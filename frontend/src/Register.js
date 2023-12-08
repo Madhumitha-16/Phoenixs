@@ -1,8 +1,8 @@
 import React, {useRef, useState} from 'react';
 // import './Styles/register.css';
 // import register from "../Assets/Images/regsiteration.png";
-// import {auth} from "../firebaseConfig";
-// import {createUserWithEmailAndPassword} from 'firebase/auth';
+import {auth} from "../src/firebaseConfig";
+import {createUserWithEmailAndPassword} from 'firebase/auth';
 import { useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
@@ -65,22 +65,22 @@ export default function Register()
       }
     }, [userId, navigate]);
 
-//    const signup=(e)=>
-//     {
-//         e.preventDefault();
-//     createUserWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-//     const user = userCredential.user;
-//     console.log(user);
-//     setUserId(user.uid)
-//   })
+   const signup=(e)=>
+    {
+        e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    const user = userCredential.user;
+    console.log(user);
+    setUserId(user.uid)
+  })
   
-//   .catch((error) => {
-//     const errorMessage = error.message;
-//     console.log(errorMessage);
-//     err();
-//   });
-// };
+  .catch((error) => {
+    const errorMessage = error.message;
+    console.log(errorMessage);
+    err();
+  });
+};
 
   return (<div className="bodyWrap">
    <Toaster toastOptions={{
@@ -93,7 +93,7 @@ export default function Register()
       }} />
     <div className="contentRegisterWrap">
     <form className="registerForm" 
-    // onSubmit={signup}
+     onSubmit={signup}
     >
       <div className="RegisterSide">
         <div className="loginWrap">
@@ -182,9 +182,9 @@ export default function Register()
             </div>
             </div>
         <div>
-        <input type='submit' className='button'  value="Register"/>
+       
         <button 
-        // onClick={login}
+       // onClick={login}
         >Register</button>
         </div>
        

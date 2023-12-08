@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./Styles/login.css";
-// import login_img from "../Assets/Images/Secure login.gif";
+// import "./Styles/login.css";
+//import login_img from "../Assets/Images/Secure login.gif";
 import { Link } from "react-router-dom";
-// import { signInWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "../firebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../src/firebaseConfig";
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -16,35 +16,35 @@ function Login() {
   const notify = () => toast.success('Login successful');
   const err = () => toast.error('User not found!');
 
-//  const loginfunc=(e)=>{
-//       e.preventDefault();
-//       signInWithEmailAndPassword(auth,username,password)
-//       .then((userCredential)=>
-//       {    
-//         const user = userCredential.user;
-//         console.log(user);
-//         setUserId(user.uid)
-//       }).catch((error)=>
-//       {
-//         const errorMessage = error.message;
-//         console.log(errorMessage);
-//         err();
-//       });
-//     };
+ const loginfunc=(e)=>{
+      e.preventDefault();
+      signInWithEmailAndPassword(auth,username,password)
+      .then((userCredential)=>
+      {    
+        const user = userCredential.user;
+        console.log(user);
+        setUserId(user.uid)
+      }).catch((error)=>
+      {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        err();
+      });
+    };
   
-    // useEffect(() => {
-    //   if (userId==="fCUUjbdovFZnFjea0H26oZeHSHA3") { 
-    //     notify();
-    //     setTimeout(() => {
-    //       navigate(`/dashboard/${userId}`);
-    //     }, 1000);
-    //   }else if(userId){
-    //     notify();
-    //     setTimeout(() => {
-    //       navigate(`/home/${userId}`);
-    //     }, 1000);
-    //   }
-    // }, [userId, navigate]);
+    useEffect(() => {
+      if (userId==="fCUUjbdovFZnFjea0H26oZeHSHA3") { 
+        notify();
+        setTimeout(() => {
+          navigate(`/dashboard/${userId}`);
+        }, 1000);
+      }else if(userId){
+        notify();
+        setTimeout(() => {
+          navigate(`/home/${userId}`);
+        }, 1000);
+      }
+    }, [userId, navigate]);
     
   return (
     <>
@@ -64,9 +64,7 @@ function Login() {
       <div className="body">
         <div className="contentLoginWrap">
 
-          <form className="loginForm"
-          //  onSubmit={loginfunc}
-           >
+          <form className="loginForm" onSubmit={loginfunc}>
             <div className="loginSide">
               <div className="loginWrap">
                 <h1>Log in</h1>
@@ -75,7 +73,7 @@ function Login() {
                     type="email"
                     className="input"
                     value={username}
-                    // onChange={(e) => setUsername(e.target.value)}
+                    onChange={(e) => setUsername(e.target.value)}
                     required
                   />
                   <label
@@ -107,11 +105,11 @@ function Login() {
             </div>
           </form>
         </div>
-        <div className="Side">
+        {/* <div className="Side">
           <div className="loginWrap">
-            {/* <img src={login_img} /> */}
+            <img src={login_img} />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
