@@ -23,7 +23,8 @@ function Login() {
       {    
         const user = userCredential.user;
         console.log(user);
-        setUserId(user.uid)
+        setUserId(user.uid);
+        navigate('/landing');
       }).catch((error)=>
       {
         const errorMessage = error.message;
@@ -32,19 +33,19 @@ function Login() {
       });
     };
   
-    useEffect(() => {
-      if (userId==="fCUUjbdovFZnFjea0H26oZeHSHA3") { 
-        notify();
-        setTimeout(() => {
-          navigate(`/dashboard/${userId}`);
-        }, 1000);
-      }else if(userId){
-        notify();
-        setTimeout(() => {
-          navigate(`/home/${userId}`);
-        }, 1000);
-      }
-    }, [userId, navigate]);
+    // useEffect(() => {
+    //   if (userId==="fCUUjbdovFZnFjea0H26oZeHSHA3") { 
+    //     notify();
+    //     setTimeout(() => {
+    //       navigate(`/dashboard/${userId}`);
+    //     }, 1000);
+    //   }else if(userId){
+    //     notify();
+    //     setTimeout(() => {
+    //       navigate(`/home/${userId}`);
+    //     }, 1000);
+    //   }
+    // }, [userId, navigate]);
     
   return (
     <>
@@ -108,7 +109,7 @@ function Login() {
         {/* <div className="Side">
           <div className="loginWrap">
             <img src={login_img} />
-          </div>
+          </div>  
         </div> */}
       </div>
     </>
