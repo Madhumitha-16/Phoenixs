@@ -5,7 +5,6 @@ import Login from './Login';
 import Register from './Register';
 import Forum from './Forum';
 import PostDetails from './PostDetails';
-import Landing from './Landing';
 import Temp from './Home';
 
 function App() {
