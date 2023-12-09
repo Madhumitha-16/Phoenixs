@@ -6,6 +6,7 @@ import Register from './Register';
 import Forum from './Forum';
 import PostDetails from './PostDetails';
 import Temp from './Home';
+import Home from './Student/Home';
 
 function App() {
   return (
@@ -16,6 +17,12 @@ function App() {
           path="/"
           element={
               <Temp />
+          }
+        />
+         <Route
+          path="/student/home"
+          element={
+              <Home />
           }
         />
         <Route
