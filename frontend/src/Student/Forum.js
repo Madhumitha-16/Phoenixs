@@ -35,7 +35,6 @@ const Forum = () => {
       {posts.map((post, index) => (
         <div key={index}>
           <p>{post.content}</p>
-          {/* Add rendering for other fields if needed */}
         </div>
       ))}
     </div>

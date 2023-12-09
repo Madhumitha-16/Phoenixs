@@ -7,6 +7,8 @@ import Temp from './Home';
 import Home from './Student/Home';
 import PostDetails from './Student/PostDetails';
 import Forum from './Student/Forum';
+import THome from './Teacher/THome';
+import Mhome from './Ministry/Mhome';
 
 function App() {
   return (
@@ -37,6 +39,14 @@ function App() {
               <PostDetails />
           }
         />
+
+        < Route
+          path="/Ministry/home"
+          element={
+              <Mhome />
+          }
+        />
+
         <Route
           path="/forum"
           element={
@@ -47,6 +57,10 @@ function App() {
          <Route 
          path="/register" 
          element={<Register />} />
+          
+          <Route 
+         path="/teacher/home" 
+         element={<THome />} />
 
         </Routes>
   </BrowserRouter>

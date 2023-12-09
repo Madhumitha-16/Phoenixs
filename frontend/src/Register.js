@@ -80,7 +80,7 @@ export default function Register()
           Firstname: firstName,
           Lastname: lastName,
           Email: email,
-          Role: selectedOption,
+          Role: selectedOption
           
         };
 
@@ -145,8 +145,9 @@ export default function Register()
         <select className='select' id="dropdown"  value={selectedOption} 
          onChange={handleSelectChange} 
         > <option value="Student">Student</option>
-            <option value=" Teacher">Teachers / NGO</option>
+            <option value=" Teach">Teacher</option>
             <option value="Org">Organization</option>
+            <option value="Minis">Ministry</option>
         </select>
         
         </div>
