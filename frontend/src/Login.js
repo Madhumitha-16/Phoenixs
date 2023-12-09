@@ -24,7 +24,7 @@ function Login() {
         const user = userCredential.user;
         console.log(user);
         setUserId(user.uid);
-        navigate('/forum');
+        navigate('/post-details');
       }).catch((error)=>
       {
         const errorMessage = error.message;

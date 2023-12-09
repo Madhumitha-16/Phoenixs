@@ -72,12 +72,11 @@ export default function Register()
         const user = userCredential.user;
         console.log(user);
         setUserId(user.uid);
-
-        // Create a document in the 'users' collection with the user ID
         const userDocRef = doc(db, 'Users', user.uid);
 
         // Set the document data
         const userData = {
+          UserID: user.uid, 
           Firstname: firstName,
           Lastname: lastName,
           Email: email,
