@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
-// import "./Styles/login.css";
-//import login_img from "../Assets/Images/Secure login.gif";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../src/firebaseConfig";
+import { auth, db } from "../src/firebaseConfig";
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
+import { doc, getDoc } from "firebase/firestore";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -16,22 +15,56 @@ function Login() {
   const notify = () => toast.success('Login successful');
   const err = () => toast.error('User not found!');
 
- const loginfunc=(e)=>{
-      e.preventDefault();
-      signInWithEmailAndPassword(auth,username,password)
-      .then((userCredential)=>
-      {    
+  const loginfunc = (e) => {
+    e.preventDefault();
+    
+    signInWithEmailAndPassword(auth, username, password)
+      .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
         setUserId(user.uid);
-        navigate('/forum');
-      }).catch((error)=>
-      {
+  
+        // Fetch the user document from Firestore based on the user's UID
+        const userDocRef = doc(db, 'Users', user.uid);
+        getDoc(userDocRef)
+          .then((userDoc) => {
+            if (userDoc.exists()) {
+              const userData = userDoc.data();
+              const userRole = userData.Role;
+  
+              // Navigate based on the user's role
+              switch (userRole) {
+                case 'Student':
+                  navigate('/student/home');
+                  break;
+                // case 'Teach':
+                //   navigate('/teacher/home');
+                  break;
+                case 'Org':
+                  navigate('/teacher/home');
+                  break;
+                case 'Minis':
+                  navigate('/ministry/home');
+                  break;
+                default:
+                  // Handle default case or error
+                  break;
+              }
+            } else {
+              console.error('User document not found.');
+            }
+          })
+          .catch((error) => {
+            console.error('Error fetching user document:', error.message);
+          });
+      })
+      .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
         err();
       });
-    };
+  };
+  
        
   return (
     <>
