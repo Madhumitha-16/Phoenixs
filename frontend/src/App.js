@@ -3,14 +3,22 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
 import Register from './Register';
+import Forum from './Forum';
 import PostDetails from './PostDetails';
 import Landing from './Landing';
+import Temp from './Home';
 
 function App() {
   return (
 
   <BrowserRouter>
       <Routes>
+      <Route
+          path="/"
+          element={
+              <Temp />
+          }
+        />
         <Route
           path="/login"
           element={
@@ -22,6 +30,9 @@ function App() {
          path="/register" 
          element={<Register />} />
 
+        <Route 
+         path="/forum" 
+         element={<Forum />} />
         
         <Route 
          path="/post-details" 
