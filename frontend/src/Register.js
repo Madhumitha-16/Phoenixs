@@ -1,12 +1,11 @@
 import React, {useRef, useState} from 'react';
-// import './Styles/register.css';
-// import register from "../Assets/Images/regsiteration.png";
 import {auth} from "../src/firebaseConfig";
 import {createUserWithEmailAndPassword} from 'firebase/auth';
 import { useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
-
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from '../src/firebaseConfig';
 
 export default function Register()
 {
@@ -15,11 +14,11 @@ export default function Register()
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [curpassword, setCurPassword] = useState("");
-  const [regnum,setRegNo] = useState("");
-  const [selectedOption, setSelectedOption] = useState('');
-  const [email,setemail]=useState("");
-  const[password,setPassword]=useState("");
-  const[userId,setUserId]=useState("");
+  const [Phnum, setPhNo] = useState("");
+  const [selectedOption, setSelectedOption] = useState('Student');
+  const [email, setemail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userId, setUserId] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
 
@@ -27,60 +26,74 @@ export default function Register()
   const err = () => toast.error('Email already registered!');
 
   const handleSelectChange = (event) => {
-      setSelectedOption(event.target.value);
-    };
+    setSelectedOption(event.target.value);
+  };
 
-    const validatePassword = (password) => {
-      return password.length >= 6;
-    };
+  const validatePassword = (password) => {
+    return password.length >= 6;
+  };
 
-    const handlePasswordChange = (e) => {
-      const newPassword = e.target.value;
-      setPassword(newPassword);
-  
-      if (!validatePassword(newPassword)) {
-        setPasswordError("Password must be at least 6 characters long.");
-      } else {
-        setPasswordError("");
-      }
-    };
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
 
-    const handleConfirmPasswordChange = (e) => {
-      const newConfirmPassword = e.target.value;
-      setCurPassword(newConfirmPassword);
-  
-      if (newConfirmPassword !== password) {
-        setConfirmPasswordError("Passwords do not match.");
-      } else {
-        setConfirmPasswordError("");
-      }
-    };
-    
-    useEffect(() => {
-      if (userId) { 
-        notify();
-        setTimeout(() => {
-          navigate(`/team-registration/${userId}`); 
-        }, 1000);
-      }
-    }, [userId, navigate]);
+    if (!validatePassword(newPassword)) {
+      setPasswordError("Password must be at least 6 characters long.");
+    } else {
+      setPasswordError("");
+    }
+  };
 
-   const signup=(e)=>
-    {
-        e.preventDefault();
+  const handleConfirmPasswordChange = (e) => {
+    const newConfirmPassword = e.target.value;
+    setCurPassword(newConfirmPassword);
+
+    if (newConfirmPassword !== password) {
+      setConfirmPasswordError("Passwords do not match.");
+    } else {
+      setConfirmPasswordError("");
+    }
+  };
+
+  useEffect(() => {
+    if (userId) {
+      notify();
+      setTimeout(() => {
+        navigate(`/login`);
+      }, 1000);
+    }
+  }, [userId, navigate]);
+
+  const signup = (e) => {
+    e.preventDefault();
+
     createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    const user = userCredential.user;
-    console.log(user);
-    setUserId(user.uid)
-  })
-  
-  .catch((error) => {
-    const errorMessage = error.message;
-    console.log(errorMessage);
-    err();
-  });
-};
+      .then(async (userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        setUserId(user.uid);
+
+        // Create a document in the 'users' collection with the user ID
+        const userDocRef = doc(db, 'Users', user.uid);
+
+        // Set the document data
+        const userData = {
+          Firstname: firstName,
+          Lastname: lastName,
+          Email: email,
+          Role: selectedOption,
+          
+        };
+
+        await setDoc(userDocRef, userData);
+
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.error(errorMessage);
+        err();
+      });
+  };
 
   return (<div className="bodyWrap">
    <Toaster toastOptions={{
@@ -101,7 +114,7 @@ export default function Register()
           <div className="input-row">
             <div className="input-group">
                 <input type="text" className="input" 
-                // onChange={e => setFirstName(e.target.value)} 
+                 onChange={e => setFirstName(e.target.value)} 
                 required/>
                 <label className={`input-label ${firstName.length > 0 ? "focusLabel" : ""}`}>First Name</label>
             </div>
@@ -121,26 +134,20 @@ export default function Register()
         <input
         type="text"
         className="input"
-        // onChange={e => setRegNo(e.target.value)}
+         onChange={e => setPhNo(e.target.value)}
         required
         pattern="[0-9]*"
         inputMode="numeric"
         />
-        <label className={`input-label ${regnum.length > 0 ? "focusLabel" : ""}`}>Register No. [Only numbers]</label>
-        </div>
-        <div className="input-group">
-        <label>Course</label>
-        <input type="radio" className="input-radio"  required value="BE" name="course"/>BE
-        <input type="radio" className="input-radio"  required value="BTech" name="course"/>BTech
+        <label className={`input-label ${Phnum.length > 0 ? "focusLabel" : ""}`}>Phone No. [Only numbers]</label>
         </div>
         <div className='input-group'>
-        <label>Department</label>
+        <label>Role</label>
         <select className='select' id="dropdown"  value={selectedOption} 
-        // onChange={handleSelectChange} 
-        > <option value="IT">IT</option>
-            <option value="CSE">CSE</option>
-            <option value="ADS">ADS</option>
-            <option value="CSBS">CSBS</option>
+         onChange={handleSelectChange} 
+        > <option value="Student">Student</option>
+            <option value=" Teacher">Teachers / NGO</option>
+            <option value="Org">Organization</option>
         </select>
         
         </div>
@@ -184,7 +191,6 @@ export default function Register()
         <div>
        
         <button 
-       // onClick={login}
         >Register</button>
         </div>
        
