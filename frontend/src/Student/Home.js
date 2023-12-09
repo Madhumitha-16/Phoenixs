@@ -1,20 +1,20 @@
 import React from 'react';
-import '../src/Styles/Home.css';
-import logo from '../src/img/logo.png';
-import c1 from '../src/img/carousel-1.jpg';
-import c2 from '../src/img/carousel-2.jpg';
-import teacher from '../src/img/call-to-action.jpg'
-import about1 from '../src/img/about-1.jpg';
-import about2 from '../src/img/about-2.jpg';
-import about3 from '../src/img/about-3.jpg';
-import appointment from '../src/img/appointment.jpg';
-import cls1 from '../src/img/classes-1.jpg';
-import cls2 from '../src/img/classes-2.jpg';
-import cls3 from '../src/img/classes-3.jpg';
-import cls4 from '../src/img/classes-4.jpg';
+import '../Styles/Home.css';
+import logo from '../img/logo.png';
+import c1 from '../img/carousel-1.jpg';
+import c2 from '../img/carousel-2.jpg';
+import teacher from '../img/call-to-action.jpg'
+import about1 from '../img/about-1.jpg';
+import about2 from '../img/about-2.jpg';
+import about3 from '../img/about-3.jpg';
+import appointment from '../img/appointment.jpg';
+import cls1 from '../img/classes-1.jpg';
+import cls2 from '../img/classes-2.jpg';
+import cls3 from '../img/classes-3.jpg';
+import cls4 from '../img/classes-4.jpg';
 
 
-function Temp() {
+function Home() {
   return (
     <>
     {/* Google Web Fonts */}
@@ -38,7 +38,7 @@ function Temp() {
       <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0 ">
         <a href="index.html" className="navbar-brand">
           <h1 className="m-0 text-primary ">
-          <img src={logo} alt=''  width={100} />
+            <img src={logo} alt=''  width={100} />
             Phoenixs
           </h1>
         </a>
@@ -986,4 +986,4 @@ function Temp() {
   );
 }
 
-export default Temp;
+export default Home;

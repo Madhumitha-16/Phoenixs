@@ -7,6 +7,7 @@ import Forum from './Student/Forum';
 import PostDetails from './Teacher/PostDetails';
 import Landing from './Landing';
 import Temp from './Home';
+import Home from './Student/Home';
 
 function App() {
   return (
@@ -17,6 +18,12 @@ function App() {
           path="/"
           element={
               <Temp />
+          }
+        />
+         <Route
+          path="/student/home"
+          element={
+              <Home />
           }
         />
         <Route
