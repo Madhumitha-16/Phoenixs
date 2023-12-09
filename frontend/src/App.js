@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
 import Register from './Register';
-import Forum from './Forum';
-import PostDetails from './PostDetails';
+/*import Forum from './Forum';
+import PostDetails from './PostDetails'; */
 import Temp from './Home';
 import Home from './Student/Home';
 
@@ -36,13 +36,13 @@ function App() {
          path="/register" 
          element={<Register />} />
 
-        <Route 
+        {/*<Route 
          path="/forum" 
          element={<Forum />} />
         
         <Route 
          path="/post-details" 
-         element={<PostDetails />} />
+        element={<PostDetails />} /> */ }
 
         </Routes>
   </BrowserRouter>

@@ -1,12 +1,15 @@
 import React from 'react';
 import '../src/Styles/Home.css';
 import logo from '../src/img/logo.png';
-import c1 from '../src/img/carousel-1.jpg';
+import logo1 from '../src/img/logo-SQUARE.png';
+import c1 from '../src/img/Header-down-image.jpg';
 import c2 from '../src/img/carousel-2.jpg';
-import teacher from '../src/img/call-to-action.jpg'
-import about1 from '../src/img/about-1.jpg';
-import about2 from '../src/img/about-2.jpg';
-import about3 from '../src/img/about-3.jpg';
+import teacher from '../src/img/TeacherImg.jpeg'
+import orgcenter from '../src/img/educenter.jpg';
+import stugru from '../src/img/StudentsGrp.jpeg';
+import about1 from '../src/img/Circle-3.jpeg';
+import about2 from '../src/img/Circle-2.png';
+import about3 from '../src/img/Circle-1.jpg';
 import appointment from '../src/img/appointment.jpg';
 import cls1 from '../src/img/classes-1.jpg';
 import cls2 from '../src/img/classes-2.jpg';
@@ -105,20 +108,21 @@ function Temp() {
       </nav>
 
       <div className="container-fluid p-0 mb-5">
-            <img src={c1} alt="" style={{  objectFit: "cover", width: "100%", height: "750px" }} />
+            <img src={c1} alt="" style={{  objectFit: "fit", width: "100%", height: "650px" }} />
             <div
               className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
             >
               <div className="container">
                 <div className="row justify-content-start">
                   <div className="col-10 col-lg-8">
-                    <h1 className="display-2 text-white animated slideInDown mb-4">
-                      The Best Kindergarten School For Your Child
-                    </h1>
-                    <p className="fs-5 fw-medium text-white mb-4 pb-2">
-                      Vero elitr justo clita lorem. Ipsum dolor at sed stet sit
-                      diam no. Kasd rebum ipsum et diam justo clita et kasd rebum
-                      sea elitr.
+                  <h1 style={{ color: '#ffffff', fontSize: '3rem', textShadow: '2px 2px 4px #000000' }} className="text-white animated slideInDown mb-4">
+                  Bridging Gaps, Fostering Dreams:<br></br> A Journey to Inclusive Education
+              </h1>
+              
+              
+                    <p style={{fontSize: '1.3rem', textShadow: '2px 2px 4px #000000' }} className=" fw-medium text-white mb-4 pb-2">
+                    This platform unites students, institutions, teachers, and government ministries, 
+                    an Edu-ecosystem that empowers, informs, and transforms lives.
                     </p>
                     <a
                       href="www.google.com"
@@ -175,87 +179,101 @@ function Temp() {
       {/* Carousel End */}
       {/* Facilities Start */}
       <div className="container-xxl py-5">
-        <div className="container">
-          <div
-            className="text-center mx-auto mb-5 wow fadeInUp"
-            data-wow-delay="0.1s"
-            style={{ maxWidth: 600 }}
-          >
-            <h1 className="mb-3">School Facilities</h1>
-            <p>
-              Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore
-              lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum
-              vero dolor duo.
-            </p>
+      <div className="container">
+        <div
+          className="text-center mx-auto mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style={{ maxWidth: 600 }}
+        >
+          <h1 className="mb-3">Explore Our Features!</h1>
+          <p>
+          Empowering Students!!
+         Inclusive Education is Here.Happy Learning!!
+          </p>
+        </div>
+        <div className="row g-4">
+          <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div className="facility-item">
+              <div className="facility-icon bg-primary">
+                <span className="bg-primary" />
+                <i className="bi bi-person fa-3x text-primary" />
+                <span className="bg-primary" />
+              </div>
+              <div className="facility-text bg-primary">
+                <h3 className="text-primary mb-3">Student's</h3>
+                <p className="mb-0">
+                Unlock your learning journey!</p>
+                <p></p>
+                <p> Accessible course materials </p><p>Adaptive learning tools</p>
+                     <p>Support services</p>
+                      <p>Peer support</p>
+              </div>
+            </div>
           </div>
-          <div className="row g-4">
-            <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div className="facility-item">
-                <div className="facility-icon bg-primary">
-                  <span className="bg-primary" />
-                  <i className="fa fa-bus-alt fa-3x text-primary" />
-                  <span className="bg-primary" />
-                </div>
-                <div className="facility-text bg-primary">
-                  <h3 className="text-primary mb-3">School Bus</h3>
-                  <p className="mb-0">
-                    Eirmod sed ipsum dolor sit rebum magna erat lorem kasd vero
-                    ipsum sit
-                  </p>
-                </div>
+          <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div className="facility-item">
+              <div className="facility-icon bg-success">
+                <span className="bg-success" />
+                <i className="bi bi-building fa-3x text-success" />
+                <span className="bg-success" />
+              </div>
+              <div className="facility-text bg-success">
+                <h3 className="text-success mb-3">Organisation</h3>
+                <p className="mb-0">
+                  Decrease the Huddles and Overcome It!</p>
+                  <p></p>
+                <p>Comprehensive Curriculum</p>
+                
+                <p>Professional Development</p>
+                <p>Collaboration and Advocacy</p>
+                <p>Data and Reporting</p>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-              <div className="facility-item">
-                <div className="facility-icon bg-success">
-                  <span className="bg-success" />
-                  <i className="fa fa-futbol fa-3x text-success" />
-                  <span className="bg-success" />
-                </div>
-                <div className="facility-text bg-success">
-                  <h3 className="text-success mb-3">Playground</h3>
-                  <p className="mb-0">
-                    Eirmod sed ipsum dolor sit rebum magna erat lorem kasd vero
-                    ipsum sit
-                  </p>
-                </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div className="facility-item">
+              <div className="facility-icon bg-warning">
+                <span className="bg-warning" />
+                <i className="fa fa-chalkboard-teacher fa-3x text-warning" />
+                <span className="bg-warning" />
+              </div>
+              <div className="facility-text bg-warning">
+                <h3 className="text-warning mb-3">Teacher's</h3>
+                <p className="mb-0">
+                Jump In ! To Train and help Our Special Kids</p>
+                <p></p>
+               <p>Individualized Education Plans (IEPs)</p>
+      
+                <p>Assistive technology resources
+                </p>
+                <p>Collaboration tools
+                </p>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div className="facility-item">
-                <div className="facility-icon bg-warning">
-                  <span className="bg-warning" />
-                  <i className="fa fa-home fa-3x text-warning" />
-                  <span className="bg-warning" />
-                </div>
-                <div className="facility-text bg-warning">
-                  <h3 className="text-warning mb-3">Healthy Canteen</h3>
-                  <p className="mb-0">
-                    Eirmod sed ipsum dolor sit rebum magna erat lorem kasd vero
-                    ipsum sit
-                  </p>
-                </div>
+          </div>
+          <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div className="facility-item">
+              <div className="facility-icon bg-info">
+                <span className="bg-info" />
+                <i className="fa fa-chalkboard-teacher fa-3x text-info" />
+                <span className="bg-info" />
               </div>
-            </div>
-            <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-              <div className="facility-item">
-                <div className="facility-icon bg-info">
-                  <span className="bg-info" />
-                  <i className="fa fa-chalkboard-teacher fa-3x text-info" />
-                  <span className="bg-info" />
-                </div>
-                <div className="facility-text bg-info">
-                  <h3 className="text-info mb-3">Positive Learning</h3>
-                  <p className="mb-0">
-                    Eirmod sed ipsum dolor sit rebum magna erat lorem kasd vero
-                    ipsum sit
-                  </p>
-                </div>
+              <div className="facility-text bg-info">
+                <h3 className="text-info mb-3">Ministry</h3>
+                <p className="mb-0">
+                  For the People!
+                </p>
+                <p></p>
+                <p>Schemes and Scholorship</p>
+                <p>Certificates and Services</p>
+                <p>Education and Employment Resources</p>
+                <p>Awareness Campaigns</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
       {/* Facilities End */}
       {/* About Start */}
       <div className="container-xxl py-5">
@@ -263,20 +281,22 @@ function Temp() {
           <div className="row g-5 align-items-center">
             <div className="col-lg-6">
               <h1 className="mb-4">
-                Learn More About Our Work And Our Cultural Activities
+                Learn More About Our Work And Activities Here!
               </h1>
-              <p>
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
-                lorem sit clita duo justo magna dolore erat amet
-              </p>
               <p className="mb-4">
-                Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No
-                stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo
-                nonumy clita sit at, sed sit sanctus dolor eos, ipsum labore duo
-                duo sit no sea diam. Et dolor et kasd ea. Eirmod diam at dolor est
-                vero nonumy magna.
+              Welcome to our transformative platform dedicated to inclusive education.
+              At the heart of our mission is the empowerment of special children with disabilities, 
+              offering a seamless registration process and access to mainstream education. We connect 
+              students with local education centers and enrich their learning experience through a 
+              gamified educational platform. Educational institutions benefit from proactive notifications, 
+              keeping them informed about potential enrollees and government schemes. For teachers, 
+              we provide not just job opportunities but a collaborative space to share resources 
+              and enhance their impact. Government ministries find a secure gateway to manage requests,
+               upload schemes, and contribute to the collective advancement of inclusive education. 
+               Join us in building a future where every child, regardless of ability, has access 
+               to quality education and limitless possibilities.
               </p>
+            
               <div className="row g-4 align-items-center">
                 <div className="col-sm-6">
                   <a className="btn btn-primary rounded-pill py-3 px-5" href="">
@@ -287,13 +307,13 @@ function Temp() {
                   <div className="d-flex align-items-center">
                     <img
                       className="rounded-circle flex-shrink-0"
-                      src="img/user.jpg"
+                      src={logo1}
                       alt=""
                       style={{ width: 45, height: 45 }}
                     />
                     <div className="ms-3">
-                      <h6 className="text-primary mb-1">Jhon Doe</h6>
-                      <small>CEO &amp; Founder</small>
+                      <h6 className="text-primary mb-1">Phoenixs</h6>
+                      <small>IT, RMKEC</small>
                     </div>
                   </div>
                 </div>
@@ -313,14 +333,14 @@ function Temp() {
                 </div>
                 <div className="col-6 text-start" style={{ marginTop: "-150px" }}>
                   <img
-                    className="img-fluid w-100 rounded-circle bg-light p-3"
+                    className="img-fluid w-100  rounded-circle bg-light p-3"
                     src={about2}
                     alt=""
                   />
                 </div>
                 <div className="col-6 text-end" style={{ marginTop: "-150px" }}>
                   <img
-                    className="img-fluid w-100 rounded-circle bg-light p-3"
+                    className="img-fluid w-100 h-100 rounded-circle bg-light p-3"
                     src={about3}
                     alt=""
                   />
@@ -333,6 +353,79 @@ function Temp() {
       {/* About End */}
       {/* Call To Action Start */}
       <div className="container-xxl py-5">
+      <div className="container">
+        <div className="bg-light rounded">
+          <div className="row g-0">
+            <div
+              className="col-lg-6 wow fadeIn"
+              data-wow-delay="0.1s"
+              style={{ minHeight: 400 }}
+            >
+              <div className="position-relative h-100">
+                <img
+                  className="position-absolute w-100 h-100 rounded"
+                  src={stugru}
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </div>
+            <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+              <div className="h-100 d-flex flex-column justify-content-center p-5">
+                <h1 className="mb-4">Unlock Learning!!</h1>
+                <p className="mb-4">
+                Makes learning easy by giving students personal profiles, real-time updates, and clear communication for parents. It's secure and lets everyone work together with shared resources, 
+          online meetings, and a helpful library. You can give feedback to make it better and ensure a complete learning experience for students and their families.
+                </p>
+                <a className="btn btn-primary py-3 px-5" href="">
+                  Let's Get Educated ! Enroll here
+                  <i className="fa fa-arrow-right ms-2" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      
+      <div className="container-xxl py-5">
+      <div className="container">
+        <div className="bg-light rounded">
+          <div className="row g-0">
+            <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+              <div className="h-100 d-flex flex-column justify-content-center p-5">
+                <h1 className="mb-4">Classroom Navigator </h1>
+                <p className="mb-4">
+                Teachers play a crucial role in the holistic development of disabled individuals by fostering inclusive education, providing tailored support, and nurturing an environment that promotes their unique strengths.
+                These professionals employ personalized strategies, create inclusive environments, and advocate for the unique needs of disabled learners. Through their guidance and encouragement, disabled individuals can overcome obstacles, gain confidence, and actively engage in society, promoting inclusivity and diversity.
+                </p>
+                <a className="btn btn-primary py-3 px-5" href="">
+                  Register As a Teacher Now 
+                  <i className="fa fa-arrow-right ms-2" />
+                </a>
+              </div>
+            </div>
+            <div
+              className="col-lg-6 wow fadeIn"
+              data-wow-delay="0.1s"
+              style={{ minHeight: 400 }}
+            >
+              <div className="position-relative h-100">
+                <img
+                  className="position-absolute w-100 h-100 rounded"
+                  src={teacher}
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+
+      <div className="container-xxl py-5">
         <div className="container">
           <div className="bg-light rounded">
             <div className="row g-0">
@@ -344,21 +437,25 @@ function Temp() {
                 <div className="position-relative h-100">
                   <img
                     className="position-absolute w-100 h-100 rounded"
-                    src={teacher}
+                    src={orgcenter}
                     style={{ objectFit: "cover" }}
                   />
                 </div>
               </div>
               <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                 <div className="h-100 d-flex flex-column justify-content-center p-5">
-                  <h1 className="mb-4">Become A Teacher</h1>
+                  <h1 className="mb-4">Organizations</h1>
                   <p className="mb-4">
-                    Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                    Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                    sed stet lorem sit clita duo justo magna dolore erat amet
+                  This year, we're on a mission to expand our horizons,
+                  and we need YOUR passion and skills to make it happen.
+                  Whether you're interested in recruiting staff to enhance our organization,
+                  lending a helping hand to support disabled kids in our community,
+                  establishing connections with other incredible organizations,
+                  or getting notified about the latest schemes and government requests
+                    - we have a place for you!
                   </p>
                   <a className="btn btn-primary py-3 px-5" href="">
-                    Get Started Now
+                    Enroll Your Edu-Center!
                     <i className="fa fa-arrow-right ms-2" />
                   </a>
                 </div>
@@ -833,15 +930,15 @@ function Temp() {
               <h3 className="text-white mb-4">Get In Touch</h3>
               <p className="mb-2">
                 <i className="fa fa-map-marker-alt me-3" />
-                123 Street, New York, USA
+                Smart India Hackathon
               </p>
               <p className="mb-2">
                 <i className="fa fa-phone-alt me-3" />
-                +012 345 67890
+                +91 9894703845
               </p>
               <p className="mb-2">
                 <i className="fa fa-envelope me-3" />
-                info@example.com
+                Phoenixs.EduForAll@gmail
               </p>
               <div className="d-flex pt-2">
                 <a className="btn btn-outline-light btn-social" href="">
@@ -924,22 +1021,20 @@ function Temp() {
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
-              <h3 className="text-white mb-4">Newsletter</h3>
-              <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+              <h3 className="text-white mb-4">FundRaiser</h3>
+              <p>Empower special children with education. 
+              Support our fundraiser for inclusivity. Every contribution 
+              transforms lives and fosters a limitless future.</p>
               <div
                 className="position-relative mx-auto"
                 style={{ maxWidth: 400 }}
               >
-                <input
-                  className="form-control bg-transparent w-100 py-3 ps-4 pe-5"
-                  type="text"
-                  placeholder="Your email"
-                />
+             
                 <button
                   type="button"
                   className="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
                 >
-                  SignUp
+                Donate Now
                 </button>
               </div>
             </div>
@@ -951,19 +1046,19 @@ function Temp() {
               <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 ©{" "}
                 <a className="border-bottom" href="#">
-                  Your Site Name
+                  Phoenixs
                 </a>
                 , All Right Reserved.
                 {/*/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. *** /*/}
                 Designed By{" "}
-                <a className="border-bottom" href="https://htmlcodex.com">
-                  HTML Codex
+                <a className="border-bottom" href="https://rmkec.ac.in/ydeptabout.php?dept=it">
+                  IT, RMKEC
                 </a>
               </div>
               <div className="col-md-6 text-center text-md-end">
                 <div className="footer-menu">
                   <a href="">Home</a>
-                  <a href="">Cookies</a>
+                  <a href="">Support Us</a>
                   <a href="">Help</a>
                   <a href="">FQAs</a>
                 </div>
