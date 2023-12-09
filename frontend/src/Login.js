@@ -24,7 +24,7 @@ function Login() {
         const user = userCredential.user;
         console.log(user);
         setUserId(user.uid);
-        navigate('/landing');
+        navigate('/forum');
       }).catch((error)=>
       {
         const errorMessage = error.message;
@@ -32,21 +32,7 @@ function Login() {
         err();
       });
     };
-  
-    // useEffect(() => {
-    //   if (userId==="fCUUjbdovFZnFjea0H26oZeHSHA3") { 
-    //     notify();
-    //     setTimeout(() => {
-    //       navigate(`/dashboard/${userId}`);
-    //     }, 1000);
-    //   }else if(userId){
-    //     notify();
-    //     setTimeout(() => {
-    //       navigate(`/home/${userId}`);
-    //     }, 1000);
-    //   }
-    // }, [userId, navigate]);
-    
+       
   return (
     <>
       <div className="title">
@@ -106,11 +92,6 @@ function Login() {
             </div>
           </form>
         </div>
-        {/* <div className="Side">
-          <div className="loginWrap">
-            <img src={login_img} />
-          </div>  
-        </div> */}
       </div>
     </>
   );
