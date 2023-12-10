@@ -24,10 +24,6 @@ import Puzzule from'../img/puzzle.jpg';
 
 export default function THome() {
   return (
-<<<<<<< HEAD
-    <div>THome</div>
-  )
-=======
     <>
     {/* Google Web Fonts */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -947,5 +943,4 @@ export default function THome() {
   
   );
   
->>>>>>> 8f82927e2c2dfe1e7151c8676528e7d8144e3a07
 }

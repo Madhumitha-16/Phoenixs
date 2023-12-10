@@ -8,7 +8,7 @@ import Home from './Student/Home';
 import PostDetails from './Student/PostDetails';
 import Forum from './Student/Forum';
 import Mhome from './Ministry/Mhome';
-import Thome from './Teacher/Thome';
+import Thome from './Teacher/THome';
 
 
 function App() {
