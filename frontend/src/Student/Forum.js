@@ -19,12 +19,10 @@ const Forum = () => {
     }
   };
 
-  // Fetch posts when the component mounts
   useEffect(() => {
     fetchPosts();
   }, []);
 
-  // Log posts in the console
   useEffect(() => {
     console.log('All Posts:', posts);
   }, [posts]);
@@ -35,6 +33,7 @@ const Forum = () => {
       {posts.map((post, index) => (
         <div key={index}>
           <p>{post.content}</p>
+          <p>{post.FirstName}</p>
         </div>
       ))}
     </div>

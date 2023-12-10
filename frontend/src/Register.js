@@ -94,7 +94,8 @@ export default function Register()
       });
   };
 
-  return (<div className="bodyWrap">
+  return (
+  <div className="bodyWrap">
    <Toaster toastOptions={{
         success: {
           iconTheme: {
@@ -145,7 +146,7 @@ export default function Register()
         <select className='select' id="dropdown"  value={selectedOption} 
          onChange={handleSelectChange} 
         > <option value="Student">Student</option>
-            <option value=" Teach">Teacher</option>
+            <option value="Teach">Teacher</option>
             <option value="Org">Organization</option>
             <option value="Minis">Ministry</option>
         </select>

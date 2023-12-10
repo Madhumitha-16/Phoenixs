@@ -31,17 +31,18 @@ function Login() {
             if (userDoc.exists()) {
               const userData = userDoc.data();
               const userRole = userData.Role;
-  
+              console.log(userRole);
               // Navigate based on the user's role
               switch (userRole) {
                 case 'Student':
                   navigate('/student/home');
                   break;
-                // case 'Teach':
-                //   navigate('/teacher/home');
-                  break;
-                case 'Org':
+                case 'Teach':
                   navigate('/teacher/home');
+                  break;
+    
+                case 'Org':
+                  navigate('/student/home');
                   break;
                 case 'Minis':
                   navigate('/ministry/home');
