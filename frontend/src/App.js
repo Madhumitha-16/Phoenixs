@@ -41,9 +41,8 @@ function App() {
               <PostDetails />
           }
         />
-
-        < Route
-          path="/Ministry/home"
+        <Route
+          path="/ministry/home"
           element={
               <Mhome />
           }
@@ -70,8 +69,7 @@ function App() {
           
         <Route 
          path="/teacher/home" 
-         element={<THome />} 
-         />
+         element={<THome />} />
 
         </Routes>
   </BrowserRouter>
