@@ -3,11 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
 import Register from './Register';
-<<<<<<< HEAD
 /*import Forum from './Forum';
 import PostDetails from './PostDetails'; */
-=======
->>>>>>> 682eead9fa376db9292e32afad4806e38a5bbda4
 import Temp from './Home';
 import Home from './Student/Home';
 import PostDetails from './Student/PostDetails';
@@ -62,7 +59,6 @@ function App() {
          <Route 
          path="/register" 
          element={<Register />} />
-<<<<<<< HEAD
 
         {/*<Route 
          path="/forum" 
@@ -71,12 +67,11 @@ function App() {
         <Route 
          path="/post-details" 
         element={<PostDetails />} /> */ }
-=======
           
-          <Route 
+        <Route 
          path="/teacher/home" 
-         element={<THome />} />
->>>>>>> 682eead9fa376db9292e32afad4806e38a5bbda4
+         element={<THome />} 
+         />
 
         </Routes>
   </BrowserRouter>
