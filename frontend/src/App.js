@@ -28,12 +28,7 @@ function App() {
               <Home />
           }
         />
-         <Route
-          path="/teacher/home"
-          element={
-              <Thome />
-          }
-        />
+         
 
         <Route
           path="/login"
