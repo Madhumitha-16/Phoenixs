@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react';
+import './Styles/register.css';
 import {auth} from "../src/firebaseConfig";
 import {createUserWithEmailAndPassword} from 'firebase/auth';
 import { useEffect } from 'react';
@@ -6,6 +7,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../src/firebaseConfig';
+import Navbar from './Components/Navbar';
 
 export default function Register()
 {
@@ -95,6 +97,13 @@ export default function Register()
   };
 
   return (
+    <> <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <Navbar />
   <div className="bodyWrap">
    <Toaster toastOptions={{
         success: {
@@ -110,7 +119,8 @@ export default function Register()
     >
       <div className="RegisterSide">
         <div className="loginWrap">
-          <h1>Register</h1>
+        <h1 className="m-0 text-primary ">
+          Register</h1>
           <div className="input-row">
             <div className="input-group">
                 <input type="text" className="input" 
@@ -191,21 +201,23 @@ export default function Register()
             </div>
         <div>
        
-        <button 
+        <button className="btn btn-primary rounded-pill w-50 py-3" 
         >Register</button>
         </div>
        
         </div>
         </form>
       </div>
-      <div className="infoSide">
+      <div className="infoSide ">
         <div className="loginWrap">
-          <h2>Nalaiyathiran</h2>
+          {/* <h2>Nalaiyathiran</h2>
           <hr></hr>
           <h5>Log in, collaborate with your team and submit your innovations here!  .</h5>
-          {/* <img src={register} /> */}
+          <img src={register} /> */}
         </div>
       </div>
+     
     </div>
+    </>
   )
 }
