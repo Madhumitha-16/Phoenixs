@@ -42,6 +42,12 @@ function App() {
               <PostDetails />
           }
         />
+         <Route
+          path="/teacher/home"
+          element={
+              <Thome />
+          }
+        />
         
         < Route
           path="/Ministry/home"
