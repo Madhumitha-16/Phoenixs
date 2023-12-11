@@ -32,8 +32,9 @@ const Forum = () => {
       <h2>Posts </h2>
       {posts.map((post, index) => (
         <div key={index}>
-          <p>{post.content}</p>
           <p>{post.FirstName}</p>
+          <p>{post.content}</p>
+          
         </div>
       ))}
     </div>
@@ -41,3 +42,4 @@ const Forum = () => {
 };
 
 export default Forum;
+  
