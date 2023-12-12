@@ -8,7 +8,7 @@ import Home from './Student/Home';
 import PostDetails from './Student/PostDetails';
 import Forum from './Student/Forum';
 import Mhome from './Ministry/Mhome';
-import Thome from './Teacher/THome';
+import THome from './Teacher/THome';
 
 
 function App() {
@@ -28,6 +28,13 @@ function App() {
               <Home />
           }
         />
+
+        <Route
+          path="/teacher/home"
+          element={
+              <THome />
+          }
+        />
          
 
         <Route
@@ -43,7 +50,7 @@ function App() {
           }
         />
         
-        < Route
+        <Route
           path="/Ministry/home"
           element={
               <Mhome />
