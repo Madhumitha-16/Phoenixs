@@ -5,8 +5,8 @@ import Login from './Login';
 import Register from './Register';
 import Temp from './Home';
 import Home from './Student/Home';
-import PostDetails from './Student/PostDetails';
-import Forum from './Student/Forum';
+import PostDetails from './PostDetails';
+import Forum from './Forum';
 import Mhome from './Ministry/Mhome';
 import THome from './Teacher/THome';
 
@@ -47,6 +47,12 @@ function App() {
           path="/post-details"
           element={
               <PostDetails />
+          }
+        />
+         <Route
+          path="/teacher/home"
+          element={
+              <Thome />
           }
         />
         

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, doc, getDoc } from 'firebase/firestore';
-import { db, auth } from '../firebaseConfig';
+import { db, auth } from './firebaseConfig';
 
 const PostForm = ({ onPostSubmit }) => {
     const [textValue, setTextValue] = useState('');
     const [currentUser, setCurrentUser] = useState(null);
 
-    // Function to fetch current user information
+   
     const fetchCurrentUser = async () => {
         try {
             const user = auth.currentUser;
@@ -22,12 +22,11 @@ const PostForm = ({ onPostSubmit }) => {
                     });
                 }
             } else {
-                // If user is not available yet, wait for the authentication state to change
                 const unsubscribe = auth.onAuthStateChanged((user) => {
                     if (user) {
-                        fetchCurrentUser(); // Retry fetching user once the authentication state changes
+                        fetchCurrentUser(); 
                     }
-                    unsubscribe(); // Unsubscribe to avoid repeated calls
+                    unsubscribe();
                 });
             }
         } catch (error) {
@@ -35,7 +34,6 @@ const PostForm = ({ onPostSubmit }) => {
         }
     };
 
-    // Fetch current user when the component mounts
     useEffect(() => {
         fetchCurrentUser();
     }, []);
@@ -48,7 +46,7 @@ const PostForm = ({ onPostSubmit }) => {
         e.preventDefault();
 
         try {
-            const studentsPostsCollectionRef = collection(db, 'StudentsPosts');
+            const PostsCollectionRef = collection(db, 'Posts');
             if (!currentUser) {
                 console.error('Current user is null. Unable to submit post.');
                 return;
@@ -67,12 +65,12 @@ const PostForm = ({ onPostSubmit }) => {
                 FirstName: userDoc.data().Firstname
             };
 
-            await addDoc(studentsPostsCollectionRef, postData);
+            await addDoc(PostsCollectionRef, postData);
 
-            console.log('Text submitted and saved to StudentsPosts collection:', textValue);
+            console.log('Text submitted and saved to Posts collection:', textValue);
             setTextValue('');
         } catch (error) {
-            console.error('Error saving text to StudentsPosts collection:', error.message);
+            console.error('Error saving text to Posts collection:', error.message);
         }
     };
 
@@ -82,7 +80,7 @@ const PostForm = ({ onPostSubmit }) => {
             <h2>Create a New Post</h2>
             <form onSubmit={handleSubmit}>
                 <label>
-                    Enter Text:
+                    Enter Text:<br></br>
                     <textarea
                         value={textValue}
                         onChange={handleTextAreaChange}
