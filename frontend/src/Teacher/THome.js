@@ -7,7 +7,7 @@ import teacher from '../img/call-to-action.jpg'
 import about1 from '../img/about-1.jpg';
 import about2 from '../img/about-2.jpg';
 import about3 from '../img/about-3.jpg';
-import appointment from '../img/appointment.jpg';
+import appointment from '../img/disablePic1.png';
 import cls1 from '../img/classes-1.jpg';
 import cls2 from '../img/classes-2.jpg';
 import cls3 from '../img/classes-3.jpg';
