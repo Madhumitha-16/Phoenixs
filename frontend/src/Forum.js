@@ -33,7 +33,9 @@ const Forum = () => {
       {posts.map((post, index) => (
         <div key={index}>
           <p>{post.FirstName}</p>
+          <p>{post.Lastname}</p>
           <p>{post.content}</p>
+          {post.fileURL && <img src={post.fileURL} alt="Post Media" />}
           
         </div>
       ))}
