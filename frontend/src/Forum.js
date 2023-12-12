@@ -8,7 +8,7 @@ const Forum = () => {
   // Function to retrieve all documents from the StudentsPosts collection
   const fetchPosts = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'StudentsPosts'));
+      const querySnapshot = await getDocs(collection(db, 'Posts'));
       const postsData = [];
       querySnapshot.forEach((doc) => {
         postsData.push(doc.data());
