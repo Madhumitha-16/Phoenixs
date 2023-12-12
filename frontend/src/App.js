@@ -8,7 +8,7 @@ import Home from './Student/Home';
 import PostDetails from './PostDetails';
 import Forum from './Forum';
 import Mhome from './Ministry/Mhome';
-import THome from './Teacher/THome';
+import Thome from './Teacher/THome';
 
 
 function App() {
@@ -28,14 +28,12 @@ function App() {
               <Home />
           }
         />
-
-        <Route
-          path="/teacher/home"
+         <Route
+          path="/student/gamify"
           element={
-              <THome />
+              <OddOneOut/>
           }
         />
-         
 
         <Route
           path="/login"
@@ -74,7 +72,6 @@ function App() {
          <Route 
          path="/register" 
          element={<Register />} />
-
 
         </Routes>
   </BrowserRouter>
