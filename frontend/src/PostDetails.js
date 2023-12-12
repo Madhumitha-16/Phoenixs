@@ -105,7 +105,7 @@ const PostForm = ({ onPostSubmit }) => {
         <br />
         <label>
           Upload File:<br />
-          <input type="file" accept="image/*" onChange={handleFileChange} />
+          <input type="file" accept="image,video/mkv/*" onChange={handleFileChange} />
         </label>
         <br />
         <button type="submit">Submit</button>
