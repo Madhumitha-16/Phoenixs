@@ -9,7 +9,6 @@ import PostDetails from './PostDetails';
 import Forum from './Forum';
 import Mhome from './Ministry/Mhome';
 import Thome from './Teacher/THome';
-import OddOneOut from './Student/Activity/OddOneOut';
 
 
 function App() {
@@ -55,7 +54,7 @@ function App() {
           }
         />
         
-        < Route
+        <Route
           path="/Ministry/home"
           element={
               <Mhome />
@@ -73,7 +72,6 @@ function App() {
          <Route 
          path="/register" 
          element={<Register />} />
-
 
         </Routes>
   </BrowserRouter>
