@@ -9,6 +9,7 @@ import PostDetails from './PostDetails';
 import Forum from './Forum';
 import Mhome from './Ministry/Mhome';
 import THome from './Teacher/THome';
+import OddOneOut from './Student/Activity/OddOneOut'
 
 
 function App() {
@@ -28,14 +29,12 @@ function App() {
               <Home />
           }
         />
-
-        <Route
-          path="/teacher/home"
+         <Route
+          path="/student/gamify"
           element={
-              <THome />
+              <OddOneOut/>
           }
         />
-         
 
         <Route
           path="/login"
@@ -49,7 +48,16 @@ function App() {
               <PostDetails />
           }
         />
+<<<<<<< HEAD
         
+=======
+         <Route
+          path="/teacher/home"
+          element={
+              <THome />
+          }
+        />
+>>>>>>> d418e3fd45cec4eac11d1093b9b1e348d406bf6d
         
         <Route
           path="/Ministry/home"
