@@ -9,6 +9,7 @@ import PostDetails from './PostDetails';
 import Forum from './Forum';
 import Mhome from './Ministry/Mhome';
 import Thome from './Teacher/THome';
+import OddOneOut from './Student/Activity/OddOneOut';
 
 
 function App() {
