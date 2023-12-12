@@ -5,10 +5,11 @@ import Login from './Login';
 import Register from './Register';
 import Temp from './Home';
 import Home from './Student/Home';
-import PostDetails from './Student/PostDetails';
-import Forum from './Student/Forum';
-import THome from './Teacher/THome';
+import PostDetails from './PostDetails';
+import Forum from './Forum';
 import Mhome from './Ministry/Mhome';
+import THome from './Teacher/THome';
+
 
 function App() {
   return (
@@ -27,6 +28,15 @@ function App() {
               <Home />
           }
         />
+
+        <Route
+          path="/teacher/home"
+          element={
+              <THome />
+          }
+        />
+         
+
         <Route
           path="/login"
           element={
@@ -39,13 +49,20 @@ function App() {
               <PostDetails />
           }
         />
-
-        < Route
+         <Route
+          path="/teacher/home"
+          element={
+              <Thome />
+          }
+        />
+        
+        <Route
           path="/Ministry/home"
           element={
               <Mhome />
           }
         />
+       
 
         <Route
           path="/forum"
@@ -57,10 +74,6 @@ function App() {
          <Route 
          path="/register" 
          element={<Register />} />
-          
-          <Route 
-         path="/teacher/home" 
-         element={<THome />} />
 
         </Routes>
   </BrowserRouter>

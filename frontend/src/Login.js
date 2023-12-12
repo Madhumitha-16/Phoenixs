@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import './Styles/register.css';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../src/firebaseConfig";
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { doc, getDoc } from "firebase/firestore";
+import Navbar from "./Components/Navbar";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -31,17 +33,18 @@ function Login() {
             if (userDoc.exists()) {
               const userData = userDoc.data();
               const userRole = userData.Role;
-  
+              console.log(userRole);
               // Navigate based on the user's role
               switch (userRole) {
                 case 'Student':
                   navigate('/student/home');
                   break;
-                // case 'Teach':
-                //   navigate('/teacher/home');
-                  break;
-                case 'Org':
+                case 'Teach':
                   navigate('/teacher/home');
+                  break;
+    
+                case 'Org':
+                  navigate('/student/home');
                   break;
                 case 'Minis':
                   navigate('/ministry/home');
@@ -68,9 +71,7 @@ function Login() {
        
   return (
     <>
-      <div className="title">
-        <h1> Nalaiyathiran</h1>
-      </div>
+     <Navbar />
       <div>
       <Toaster toastOptions={{
         success: {
@@ -116,11 +117,12 @@ function Login() {
                       Password<span className="asterisk"> * </span>
                     </label>
                   </div>
-                  <input type="submit" value="Login" className="button"/>
-                <h4>Haven't registered yet ? 
+                  <input type="submit" value="Login" className="btn btn-primary rounded-pill w-25 py-2"/>
+               <br></br>
+                <p>Haven't registered yet ? 
                 <Link to="/register">
                 Register here!
-                </Link></h4>
+                </Link></p>
               </div>
             </div>
           </form>
