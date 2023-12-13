@@ -10,11 +10,9 @@ import stugru from '../src/img/StudentsGrp.jpeg';
 import about1 from '../src/img/Circle-3.jpeg';
 import about2 from '../src/img/Circle-2.png';
 import about3 from '../src/img/Circle-1.jpg';
-import appointment from '../src/img/appointment.jpg';
-import cls1 from '../src/img/classes-1.jpg';
-import cls2 from '../src/img/classes-2.jpg';
-import cls3 from '../src/img/classes-3.jpg';
-import cls4 from '../src/img/classes-4.jpg';
+import donorpic from '../src/img/disablePic1.png'; 
+import Footer from './Components/Footer.js';
+import { BiSolidDonateHeart } from "react-icons/bi";
 
 
 function Temp() {
@@ -109,15 +107,18 @@ function Temp() {
 
       <div className="container-fluid p-0 mb-5">
             <img src={c1} alt="" style={{  objectFit: "fit", width: "100%", height: "650px" }} />
+            <div className="overlay">
             <div
               className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-            >
+            > 
+            
               <div className="container">
+              
                 <div className="row justify-content-start">
                   <div className="col-10 col-lg-8">
                   <h1 style={{ color: '#ffffff', fontSize: '3rem', textShadow: '2px 2px 4px #000000' }} className="text-white animated slideInDown mb-4">
                   Bridging Gaps, Fostering Dreams:<br></br> A Journey to Inclusive Education
-              </h1>
+                   </h1>
               
               
                     <p style={{fontSize: '1.3rem', textShadow: '2px 2px 4px #000000' }} className=" fw-medium text-white mb-4 pb-2">
@@ -128,16 +129,17 @@ function Temp() {
                       href="www.google.com"
                       className="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft"
                     >
-                      Learn More
+                      Login
                     </a>
                     <a
                       href="www.google.com"
                       className="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight"
                     >
-                      Our Classes
+                      New? Register Now!
                     </a>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           </div>
@@ -465,362 +467,6 @@ function Temp() {
         </div>
       </div>
       {/* Call To Action End */}
-      {/* Classes Start */}
-      <div className="container-xxl py-5">
-        <div className="container">
-          <div
-            className="text-center mx-auto mb-5 wow fadeInUp"
-            data-wow-delay="0.1s"
-            style={{ maxWidth: 600 }}
-          >
-            <h1 className="mb-3">School Classes</h1>
-            <p>
-              Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore
-              lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum
-              vero dolor duo.
-            </p>
-          </div>
-          <div className="row g-4">
-            <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div className="classes-item">
-                <div className="bg-light rounded-circle w-75 mx-auto p-3">
-                  <img
-                    className="img-fluid rounded-circle"
-                    src={cls1}
-                    alt=""
-                  />
-                </div>
-                <div className="bg-light rounded p-4 pt-5 mt-n5">
-                  <a className="d-block text-center h3 mt-3 mb-4" href="">
-                    Art &amp; Drawing
-                  </a>
-                  <div className="d-flex align-items-center justify-content-between mb-4">
-                    <div className="d-flex align-items-center">
-                      <img
-                        className="rounded-circle flex-shrink-0"
-                        src={cls2}
-                        alt=""
-                        style={{ width: 45, height: 45 }}
-                      />
-                      <div className="ms-3">
-                        <h6 className="text-primary mb-1">Jhon Doe</h6>
-                        <small>Teacher</small>
-                      </div>
-                    </div>
-                    <span
-                      className="bg-primary text-white rounded-pill py-2 px-3 custom-primary"
-                      href=""
-                    >
-                      $99
-                    </span>
-                  </div>
-                  <div className="row g-1">
-                    <div className="col-4">
-                      <div className="border-top border-3 border-primary pt-2">
-                        <h6 className="text-primary mb-1">Age:</h6>
-                        <small>3-5 Years</small>
-                      </div>
-                    </div>
-                    <div className="col-4">
-                      <div className="border-top border-3 border-success pt-2">
-                        <h6 className="text-success mb-1">Time:</h6>
-                        <small>9-10 AM</small>
-                      </div>
-                    </div>
-                    <div className="col-4">
-                      <div className="border-top border-3 border-warning pt-2">
-                        <h6 className="text-warning mb-1">Capacity:</h6>
-                        <small>30 Kids</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-              <div className="classes-item">
-                <div className="bg-light rounded-circle w-75 mx-auto p-3">
-                  <img
-                    className="img-fluid rounded-circle"
-                    src={cls3}
-                    alt=""
-                  />
-                </div>
-                <div className="bg-light rounded p-4 pt-5 mt-n5">
-                  <a className="d-block text-center h3 mt-3 mb-4" href="">
-                    Color Management
-                  </a>
-                  <div className="d-flex align-items-center justify-content-between mb-4">
-                    <div className="d-flex align-items-center">
-                      <img
-                        className="rounded-circle flex-shrink-0"
-                        src="img/user.jpg"
-                        alt=""
-                        style={{ width: 45, height: 45 }}
-                      />
-                      <div className="ms-3">
-                        <h6 className="text-primary mb-1">Jhon Doe</h6>
-                        <small>Teacher</small>
-                      </div>
-                    </div>
-                    <span
-                      className="bg-primary text-white rounded-pill py-2 px-3 custom-primary"
-                      href=""
-                    >
-                      $99
-                    </span>
-                  </div>
-                  <div className="row g-1">
-                    <div className="col-4">
-                      <div className="border-top border-3 border-primary pt-2">
-                        <h6 className="text-primary mb-1">Age:</h6>
-                        <small>3-5 Years</small>
-                      </div>
-                    </div>
-                    <div className="col-4">
-                      <div className="border-top border-3 border-success pt-2">
-                        <h6 className="text-success mb-1">Time:</h6>
-                        <small>9-10 AM</small>
-                      </div>
-                    </div>
-                    <div className="col-4">
-                      <div className="border-top border-3 border-warning pt-2">
-                        <h6 className="text-warning mb-1">Capacity:</h6>
-                        <small>30 Kids</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div className="classes-item">
-                <div className="bg-light rounded-circle w-75 mx-auto p-3">
-                  <img
-                    className="img-fluid rounded-circle"
-                    src={cls4}
-                    alt=""
-                  />
-                </div>
-                <div className="bg-light rounded p-4 pt-5 mt-n5">
-                  <a className="d-block text-center h3 mt-3 mb-4" href="">
-                    Athletic &amp; Dance
-                  </a>
-                  <div className="d-flex align-items-center justify-content-between mb-4">
-                    <div className="d-flex align-items-center">
-                      <img
-                        className="rounded-circle flex-shrink-0"
-                        src="img/user.jpg"
-                        alt=""
-                        style={{ width: 45, height: 45 }}
-                      />
-                      <div className="ms-3">
-                        <h6 className="text-primary mb-1">Jhon Doe</h6>
-                        <small>Teacher</small>
-                      </div>
-                    </div>
-                    <span
-                      className="bg-primary text-white rounded-pill py-2 px-3 custom-primary"
-                      href=""
-                    >
-                      $99
-                    </span>
-                  </div>
-                  <div className="row g-1">
-                    <div className="col-4">
-                      <div className="border-top border-3 border-primary pt-2">
-                        <h6 className="text-primary mb-1">Age:</h6>
-                        <small>3-5 Years</small>
-                      </div>
-                    </div>
-                    <div className="col-4">
-                      <div className="border-top border-3 border-success pt-2">
-                        <h6 className="text-success mb-1">Time:</h6>
-                        <small>9-10 AM</small>
-                      </div>
-                    </div>
-                    <div className="col-4">
-                      <div className="border-top border-3 border-warning pt-2">
-                        <h6 className="text-warning mb-1">Capacity:</h6>
-                        <small>30 Kids</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div className="classes-item">
-                <div className="bg-light rounded-circle w-75 mx-auto p-3">
-                  <img
-                    className="img-fluid rounded-circle"
-                    src={cls2}
-                    alt=""
-                  />
-                </div>
-                <div className="bg-light rounded p-4 pt-5 mt-n5">
-                  <a className="d-block text-center h3 mt-3 mb-4" href="">
-                    Language &amp; Speaking
-                  </a>
-                  <div className="d-flex align-items-center justify-content-between mb-4">
-                    <div className="d-flex align-items-center">
-                      <img
-                        className="rounded-circle flex-shrink-0"
-                        src="img/user.jpg"
-                        alt=""
-                        style={{ width: 45, height: 45 }}
-                      />
-                      <div className="ms-3">
-                        <h6 className="text-primary mb-1">Jhon Doe</h6>
-                        <small>Teacher</small>
-                      </div>
-                    </div>
-                    <span
-                      className="bg-primary text-white rounded-pill py-2 px-3 custom-primary"
-                      href=""
-                    >
-                      $99
-                    </span>
-                  </div>
-                  <div className="row g-1">
-                    <div className="col-4">
-                      <div className="border-top border-3 border-primary pt-2">
-                        <h6 className="text-primary mb-1">Age:</h6>
-                        <small>3-5 Years</small>
-                      </div>
-                    </div>
-                    <div className="col-4">
-                      <div className="border-top border-3 border-success pt-2">
-                        <h6 className="text-success mb-1">Time:</h6>
-                        <small>9-10 AM</small>
-                      </div>
-                    </div>
-                    <div className="col-4">
-                      <div className="border-top border-3 border-warning pt-2">
-                        <h6 className="text-warning mb-1">Capacity:</h6>
-                        <small>30 Kids</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-              <div className="classes-item">
-                <div className="bg-light rounded-circle w-75 mx-auto p-3">
-                  <img
-                    className="img-fluid rounded-circle"
-                    src={cls4}
-                    alt=""
-                  />
-                </div>
-                <div className="bg-light rounded p-4 pt-5 mt-n5">
-                  <a className="d-block text-center h3 mt-3 mb-4" href="">
-                    Religion &amp; History
-                  </a>
-                  <div className="d-flex align-items-center justify-content-between mb-4">
-                    <div className="d-flex align-items-center">
-                      <img
-                        className="rounded-circle flex-shrink-0"
-                        src="img/user.jpg"
-                        alt=""
-                        style={{ width: 45, height: 45 }}
-                      />
-                      <div className="ms-3">
-                        <h6 className="text-primary mb-1">Jhon Doe</h6>
-                        <small>Teacher</small>
-                      </div>
-                    </div>
-                    <span
-                      className="bg-primary text-white rounded-pill py-2 px-3 custom-primary"
-                      href=""
-                    >
-                      $99
-                    </span>
-                  </div>
-                  <div className="row g-1">
-                    <div className="col-4">
-                      <div className="border-top border-3 border-primary pt-2">
-                        <h6 className="text-primary mb-1">Age:</h6>
-                        <small>3-5 Years</small>
-                      </div>
-                    </div>
-                    <div className="col-4">
-                      <div className="border-top border-3 border-success pt-2">
-                        <h6 className="text-success mb-1">Time:</h6>
-                        <small>9-10 AM</small>
-                      </div>
-                    </div>
-                    <div className="col-4">
-                      <div className="border-top border-3 border-warning pt-2">
-                        <h6 className="text-warning mb-1">Capacity:</h6>
-                        <small>30 Kids</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div className="classes-item">
-                <div className="bg-light rounded-circle w-75 mx-auto p-3">
-                  <img
-                    className="img-fluid rounded-circle"
-                    src={cls4}
-                    alt=""
-                  />
-                </div>
-                <div className="bg-light rounded p-4 pt-5 mt-n5">
-                  <a className="d-block text-center h3 mt-3 mb-4" href="">
-                    General Knowledge
-                  </a>
-                  <div className="d-flex align-items-center justify-content-between mb-4">
-                    <div className="d-flex align-items-center">
-                      <img
-                        className="rounded-circle flex-shrink-0"
-                        src="img/user.jpg"
-                        alt=""
-                        style={{ width: 45, height: 45 }}
-                      />
-                      <div className="ms-3">
-                        <h6 className="text-primary mb-1">Jhon Doe</h6>
-                        <small>Teacher</small>
-                      </div>
-                    </div>
-                    <span
-                      className="bg-primary text-white rounded-pill py-2 px-3 custom-primary"
-                      href=""
-                    >
-                      $99
-                    </span>
-                  </div>
-                  <div className="row g-1">
-                    <div className="col-4">
-                      <div className="border-top border-3 border-primary pt-2">
-                        <h6 className="text-primary mb-1">Age:</h6>
-                        <small>3-5 Years</small>
-                      </div>
-                    </div>
-                    <div className="col-4">
-                      <div className="border-top border-3 border-success pt-2">
-                        <h6 className="text-success mb-1">Time:</h6>
-                        <small>9-10 AM</small>
-                      </div>
-                    </div>
-                    <div className="col-4">
-                      <div className="border-top border-3 border-warning pt-2">
-                        <h6 className="text-warning mb-1">Capacity:</h6>
-                        <small>30 Kids</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Classes End */}
       {/* Appointment Start */}
       <div className="container-xxl py-5">
         <div className="container">
@@ -828,7 +474,7 @@ function Temp() {
             <div className="row g-0">
               <div className="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                 <div className="h-100 d-flex flex-column justify-content-center p-5">
-                  <h1 className="mb-4">Make Appointment</h1>
+                  <h1 className="mb-4">Open Hearts, Open Pockets: Donate Now <BiSolidDonateHeart /> </h1>
                   <form>
                     <div className="row g-3">
                       <div className="col-sm-6">
@@ -839,7 +485,7 @@ function Temp() {
                             id="gname"
                             placeholder="Gurdian Name"
                           />
-                          <label htmlFor="gname">Gurdian Name</label>
+                          <label htmlFor="gname">Your Name</label>
                         </div>
                       </div>
                       <div className="col-sm-6">
@@ -850,31 +496,10 @@ function Temp() {
                             id="gmail"
                             placeholder="Gurdian Email"
                           />
-                          <label htmlFor="gmail">Gurdian Email</label>
+                          <label htmlFor="gmail">Email</label>
                         </div>
                       </div>
-                      <div className="col-sm-6">
-                        <div className="form-floating">
-                          <input
-                            type="text"
-                            className="form-control border-0"
-                            id="cname"
-                            placeholder="Child Name"
-                          />
-                          <label htmlFor="cname">Child Name</label>
-                        </div>
-                      </div>
-                      <div className="col-sm-6">
-                        <div className="form-floating">
-                          <input
-                            type="text"
-                            className="form-control border-0"
-                            id="cage"
-                            placeholder="Child Age"
-                          />
-                          <label htmlFor="cage">Child Age</label>
-                        </div>
-                      </div>
+                     
                       <div className="col-12">
                         <div className="form-floating">
                           <textarea
@@ -892,7 +517,7 @@ function Temp() {
                           className="btn btn-primary w-100 py-3"
                           type="submit"
                         >
-                          Submit
+                          Click Here for Helping!
                         </button>
                       </div>
                     </div>
@@ -907,7 +532,7 @@ function Temp() {
                 <div className="position-relative h-100">
                   <img
                     className="position-absolute w-100 h-100 rounded"
-                    src={appointment}
+                    src={donorpic}
                     style={{ objectFit: "cover" }}
                   />
                 </div>
@@ -917,157 +542,13 @@ function Temp() {
         </div>
       </div>
       {/* Appointment End */}
-  
+
+      {/* footer starts */}
+     <Footer />
+
+     {/* footer ends */}
           
-      {/* Footer Start */}
-      <div
-        className="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn"
-        data-wow-delay="0.1s"
-      >
-        <div className="container py-5">
-          <div className="row g-5">
-            <div className="col-lg-3 col-md-6">
-              <h3 className="text-white mb-4">Get In Touch</h3>
-              <p className="mb-2">
-                <i className="fa fa-map-marker-alt me-3" />
-                Smart India Hackathon
-              </p>
-              <p className="mb-2">
-                <i className="fa fa-phone-alt me-3" />
-                +91 9894703845
-              </p>
-              <p className="mb-2">
-                <i className="fa fa-envelope me-3" />
-                Phoenixs.EduForAll@gmail
-              </p>
-              <div className="d-flex pt-2">
-                <a className="btn btn-outline-light btn-social" href="">
-                  <i className="fab fa-twitter" />
-                </a>
-                <a className="btn btn-outline-light btn-social" href="">
-                  <i className="fab fa-facebook-f" />
-                </a>
-                <a className="btn btn-outline-light btn-social" href="">
-                  <i className="fab fa-youtube" />
-                </a>
-                <a className="btn btn-outline-light btn-social" href="">
-                  <i className="fab fa-linkedin-in" />
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <h3 className="text-white mb-4">Quick Links</h3>
-              <a className="btn btn-link text-white-50" href="">
-                About Us
-              </a>
-              <a className="btn btn-link text-white-50" href="">
-                Contact Us
-              </a>
-              <a className="btn btn-link text-white-50" href="">
-                Our Services
-              </a>
-              <a className="btn btn-link text-white-50" href="">
-                Privacy Policy
-              </a>
-              <a className="btn btn-link text-white-50" href="">
-                Terms &amp; Condition
-              </a>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <h3 className="text-white mb-4">Photo Gallery</h3>
-              <div className="row g-2 pt-2">
-                <div className="col-4">
-                  <img
-                    className="img-fluid rounded bg-light p-1"
-                    src="img/classes-1.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="col-4">
-                  <img
-                    className="img-fluid rounded bg-light p-1"
-                    src="img/classes-2.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="col-4">
-                  <img
-                    className="img-fluid rounded bg-light p-1"
-                    src="img/classes-3.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="col-4">
-                  <img
-                    className="img-fluid rounded bg-light p-1"
-                    src="img/classes-4.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="col-4">
-                  <img
-                    className="img-fluid rounded bg-light p-1"
-                    src="img/classes-5.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="col-4">
-                  <img
-                    className="img-fluid rounded bg-light p-1"
-                    src="img/classes-6.jpg"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <h3 className="text-white mb-4">FundRaiser</h3>
-              <p>Empower special children with education. 
-              Support our fundraiser for inclusivity. Every contribution 
-              transforms lives and fosters a limitless future.</p>
-              <div
-                className="position-relative mx-auto"
-                style={{ maxWidth: 400 }}
-              >
-             
-                <button
-                  type="button"
-                  className="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
-                >
-                Donate Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div className="copyright">
-            <div className="row">
-              <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                ©{" "}
-                <a className="border-bottom" href="#">
-                  Phoenixs
-                </a>
-                , All Right Reserved.
-                {/*/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. *** /*/}
-                Designed By{" "}
-                <a className="border-bottom" href="https://rmkec.ac.in/ydeptabout.php?dept=it">
-                  IT, RMKEC
-                </a>
-              </div>
-              <div className="col-md-6 text-center text-md-end">
-                <div className="footer-menu">
-                  <a href="">Home</a>
-                  <a href="">Support Us</a>
-                  <a href="">Help</a>
-                  <a href="">FQAs</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Footer End */}
+      
       {/* Back to Top */}
       <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top">
         <i className="bi bi-arrow-up" />
