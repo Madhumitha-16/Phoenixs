@@ -52,7 +52,7 @@ function App() {
          <Route
           path="/teacher/home"
           element={
-              <Thome />
+              <THome />
           }
         />
         

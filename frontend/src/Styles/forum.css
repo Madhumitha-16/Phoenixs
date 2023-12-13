@@ -1,0 +1,71 @@
+/* Example CSS styling */
+.post-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-post {
+    margin: 50px auto;
+    max-width: 600px;
+  }
+  
+  .box {
+    margin-bottom: 15px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none; /* Remove default input/textarea focus outline */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+  }
+  
+  .input-field:focus {
+    border-color: #7f8c8d; /* Change border color on focus */
+  }
+  .post{
+    margin-left: 30%;
+}
+
+.posts-container {
+    display: flex;
+    margin-left: 5%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .post-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #ccc;
+    width: calc(50% - 10px); 
+    padding: 10px;
+    border: 1px solid #ccc; 
+  }
+  
+  .avatar {
+    flex: 0 0 50px; 
+  }
+  
+  .avatar div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #333; 
+    color: white;
+  }
+  
+  .post-content {
+    flex: 1;
+  }
+  
+  
