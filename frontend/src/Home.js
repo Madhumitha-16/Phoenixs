@@ -218,7 +218,7 @@ function Temp() {
                 <span className="bg-success" />
               </div>
               <div className="facility-text bg-success">
-                <h3 className="text-success mb-3">Organisation</h3>
+                <h3 className="text-success mb-3">Educational institutions</h3>
                 <p className="mb-0">
                   Decrease the Huddles and Overcome It!</p>
                   <p></p>
