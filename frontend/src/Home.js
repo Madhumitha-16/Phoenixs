@@ -119,20 +119,18 @@ function Temp() {
                   <h1 style={{ color: '#ffffff', fontSize: '3rem', textShadow: '2px 2px 4px #000000' }} className="text-white animated slideInDown mb-4">
                   Bridging Gaps, Fostering Dreams:<br></br> A Journey to Inclusive Education
                    </h1>
-              
-              
                     <p style={{fontSize: '1.3rem', textShadow: '2px 2px 4px #000000' }} className=" fw-medium text-white mb-4 pb-2">
                     This platform unites students, institutions, teachers, and government ministries, 
                     an Edu-ecosystem that empowers, informs, and transforms lives.
                     </p>
                     <a
-                      href="www.google.com"
+                      href="/login"
                       className="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft"
                     >
                       Login
                     </a>
                     <a
-                      href="www.google.com"
+                      href="/register"
                       className="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight"
                     >
                       New? Register Now!
