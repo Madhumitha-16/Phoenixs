@@ -7,12 +7,8 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../src/firebaseConfig';
-<<<<<<< HEAD
 import RegisterNavbar from './Components/RegisterNavbar';
-=======
-import Navbar from './Components/Navbar';
 import logo from '../src/img/logo-SQUARE.png';
->>>>>>> cb3efb51340712c2811e2c1a844ee0f68d7940a4
 
 export default function Register()
 {

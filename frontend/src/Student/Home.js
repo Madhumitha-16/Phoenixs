@@ -10,12 +10,7 @@ import cls2 from '../img/classes-2.jpg';
 import cls3 from '../img/classes-3.jpg';
 import cls4 from '../img/classes-4.jpg';
 import Footer from '../Components/Footer';
-<<<<<<< HEAD
 import EducatorImg from '../img/EducatorImg1.jpg';
-=======
-import header from '../img/student-home.jpg'; 
-import orgcenter from '../img/educenter.jpg';
->>>>>>> cb3efb51340712c2811e2c1a844ee0f68d7940a4
 import stugru from '../img/StudentsGrp.jpeg'
 import { MdSportsEsports } from "react-icons/md";
 import { FaSchool } from "react-icons/fa6";
@@ -54,7 +49,7 @@ function Home() {
       
 
           <div className="container-fluid p-0 mb-5">
-            <img src={header} alt="" style={{  objectFit: "cover", width: "100%", height: "650px" }} />
+            <img src={c1} alt="" style={{  objectFit: "cover", width: "100%", height: "650px" }} />
             <div className="overlay">
             <div
               className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
