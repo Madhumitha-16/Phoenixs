@@ -767,7 +767,7 @@ export default function THome() {
                 <div className="position-relative h-100">
                   {/* <img
                     className="position-absolute w-100 h-100 rounded"
-                    src={appointment}
+                    // src={appointment}
                     style={{ objectFit: "cover" }}
                   /> */}
                 </div>
