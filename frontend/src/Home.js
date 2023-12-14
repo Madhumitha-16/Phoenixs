@@ -200,7 +200,7 @@ function Temp() {
                 <span className="bg-primary" />
               </div>
               <div className="facility-text bg-primary">
-                <h3 className="text-primary mb-3">Student's</h3>
+                <h3 className="text-primary mb-3">Students</h3>
                 <p className="mb-0">
                 Unlock your learning journey!</p>
                 <p></p>
@@ -238,7 +238,7 @@ function Temp() {
                 <span className="bg-warning" />
               </div>
               <div className="facility-text bg-warning">
-                <h3 className="text-warning mb-3">Teacher's</h3>
+                <h3 className="text-warning mb-3">Teachers</h3>
                 <p className="mb-0">
                 Jump In ! To Train and help Our Special Kids</p>
                 <p></p>
