@@ -26,7 +26,7 @@
     border-color: #7f8c8d; /* Change border color on focus */
   }
   .post{
-    margin-left: 30%;
+    margin-left: 20%;
 }
 
 .posts-container {
@@ -43,16 +43,31 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    vertical-align: middle;
     border: 1px solid #ccc;
     width: calc(50% - 10px); 
     padding: 10px;
     border: 1px solid #ccc; 
+    
   }
   
   .avatar {
     flex: 0 0 50px; 
   }
-  
+  .main-container{
+    display: flex;
+    flex-direction: row;
+  }
+  .sidebar{
+    border: 1px solid #ccc; 
+    border-top: none;
+    height: auto;
+    width: 20%;
+  }
+  .sidebar button{
+    background-color: var(--dark) ;
+  }
+
   .avatar div {
     display: flex;
     align-items: center;
@@ -67,5 +82,7 @@
   .post-content {
     flex: 1;
   }
-  
+  .content{
+    width: calc(50% - 10px); 
+  }
   

@@ -48,16 +48,12 @@ function App() {
               <PostDetails />
           }
         />
-<<<<<<< HEAD
-        
-=======
          <Route
           path="/teacher/home"
           element={
               <THome />
           }
         />
->>>>>>> d418e3fd45cec4eac11d1093b9b1e348d406bf6d
         
         <Route
           path="/Ministry/home"
