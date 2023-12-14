@@ -12,7 +12,7 @@
     /* justify-content: center; */
     width: 70%;
     height: 80%;
-    margin-left: 5%;
+    margin-left: 15%;
     margin-top: 2%;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     }
@@ -49,12 +49,13 @@
   
   .contentRegisterWrap {
     height: 100%;
-    width: 80%;
+    width: 100%;
     max-width: 1500px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color:#ffffff;
+    margin-left: 10%;
     border-radius: 30px;
     -webkit-box-shadow: 0px 0px 33px 0px rgba(219, 221, 255, 0.46);
     -moz-box-shadow: 0px 0px 33px 0px rgba(219, 221, 255, 0.46);
@@ -396,7 +397,10 @@ label.focusLabel {
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100px;
+    width: 150px;
+    height: 40px;
+    margin-top:30px;
+    margin-left: 50px;
   }
   
   

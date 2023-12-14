@@ -53,20 +53,18 @@ function Temp() {
                   <h1 style={{ color: '#ffffff', fontSize: '3rem', textShadow: '2px 2px 4px #000000' }} className="text-white animated slideInDown mb-4">
                   Bridging Gaps, Fostering Dreams:<br></br> A Journey to Inclusive Education
                    </h1>
-              
-              
                     <p style={{fontSize: '1.3rem', textShadow: '2px 2px 4px #000000' }} className=" fw-medium text-white mb-4 pb-2">
                     This platform unites students, institutions, teachers, and government ministries, 
                     an Edu-ecosystem that empowers, informs, and transforms lives.
                     </p>
                     <a
-                      href="www.google.com"
+                      href="/login"
                       className="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft"
                     >
                       Login
                     </a>
                     <a
-                      href="www.google.com"
+                      href="/register"
                       className="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight"
                     >
                       New? Register Now!
@@ -136,7 +134,7 @@ function Temp() {
                 <span className="bg-primary" />
               </div>
               <div className="facility-text bg-primary">
-                <h3 className="text-primary mb-3">Student's</h3>
+                <h3 className="text-primary mb-3">Students</h3>
                 <p className="mb-0">
                 Unlock your learning journey!</p>
                 <p></p>
@@ -154,7 +152,7 @@ function Temp() {
                 <span className="bg-success" />
               </div>
               <div className="facility-text bg-success">
-                <h3 className="text-success mb-3">Organisation</h3>
+                <h3 className="text-success mb-3">Educational institutions</h3>
                 <p className="mb-0">
                   Decrease the Huddles and Overcome It!</p>
                   <p></p>
@@ -174,7 +172,7 @@ function Temp() {
                 <span className="bg-warning" />
               </div>
               <div className="facility-text bg-warning">
-                <h3 className="text-warning mb-3">Teacher's</h3>
+                <h3 className="text-warning mb-3">Teachers</h3>
                 <p className="mb-0">
                 Jump In ! To Train and help Our Special Kids</p>
                 <p></p>

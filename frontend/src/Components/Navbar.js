@@ -88,6 +88,7 @@ export default function Navbar() {
           </a>
         </div>
       </nav>
+      <hr></hr>
       </body>
     </>
   );

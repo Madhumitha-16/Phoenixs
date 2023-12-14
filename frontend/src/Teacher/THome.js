@@ -708,11 +708,11 @@ export default function THome() {
                 style={{ minHeight: 400 }}
               >
                 <div className="position-relative h-100">
-                  <img
+                  {/* <img
                     className="position-absolute w-100 h-100 rounded"
-                    src={appointment}
+                    // src={appointment}
                     style={{ objectFit: "cover" }}
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
