@@ -8,6 +8,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../src/firebaseConfig';
 import Navbar from './Components/Navbar';
+import logo from '../src/img/logo-SQUARE.png';
 
 export default function Register()
 {
@@ -105,6 +106,7 @@ export default function Register()
     />
     <Navbar />
   <div className="bodyWrap">
+ 
    <Toaster toastOptions={{
         success: {
           iconTheme: {
@@ -153,12 +155,12 @@ export default function Register()
         </div>
         <div className='input-group'>
         <label>Role</label>
+        <br></br>
         <select className='select' id="dropdown"  value={selectedOption} 
          onChange={handleSelectChange} 
         > <option value="Student">Student</option>
             <option value="Teach">Teacher</option>
             <option value="Org">Organization</option>
-            <option value="Minis">Ministry</option>
         </select>
         
         </div>
@@ -216,7 +218,7 @@ export default function Register()
           <img src={register} /> */}
         </div>
       </div>
-     
+    
     </div>
     </>
   )
