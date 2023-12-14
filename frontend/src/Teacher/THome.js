@@ -7,11 +7,6 @@ import teacher from '../img/call-to-action.jpg'
 import about1 from '../img/about-1.jpg';
 import about2 from '../img/about-2.jpg';
 import about3 from '../img/about-3.jpg';
-<<<<<<< HEAD
-import appointment from '../img/disablePic1.png';
-=======
-
->>>>>>> d418e3fd45cec4eac11d1093b9b1e348d406bf6d
 import cls1 from '../img/classes-1.jpg';
 import cls2 from '../img/classes-2.jpg';
 import cls3 from '../img/classes-3.jpg';
@@ -772,7 +767,7 @@ export default function THome() {
                 <div className="position-relative h-100">
                   <img
                     className="position-absolute w-100 h-100 rounded"
-                    src={appointment}
+                    // src={appointment}
                     style={{ objectFit: "cover" }}
                   />
                 </div>
