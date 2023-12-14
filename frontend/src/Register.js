@@ -7,7 +7,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../src/firebaseConfig';
-import Navbar from './Components/Navbar';
+import RegisterNavbar from './Components/RegisterNavbar';
 
 export default function Register()
 {
@@ -103,7 +103,7 @@ export default function Register()
       href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
       rel="stylesheet"
     />
-    <Navbar />
+    <RegisterNavbar />
   <div className="bodyWrap">
    <Toaster toastOptions={{
         success: {
@@ -155,7 +155,7 @@ export default function Register()
         <label>Role</label>
         <select className='select' id="dropdown"  value={selectedOption} 
          onChange={handleSelectChange} 
-        > <option value="Student">Student</option>
+        >  <option value="Student">Student</option>
             <option value="Teach">Teacher</option>
             <option value="Org">Organization</option>
             <option value="Minis">Ministry</option>

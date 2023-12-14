@@ -2,14 +2,15 @@ import React from 'react';
 import '../Styles/Home.css';
 import logo from '../img/logo.png';
 import c1 from '../img/StudentHeaderImg.jpeg';
-import teacher from '../img/call-to-action.jpg'
+import scholor from '../img/ScholorImg.jpg'
+import ForumImg1 from '../img/ForumImg.jpg'
 import donorpic from '../img/disablePic1.png';
 import cls1 from '../img/classes-1.jpg';
 import cls2 from '../img/classes-2.jpg';
 import cls3 from '../img/classes-3.jpg';
 import cls4 from '../img/classes-4.jpg';
 import Footer from '../Components/Footer';
-import orgcenter from '../img/educenter.jpg';
+import EducatorImg from '../img/EducatorImg1.jpg';
 import stugru from '../img/StudentsGrp.jpeg'
 import { MdSportsEsports } from "react-icons/md";
 import { FaSchool } from "react-icons/fa6";
@@ -20,6 +21,7 @@ import { IconContext } from "react-icons";
 import { FaGraduationCap } from "react-icons/fa6";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { FaQuestionCircle } from "react-icons/fa";
+import StudentNavbar from '../Components/StudentNavbar';
 
 
 function Home() {
@@ -43,74 +45,8 @@ function Home() {
     />
 
     <body>
-      <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0 ">
-        <a href="index.html" className="navbar-brand">
-          <h1 className="m-0 text-primary ">
-            <img src={logo} alt=''  width={100} />
-            Phoenixs
-          </h1>
-        </a>
-        <button
-          type="button"
-          className="navbar-toggler"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <div className="navbar-nav mx-auto">
-            <a href="index.html" className="nav-item nav-link active">
-              Home
-            </a>
-            <a href="about.html" className="nav-item nav-link">
-              About Us
-            </a>
-            <a href="classes.html" className="nav-item nav-link">
-              Classes
-            </a>
-            <div className="nav-item dropdown">
-              <a
-                href="www.google.com"
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                Pages
-              </a>
-              <div className="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                <a href="facility.html" className="dropdown-item">
-                  School Facilities
-                </a>
-                <a href="team.html" className="dropdown-item">
-                  Popular Teachers
-                </a>
-                <a href="call-to-action.html" className="dropdown-item">
-                  Become A Teachers
-                </a>
-                <a href="appointment.html" className="dropdown-item">
-                  Make Appointment
-                </a>
-                <a href="testimonial.html" className="dropdown-item">
-                  Testimonial
-                </a>
-                <a href="404.html" className="dropdown-item">
-                  404 Error
-                </a>
-              </div>
-            </div>
-            <a href="contact.html" className="nav-item nav-link">
-              Contact Us
-            </a>
-          </div>
-          <a
-            href="www.google.com"
-            className="btn btn-primary rounded-pill px-3 d-none d-lg-block"
-          >
-            Join Us
-            <i className="fa fa-arrow-right ms-3" />
-          </a>
-        </div>
-      </nav>
+       <StudentNavbar />
+      
 
           <div className="container-fluid p-0 mb-5">
             <img src={c1} alt="" style={{  objectFit: "fit", width: "100%", height: "650px" }} />
@@ -124,7 +60,7 @@ function Home() {
                 <div className="row justify-content-start">
                   <div className="col-10 col-lg-8">
                   <h1 style={{ color: '#ffffff', fontSize: '3rem', textShadow: '2px 2px 4px #000000' }} className="text-white animated slideInDown mb-4">
-                  You are capable of amazing things
+                  You are capable of Amazing things !
                    </h1>
               
               
@@ -375,7 +311,7 @@ function Home() {
              <div className="position-relative h-100">
                <img
                  className="position-absolute w-100 h-100 rounded"
-                 src={teacher}
+                 src={scholor}
                  style={{ objectFit: "cover" }}
                />
              </div>
@@ -398,7 +334,7 @@ function Home() {
                <div className="position-relative h-100">
                  <img
                    className="position-absolute w-100 h-100 rounded"
-                   src={orgcenter}
+                   src={EducatorImg}
                    style={{ objectFit: "cover" }}
                  />
                </div>
@@ -445,7 +381,7 @@ function Home() {
              <div className="position-relative h-100">
                <img
                  className="position-absolute w-100 h-100 rounded"
-                 src={teacher}
+                 src={ForumImg1}
                  style={{ objectFit: "cover" }}
                />
              </div>

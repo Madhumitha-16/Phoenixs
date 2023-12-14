@@ -1,5 +1,6 @@
 import React from 'react'
 import { BiSolidDonateHeart } from "react-icons/bi";
+import stugru from '../img/StudentsGrp.jpeg'
 
 export default function Footer() {
   return (
@@ -19,7 +20,7 @@ export default function Footer() {
               </p>
               <p className="mb-2">
                 <i className="fa fa-phone-alt me-3" />
-                +91 9894703845
+                +91 98947*****
               </p>
               <p className="mb-2">
                 <i className="fa fa-envelope me-3" />
@@ -64,7 +65,7 @@ export default function Footer() {
                 <div className="col-4">
                   <img
                     className="img-fluid rounded bg-light p-1"
-                    src="img/classes-1.jpg"
+                    src={stugru}
                     alt=""
                   />
                 </div>

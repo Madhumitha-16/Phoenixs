@@ -7,11 +7,6 @@ import teacher from '../img/call-to-action.jpg'
 import about1 from '../img/about-1.jpg';
 import about2 from '../img/about-2.jpg';
 import about3 from '../img/about-3.jpg';
-<<<<<<< HEAD
-import appointment from '../img/disablePic1.png';
-=======
-
->>>>>>> d418e3fd45cec4eac11d1093b9b1e348d406bf6d
 import cls1 from '../img/classes-1.jpg';
 import cls2 from '../img/classes-2.jpg';
 import cls3 from '../img/classes-3.jpg';
@@ -25,6 +20,8 @@ import t5 from'../img/p5.jpg';
 import t6 from'../img/p6.jpg';
 import t7 from'../img/p7.jpg';
 import Puzzule from'../img/puzzle.jpg';
+import appointment from '../img/disablePic1.png';
+import TeacherNavbar from '../Components/TeacherNavbar';
 
 export default function THome() {
   return (
@@ -47,66 +44,7 @@ export default function THome() {
     />
 
     <body>
-      <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0 ">
-        <a href="index.html" className="navbar-brand">
-          <h1 className="m-0 text-primary ">
-            <img src={logo} alt=''  width={100} />
-            Phoenixs
-          </h1>
-        </a>
-        <button
-          type="button"
-          className="navbar-toggler"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <div className="navbar-nav mx-auto">
-            <a href="index.html" className="nav-item nav-link active">
-              Home
-            </a>
-            <a href="about.html" className="nav-item nav-link">
-            Get Hired
-            </a>
-            {/* <a href="classes.html" className="nav-item nav-link">
-              Forum
-            </a> */}
-            <div className="nav-item dropdown">
-              <a
-                href="www.google.com"
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                Forum
-              </a>
-              <div className="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                <a href="facility.html" className="dropdown-item">
-                  Publish Content
-                </a>
-                <a href="view.html" className="dropdown-item">
-                  View Content
-                </a>
-                
-              </div>
-            </div>
-            <a href="live.html" className="nav-item nav-link">
-             Live Sessions
-            </a>
-            <a href="contact.html" className="nav-item nav-link">
-              Contact Us
-            </a>
-          </div>
-          <a
-            href="www.google.com"
-            className="btn btn-primary rounded-pill px-3 d-none d-lg-block"
-          >
-            Join Us
-            <i className="fa fa-arrow-right ms-3" />
-          </a>
-        </div>
-      </nav>
+      <TeacherNavbar />
 
       <div className="container-fluid p-0 mb-5">
             <img src={t_bg} alt="" style={{  objectFit: "cover", width: "100%", height: "750px" }} />
