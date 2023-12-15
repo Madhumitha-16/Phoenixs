@@ -1,7 +1,14 @@
 import React from 'react';
 import logo from '../img/logo-SQUARE.png';
+import { useSpeechSynthesis } from "react-speech-kit";
 
 export default function StudentNavbar() {
+  const { speak } = useSpeechSynthesis()
+  const Greet = () => {
+    speak({
+      text: "Welcome to the Voice controllable website. Please chekout the commands!. These commands will help you to controll website with voice!. Click on the Next button to start!.",
+    });
+  };
   return (
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,7 +28,7 @@ export default function StudentNavbar() {
 
       <body>
       <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0 ">
-        <a href="#" className="navbar-brand">
+        <a href="/" className="navbar-brand">
           <h1 className="m-0 text-primary ">
           <img src={logo} alt=''  width={80} />
             Phoenixs
@@ -37,48 +44,25 @@ export default function StudentNavbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav mx-auto">
-            <a href="#" className="nav-item nav-link active">
+            <a href="/student/home" className="nav-item nav-link active">
               Home
             </a>
-            <a href="#" className="nav-item nav-link">
-              About Us
+            <a href="/forum" className="nav-item nav-link">
+              Forum
             </a>
-            <a href="#" className="nav-item nav-link">
-              Classes
+            <a href="/activity" className="nav-item nav-link">
+              Activity
             </a>
-            <div className="nav-item dropdown">
-              <a
-                href="www.google.com"
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                Pages
-              </a>
-              <div className="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                <a href="facility.html" className="dropdown-item">
-                  School Facilities
-                </a>
-                <a href="team.html" className="dropdown-item">
-                  Popular Teachers
-                </a>
-                <a href="call-to-action.html" className="dropdown-item">
-                  Become A Teachers
-                </a>
-                <a href="appointment.html" className="dropdown-item">
-                  Make Appointment
-                </a>
-                <a href="testimonial.html" className="dropdown-item">
-                  Testimonial
-                </a>
-                <a href="404.html" className="dropdown-item">
-                  404 Error
-                </a>
-              </div>
-            </div>
-            <a href="contact.html" className="nav-item nav-link">
-              Contact Us
+            <a href="/donators" className="nav-item nav-link">
+              Donators
+            </a>
+            <a href="/schemes-and-scholarships" className="nav-item nav-link">
+              Schemes & Scholarships
             </a>
           </div>
+          <button className="btn btn-primary rounded-pill px-3 my-2 d-none d-lg-block" onClick={Greet}>
+            Accessibility Mode
+          </button>
           <a
             href="www.google.com"
             className="btn btn-primary rounded-pill px-3 d-none d-lg-block"
