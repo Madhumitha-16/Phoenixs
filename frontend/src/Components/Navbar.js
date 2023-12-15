@@ -60,7 +60,7 @@ export default function Navbar() {
 
       <body>
       <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0 ">
-        <a href="index.html" className="navbar-brand">
+        <a href="#" className="navbar-brand">
           <h1 className="m-0 text-primary ">
           <img src={logo} alt=''  width={80} />
             Phoenixs
@@ -76,7 +76,7 @@ export default function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav mx-auto">
-            <a href="index.html" className="nav-item nav-link active">
+            <a href="#" className="nav-item nav-link active">
               Home
             </a>
             <a href="about.html" className="nav-item nav-link">

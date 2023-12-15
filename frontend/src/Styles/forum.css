@@ -37,6 +37,7 @@
     justify-content: space-between;
     gap: 20px;
     width: 100%;
+    max-width: 800px;
   }
   
   .post-item {
@@ -45,9 +46,14 @@
     align-items: center;
     vertical-align: middle;
     border: 1px solid #ccc;
-    width: calc(50% - 10px); 
-    padding: 10px;
+    width: calc(70% - 10px); 
+    padding: 15px;
     border: 1px solid #ccc; 
+    border-radius: 10px;
+    background-color: #fabf4096;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 9px;
     
   }
   
@@ -57,12 +63,14 @@
   .main-container{
     display: flex;
     flex-direction: row;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   .sidebar{
     border: 1px solid #ccc; 
     border-top: none;
     height: auto;
     width: 20%;
+    padding: 20px;
   }
   .sidebar button{
     background-color: var(--dark) ;
@@ -72,17 +80,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
-    background: #333; 
+    background: #3498db; 
     color: white;
   }
   
   .post-content {
     flex: 1;
+    padding-left: 20px;
+    
   }
   .content{
-    width: calc(50% - 10px); 
+    width: calc(70% - 10px);
+    border: 2.1px dashed #777272;
+  border-radius: 8px; 
+  padding: 10px;
+  }
+  .content p {
+    margin: 10px 0; /* Add margin for spacing between paragraphs */
+    font-size: 1.2rem; /* Adjust font size */
+    color: #555; /* Set text color */
+    line-height: 1.5; /* Set line height for better readability */
   }
   
+
+  /* additonal styling for the forum page */

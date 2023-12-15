@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
@@ -12,9 +12,11 @@ import THome from './Teacher/THome';
 import OddOneOut from './Student/Activity/OddOneOut'
 import Voice from './voice';
 import VoiceForm from './Form';
+import UIforconversion from './Braille-Converter/UIforconversion';
 
 
 function App() {
+ 
   return (
 
   <BrowserRouter>
@@ -88,7 +90,12 @@ function App() {
          path="/register" 
          element={<Register />} />
 
+         <Route 
+         path="/convert-to-braille" 
+         element={<UIforconversion />} />
+
         </Routes>
+
   </BrowserRouter>
      
   );

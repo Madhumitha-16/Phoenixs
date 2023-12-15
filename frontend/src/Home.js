@@ -47,7 +47,6 @@ function Temp() {
     />
 
     <body>
-
       <Navbar />
 
       <div className="container-fluid p-0 mb-5">
