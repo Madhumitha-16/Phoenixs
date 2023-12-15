@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
@@ -14,6 +14,7 @@ import Voice from './voice';
 import VoiceForm from './Form';
 import UIforconversion from './Braille-Converter/UIforconversion';
 import DetailsTable from './Student/WebScrapping/DetailsTable';
+import SchemesTable from './Student/WebScrapping/SchemesTable';
 
 
 function App() {
@@ -98,6 +99,12 @@ function App() {
         <Route 
          path="/School-details" 
          element={<DetailsTable />} />
+         <Route 
+         path="/School-details" 
+         element={<DetailsTable />} />
+         <Route 
+         path="/Scheme-details" 
+         element={<SchemesTable />} />
 
         </Routes>
         

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import './DetailTable.css';
-
-const db = getFirestore();
+import { db } from '../../firebaseConfig';
 
 const AllDetailsFromSubcollection = () => {
   const [allDetailsA, setAllDetailsA] = useState([]);
@@ -13,7 +12,7 @@ const AllDetailsFromSubcollection = () => {
   const [allDetailsH, setAllDetailsH] = useState([]);
 
 
-  useEffect(() => {
+  useEffect(() => { 
     const fetchAllDetailsAFromSubcollection = async () => {
       try {
         const detailsCollectionRefA = collection(db, 'DisabilitySchools', 'A', 'Details');
