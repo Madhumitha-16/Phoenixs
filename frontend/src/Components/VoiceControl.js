@@ -66,6 +66,7 @@ function VoiceControl() {
     <div className="App">
       {redirect}
       <p id="transcript">Transcript: {transcript}</p>
+      
     </div>
   );
 }
