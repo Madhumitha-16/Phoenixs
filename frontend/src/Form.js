@@ -21,6 +21,8 @@ function VoiceForm() {
 
   const handleVoiceInput = () => {
     if (transcript) {
+      const emailRegex = /^set email ([^\s@]+@[^\s@]+\.[^\s@]+)$/i;
+  
       const commands = [
         {
           command: "set first name *",
@@ -39,24 +41,14 @@ function VoiceForm() {
           callback: (message) => setFormData({ ...formData, message }),
         },
       ];
-
+  
       commands.forEach(({ command, callback }) => {
         const regex = new RegExp(`^${command.replace(/\*/g, "(.+)")}$`, "i");
+        console.log("regex",regex)
         const match = transcript.toLowerCase().match(regex);
         if (match) {
-          const capturedValue = match[1];
-          if (command.includes("first name")) {
-            const firstName = capturedValue.split(" ").slice(0, 1).join(" ");
-            setFormData({ ...formData, firstName });
-          } else if (command.includes("last name")) {
-            const lastName = capturedValue.split(" ").slice(0, 1).join(" ");
-            setFormData({ ...formData, lastName });
-          } else if (command.includes("email")) {
-            const email = capturedValue.trim();
-            setFormData({ ...formData, email });
-          } else {
-            callback(capturedValue.trim());
-          }
+           
+          callback(match[1]);
           resetTranscript();
         }
       });
