@@ -1,0 +1,11 @@
+.table-container {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table-container th, .table-container td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  
