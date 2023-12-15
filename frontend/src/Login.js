@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { doc, getDoc } from "firebase/firestore";
 import Navbar from "./Components/Navbar";
+import VoiceControl from "./Components/VoiceControl";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -88,6 +89,7 @@ function Login() {
           <form className="loginForm" onSubmit={loginfunc}>
             <div className="loginSide">
               <div className="loginWrap">
+              <VoiceControl />
                 <h1>Log in</h1>
                 <div className="input-group">
                   <input

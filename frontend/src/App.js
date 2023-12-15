@@ -10,6 +10,8 @@ import Forum from './Forum';
 import Mhome from './Ministry/Mhome';
 import THome from './Teacher/THome';
 import OddOneOut from './Student/Activity/OddOneOut'
+import Voice from './voice';
+import VoiceForm from './Form';
 import UIforconversion from './Braille-Converter/UIforconversion';
 import DetailsTable from './Student/WebScrapping/DetailsTable';
 
@@ -64,7 +66,19 @@ function App() {
               <Mhome />
           }
         />
-       
+        <Route
+          path="/voice"
+          element={
+              <Voice />
+          }
+        />
+
+<Route
+          path="/form"
+          element={
+              <VoiceForm />
+          }
+        />
 
         <Route
           path="/forum"

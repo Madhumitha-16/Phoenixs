@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../src/Styles/Home.css';
 import logo from '../src/img/logo.png';
 import logo1 from '../src/img/logo-SQUARE.png';
@@ -12,11 +12,21 @@ import about2 from '../src/img/Circle-2.png';
 import about3 from '../src/img/Circle-1.jpg';
 import donorpic from '../src/img/disablePic1.png'; 
 import Footer from './Components/Footer.js';
-import Navbar from './Components/Navbar.js';
+import { useState } from 'react';
 import { BiSolidDonateHeart } from "react-icons/bi";
+import { useSpeechSynthesis } from "react-speech-kit";
+import VoiceControl from './Components/VoiceControl.js';
+import Navbar from './Components/Navbar.js';
+
 
 
 function Temp() {
+  const { speak } = useSpeechSynthesis()
+  const [greet, setGreet] = useState(false);
+  const text = 'Some dummy text'
+
+ 
+  
   return (
     <>
     {/* Google Web Fonts */}
@@ -134,7 +144,7 @@ function Temp() {
                 <span className="bg-primary" />
               </div>
               <div className="facility-text bg-primary">
-                <h3 className="text-primary mb-3">Students</h3>
+                <h3 className="text-primary mb-3">Student's</h3>
                 <p className="mb-0">
                 Unlock your learning journey!</p>
                 <p></p>
@@ -152,7 +162,7 @@ function Temp() {
                 <span className="bg-success" />
               </div>
               <div className="facility-text bg-success">
-                <h3 className="text-success mb-3">Educational institutions</h3>
+                <h3 className="text-success mb-3">Organisation</h3>
                 <p className="mb-0">
                   Decrease the Huddles and Overcome It!</p>
                   <p></p>
@@ -172,7 +182,7 @@ function Temp() {
                 <span className="bg-warning" />
               </div>
               <div className="facility-text bg-warning">
-                <h3 className="text-warning mb-3">Teachers</h3>
+                <h3 className="text-warning mb-3">Teacher's</h3>
                 <p className="mb-0">
                 Jump In ! To Train and help Our Special Kids</p>
                 <p></p>
@@ -209,6 +219,7 @@ function Temp() {
       </div>
     </div>
       {/* Facilities End */}
+      <VoiceControl />
       {/* About Start */}
       <div className="container-xxl py-5">
         <div className="container">
