@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../img/logo-SQUARE.png';
 
-export default function Navbar() {
+export default function StudentNavbar() {
   return (
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,10 +40,10 @@ export default function Navbar() {
             <a href="#" className="nav-item nav-link active">
               Home
             </a>
-            <a href="about.html" className="nav-item nav-link">
+            <a href="#" className="nav-item nav-link">
               About Us
             </a>
-            <a href="classes.html" className="nav-item nav-link">
+            <a href="#" className="nav-item nav-link">
               Classes
             </a>
             <div className="nav-item dropdown">
@@ -88,7 +88,6 @@ export default function Navbar() {
           </a>
         </div>
       </nav>
-      <hr></hr>
       </body>
     </>
   );

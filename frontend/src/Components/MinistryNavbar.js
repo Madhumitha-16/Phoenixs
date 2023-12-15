@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../img/logo-SQUARE.png';
 
-export default function Navbar() {
+export default function MinistryNavbar() {
   return (
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -88,7 +88,6 @@ export default function Navbar() {
           </a>
         </div>
       </nav>
-      <hr></hr>
       </body>
     </>
   );
