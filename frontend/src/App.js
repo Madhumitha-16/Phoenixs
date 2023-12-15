@@ -13,6 +13,7 @@ import OddOneOut from './Student/Activity/OddOneOut'
 import Voice from './voice';
 import VoiceForm from './Form';
 import UIforconversion from './Braille-Converter/UIforconversion';
+import DetailsTable from './Student/WebScrapping/DetailsTable';
 
 
 function App() {
@@ -94,7 +95,12 @@ function App() {
          path="/convert-to-braille" 
          element={<UIforconversion />} />
 
+        <Route 
+         path="/School-details" 
+         element={<DetailsTable />} />
+
         </Routes>
+        
 
   </BrowserRouter>
      
