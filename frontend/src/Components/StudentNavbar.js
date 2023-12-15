@@ -27,7 +27,7 @@ export default function StudentNavbar() {
       />
 
       <body>
-      <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0 ">
+      <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 my-2">
         <a href="/" className="navbar-brand">
           <h1 className="m-0 text-primary ">
           <img src={logo} alt=''  width={80} />

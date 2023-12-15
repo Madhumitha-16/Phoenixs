@@ -60,6 +60,7 @@ export default function TeacherNavbar() {
           </a>
         </div>
       </nav>
+      <hr></hr>
       </body>
     </>
   );

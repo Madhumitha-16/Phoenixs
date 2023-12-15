@@ -14,6 +14,7 @@ import Voice from './voice';
 import VoiceForm from './Form';
 import UIforconversion from './Braille-Converter/UIforconversion';
 import DetailsTable from './Student/WebScrapping/DetailsTable';
+import Schools from './Student/Schools';
 
 
 function App() {
@@ -96,7 +97,11 @@ function App() {
          element={<UIforconversion />} />
 
         <Route 
-         path="/School-details" 
+         path="/school-details" 
+         element={<Schools />} />
+
+<Route 
+         path="/school" 
          element={<DetailsTable />} />
 
         </Routes>

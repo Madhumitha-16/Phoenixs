@@ -131,7 +131,8 @@ const AllDetailsFromSubcollection = () => {
 
   // Render all details in a table
   return (
-    <div>
+    <div className="entire-table">
+    
       <h2>Early Intervention Centers- Age 0-6 Years</h2>
       <table border="1" className="table-container">
         <thead>

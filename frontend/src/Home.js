@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import '../src/Styles/Home.css';
-import logo from '../src/img/logo.png';
 import logo1 from '../src/img/logo-SQUARE.png';
 import c1 from '../src/img/Header-down-image.jpg';
-import c2 from '../src/img/carousel-2.jpg';
 import teacher from '../src/img/TeacherImg.jpeg'
 import orgcenter from '../src/img/educenter.jpg';
 import stugru from '../src/img/StudentsGrp.jpeg';
@@ -17,6 +15,7 @@ import { BiSolidDonateHeart } from "react-icons/bi";
 import { useSpeechSynthesis } from "react-speech-kit";
 import VoiceControl from './Components/VoiceControl.js';
 import Navbar from './Components/Navbar.js';
+import Testimonial from './Components/Testimonial.js';
 
 
 
@@ -50,7 +49,7 @@ function Temp() {
       <Navbar />
 
       <div className="container-fluid p-0 mb-5">
-            <img src={c1} alt="" style={{  objectFit: "fit", width: "100%", height: "650px" }} />
+            <img src={c1} alt="" style={{  objectFit: "fit", width: "100%", height: "750px" }} />
             <div className="overlay">
             <div
               className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
@@ -208,7 +207,7 @@ function Temp() {
                   For the People!
                 </p>
                 <p></p>
-                <p>Schemes and Scholorship</p>
+                <p>Schemes and Scholarship</p>
                 <p>Certificates and Services</p>
                 <p>Education and Employment Resources</p>
                 <p>Awareness Campaigns</p>
@@ -310,6 +309,7 @@ function Temp() {
                 <img
                   className="position-absolute w-100 h-100 rounded"
                   src={stugru}
+                  alt='student'
                   style={{ objectFit: "cover" }}
                 />
               </div>
@@ -321,7 +321,7 @@ function Temp() {
                 Makes learning easy by giving students personal profiles, real-time updates, and clear communication for parents. It's secure and lets everyone work together with shared resources, 
           online meetings, and a helpful library. You can give feedback to make it better and ensure a complete learning experience for students and their families.
                 </p>
-                <a className="btn btn-primary py-3 px-5" href="">
+                <a className="btn btn-primary py-3 px-5" href="/login">
                   Let's Get Educated ! Enroll here
                   <i className="fa fa-arrow-right ms-2" />
                 </a>
@@ -330,10 +330,7 @@ function Temp() {
           </div>
         </div>
       </div>
-    </div>
-
-
-      
+    </div>      
       <div className="container-xxl py-5">
       <div className="container">
         <div className="bg-light rounded">
@@ -345,7 +342,7 @@ function Temp() {
                 Teachers play a crucial role in the holistic development of disabled individuals by fostering inclusive education, providing tailored support, and nurturing an environment that promotes their unique strengths.
                 These professionals employ personalized strategies, create inclusive environments, and advocate for the unique needs of disabled learners. Through their guidance and encouragement, disabled individuals can overcome obstacles, gain confidence, and actively engage in society, promoting inclusivity and diversity.
                 </p>
-                <a className="btn btn-primary py-3 px-5" href="">
+                <a className="btn btn-primary py-3 px-5" href="/login">
                   Register As a Teacher Now 
                   <i className="fa fa-arrow-right ms-2" />
                 </a>
@@ -360,6 +357,7 @@ function Temp() {
                 <img
                   className="position-absolute w-100 h-100 rounded"
                   src={teacher}
+                  alt='teacher'
                   style={{ objectFit: "cover" }}
                 />
               </div>
@@ -383,6 +381,7 @@ function Temp() {
                   <img
                     className="position-absolute w-100 h-100 rounded"
                     src={orgcenter}
+                    alt='organization'
                     style={{ objectFit: "cover" }}
                   />
                 </div>
@@ -399,7 +398,7 @@ function Temp() {
                   or getting notified about the latest schemes and government requests
                     - we have a place for you!
                   </p>
-                  <a className="btn btn-primary py-3 px-5" href="">
+                  <a className="btn btn-primary py-3 px-5" href="/login">
                     Enroll Your Edu-Center!
                     <i className="fa fa-arrow-right ms-2" />
                   </a>
@@ -410,6 +409,9 @@ function Temp() {
         </div>
       </div>
       {/* Call To Action End */}
+      <div className="container-xxl py-5">
+      <Testimonial />
+      </div>
       {/* Appointment Start */}
       <div className="container-xxl py-5">
         <div className="container">
@@ -474,6 +476,7 @@ function Temp() {
               >
                 <div className="position-relative h-100">
                   <img
+                  alt='donor'
                     className="position-absolute w-100 h-100 rounded"
                     src={donorpic}
                     style={{ objectFit: "cover" }}

@@ -1,26 +1,14 @@
 import React from 'react'
 import '../Styles/Home.css';
-import logo from '../img/logo.png';
-import c1 from '../img/carousel-1.jpg';
-import c2 from '../img/carousel-2.jpg';
-import teacher from '../img/call-to-action.jpg'
-import about1 from '../img/about-1.jpg';
-import about2 from '../img/about-2.jpg';
 import about3 from '../img/about-3.jpg';
-import cls1 from '../img/classes-1.jpg';
-import cls2 from '../img/classes-2.jpg';
-import cls3 from '../img/classes-3.jpg';
-import cls4 from '../img/classes-4.jpg';
 import t_bg from'../img/Teacher_bg.jpg';
 import t1 from'../img/p1.jpg';
-import t2 from'../img/p2.jpg';
 import t3 from'../img/p3.jpg';
 import t4 from'../img/p4.jpg';
 import t5 from'../img/p5.jpg';
 import t6 from'../img/p6.jpg';
 import t7 from'../img/p7.jpg';
 import Puzzule from'../img/puzzle.jpg';
-import appointment from '../img/disablePic1.png';
 import TeacherNavbar from '../Components/TeacherNavbar';
 
 export default function THome() {

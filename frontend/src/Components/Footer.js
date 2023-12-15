@@ -16,10 +16,11 @@ export default function Footer() {
               <h3 className="text-white mb-4">Get In Touch</h3>
               <p className="mb-2">
                 <i className="fa fa-map-marker-alt me-3" />
-                Smart India Hackathon
+                Ministry of Jharkhand
               </p>
               <p className="mb-2">
                 <i className="fa fa-phone-alt me-3" />
+                
                 +91 98947*****
               </p>
               <p className="mb-2">
