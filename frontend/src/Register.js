@@ -9,6 +9,7 @@ import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../src/firebaseConfig';
 import Navbar from './Components/Navbar';
 import logo from '../src/img/logo-SQUARE.png';
+import VoiceControl from './Components/VoiceControl';
 
 export default function Register()
 {
@@ -119,6 +120,7 @@ export default function Register()
     <form className="registerForm" 
      onSubmit={signup}
     >
+    <VoiceControl />
       <div className="RegisterSide">
         <div className="loginWrap">
         <h1 className="m-0 text-primary ">

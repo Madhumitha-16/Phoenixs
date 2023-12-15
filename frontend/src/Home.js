@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../src/Styles/Home.css';
 import logo from '../src/img/logo.png';
 import logo1 from '../src/img/logo-SQUARE.png';
@@ -12,10 +12,21 @@ import about2 from '../src/img/Circle-2.png';
 import about3 from '../src/img/Circle-1.jpg';
 import donorpic from '../src/img/disablePic1.png'; 
 import Footer from './Components/Footer.js';
+import { useState } from 'react';
 import { BiSolidDonateHeart } from "react-icons/bi";
+import { useSpeechSynthesis } from "react-speech-kit";
+import VoiceControl from './Components/VoiceControl.js';
+import Navbar from './Components/Navbar.js';
+
 
 
 function Temp() {
+  const { speak } = useSpeechSynthesis()
+  const [greet, setGreet] = useState(false);
+  const text = 'Some dummy text'
+
+ 
+  
   return (
     <>
     {/* Google Web Fonts */}
@@ -36,74 +47,8 @@ function Temp() {
     />
 
     <body>
-      <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0 ">
-        <a href="index.html" className="navbar-brand">
-          <h1 className="m-0 text-primary ">
-          <img src={logo} alt=''  width={100} />
-            Phoenixs
-          </h1>
-        </a>
-        <button
-          type="button"
-          className="navbar-toggler"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <div className="navbar-nav mx-auto">
-            <a href="index.html" className="nav-item nav-link active">
-              Home
-            </a>
-            <a href="about.html" className="nav-item nav-link">
-              About Us
-            </a>
-            <a href="classes.html" className="nav-item nav-link">
-              Classes
-            </a>
-            <div className="nav-item dropdown">
-              <a
-                href="www.google.com"
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                Pages
-              </a>
-              <div className="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                <a href="facility.html" className="dropdown-item">
-                  School Facilities
-                </a>
-                <a href="team.html" className="dropdown-item">
-                  Popular Teachers
-                </a>
-                <a href="call-to-action.html" className="dropdown-item">
-                  Become A Teachers
-                </a>
-                <a href="appointment.html" className="dropdown-item">
-                  Make Appointment
-                </a>
-                <a href="testimonial.html" className="dropdown-item">
-                  Testimonial
-                </a>
-                <a href="404.html" className="dropdown-item">
-                  404 Error
-                </a>
-              </div>
-            </div>
-            <a href="contact.html" className="nav-item nav-link">
-              Contact Us
-            </a>
-          </div>
-          <a
-            href="www.google.com"
-            className="btn btn-primary rounded-pill px-3 d-none d-lg-block"
-          >
-            Join Us
-            <i className="fa fa-arrow-right ms-3" />
-          </a>
-        </div>
-      </nav>
+
+      <Navbar />
 
       <div className="container-fluid p-0 mb-5">
             <img src={c1} alt="" style={{  objectFit: "fit", width: "100%", height: "650px" }} />
@@ -200,7 +145,7 @@ function Temp() {
                 <span className="bg-primary" />
               </div>
               <div className="facility-text bg-primary">
-                <h3 className="text-primary mb-3">Students</h3>
+                <h3 className="text-primary mb-3">Student's</h3>
                 <p className="mb-0">
                 Unlock your learning journey!</p>
                 <p></p>
@@ -218,7 +163,7 @@ function Temp() {
                 <span className="bg-success" />
               </div>
               <div className="facility-text bg-success">
-                <h3 className="text-success mb-3">Educational institutions</h3>
+                <h3 className="text-success mb-3">Organisation</h3>
                 <p className="mb-0">
                   Decrease the Huddles and Overcome It!</p>
                   <p></p>
@@ -238,7 +183,7 @@ function Temp() {
                 <span className="bg-warning" />
               </div>
               <div className="facility-text bg-warning">
-                <h3 className="text-warning mb-3">Teachers</h3>
+                <h3 className="text-warning mb-3">Teacher's</h3>
                 <p className="mb-0">
                 Jump In ! To Train and help Our Special Kids</p>
                 <p></p>
@@ -275,6 +220,7 @@ function Temp() {
       </div>
     </div>
       {/* Facilities End */}
+      <VoiceControl />
       {/* About Start */}
       <div className="container-xxl py-5">
         <div className="container">

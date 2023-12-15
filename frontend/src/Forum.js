@@ -5,6 +5,7 @@ import { addDoc, doc, getDoc } from "firebase/firestore";
 import Navbar from "./Components/Navbar";
 import "./Styles/forum.css";
 import Sidebar from "./Components/Sidebar";
+import VoiceControl from "./Components/VoiceControl";
 
 const Forum = () => {
   const [posts, setPosts] = useState([]);
@@ -136,6 +137,7 @@ const Forum = () => {
   return (
     <div>
       <Navbar />
+      <VoiceControl />
       <div className="main-container">
       <Sidebar />
       <div style={{width:"60%"}}>

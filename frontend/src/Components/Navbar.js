@@ -1,9 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../img/logo-SQUARE.png';
+import { useSpeechSynthesis } from "react-speech-kit";
 
 export default function Navbar() {
+  const { speak } = useSpeechSynthesis()
+  const [grayscale, setGrayscale] = useState(false);
+
+  useEffect(() => {
+    const isGrayscale = localStorage.getItem('grayscale');
+    if (isGrayscale === 'true') {
+      setGrayscale(true);
+      document.body.classList.add('grayscale');
+    }
+  }, []);
+
+  const toggleGrayscale = () => {
+    const updatedGrayscale = !grayscale;
+    setGrayscale(updatedGrayscale);
+    if (updatedGrayscale) {
+      localStorage.setItem('grayscale', 'true');
+      document.body.classList.add('grayscale');
+    } else {
+      localStorage.setItem('grayscale', 'false');
+      document.body.classList.remove('grayscale');
+    }
+  };
+
+  const Greet = () => {
+    speak({
+      text: "Welcome to the Voice controllable website. Please chekout the commands!. These commands will help you to controll website with voice!. Click on the Next button to start!.",
+    });
+  };
   return (
     <>
+    <style>
+        {`
+          body {
+            transition: filter 0.5s ease; /* Add transition effect for smoothness */
+          }
+          .grayscale {
+            filter: grayscale(100%); /* Apply grayscale filter to the entire website */
+          }
+        `}
+      </style>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       <link
@@ -79,13 +118,13 @@ export default function Navbar() {
               Contact Us
             </a>
           </div>
-          <a
-            href="www.google.com"
-            className="btn btn-primary rounded-pill px-3 d-none d-lg-block"
-          >
-            Logout  
-            <i className="fa fa-arrow-right ms-3" />
-          </a>
+          <button className="btn btn-primary rounded-pill px-3 my-2 d-none d-lg-block" onClick={Greet}>
+            Accessibility Mode
+          </button>
+          <button className="btn btn-secondary rounded-pill px-3 my-2 ml-3 d-none d-lg-block" onClick={toggleGrayscale}>
+            Toggle Grayscale
+          </button>
+
         </div>
       </nav>
       <hr></hr>
