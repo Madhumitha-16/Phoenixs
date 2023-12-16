@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { collection, addDoc, doc, getDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, auth, storage } from './firebaseConfig';
+import '../src/Styles/forum.css';
 
 const PostForm = ({ }) => {
   const [textValue, setTextValue] = useState('');
@@ -101,20 +102,24 @@ const PostForm = ({ }) => {
   };
   return (
     <div>
-      <h2>Create a New Post</h2>
       <form onSubmit={handleSubmit}>
         <br/>
+        <div className="box">
+                <div className="col-sm">
         <label>
           Enter Text:<br></br>
           <textarea value={textValue} onChange={handleTextAreaChange} rows="4" cols="50" />
         </label>
         <br />
+        </div>
         <label>
           Upload File:<br />
           <input type="file" accept="image,video/mkv/*" onChange={handleFileChange} />
         </label>
         <br />
-        <button type="submit">Submit</button>
+        </div>
+        <button type="submit" className="btn btn-primary rounded-pill py-sm-2 px-sm-3 me-2 animated slideInLeft"
+>Submit</button>
       </form>
     </div>
   );

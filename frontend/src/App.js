@@ -16,7 +16,8 @@ import UIforconversion from './Braille-Converter/UIforconversion';
 import DetailsTable from './Student/WebScrapping/DetailsTable';
 import Schools from './Student/Schools';
 import SchemesTable from './Student/WebScrapping/SchemesTable';
-import DonorPage from './Student/DonorPage';
+import ActivityHome from './Student/Activity/ActivityHome';
+
 
 
 function App() {
@@ -41,6 +42,12 @@ function App() {
           path="/student/gamify"
           element={
               <OddOneOut/>
+          }
+        />
+        <Route
+          path="/student/AHome"
+          element={
+              <ActivityHome/>
           }
         />
 
