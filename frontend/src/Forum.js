@@ -121,7 +121,8 @@ const Forum = () => {
   }, [posts]);
 
   function getInitials(name) {
-    return `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`;
+    console.log(name);
+    return `${name?.split(" ")[0][0]}${name?.split(" ")[1][0]}`;
   }
 
   function generateBackground(name) {
@@ -213,12 +214,13 @@ const Forum = () => {
                         // }}
                       >
                         <span>
-                          {getInitials(`${post.FirstName} ${post.LastName}`)}
+                          {getInitials(`${post.Firstname} ${post.Lastname}`)}
                         </span>
                       </div>
                     </div>
                     <div style={{ marginLeft: "10px" }}>
-                      <h5>{post.FirstName}</h5>
+                      <h5>{post.Firstname}</h5>                      
+                      <p>{post.Role}</p>
                     </div>
                   </div>
 
