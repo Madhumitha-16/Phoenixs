@@ -25,7 +25,9 @@ const Forum = () => {
         if (userDoc.exists()) {
           setCurrentUser({
             uid: user.uid,
-            name: userDoc.data().Firstname,
+            Firstname: userDoc.data().Firstname,
+            Lastname: userDoc.data().Lastname,
+            Role: userDoc.data().Role
           });
         }
       } else {
@@ -69,7 +71,9 @@ const Forum = () => {
       const postData = {
         content: textValue,
         userID: currentUser.uid,
-        FirstName: userDoc.data().Firstname,
+        Firstname: userDoc.data().Firstname,
+        Lastname: userDoc.data().Lastname,
+        Role: userDoc.data().Role
       };
 
       await addDoc(PostsCollectionRef, postData);
@@ -145,16 +149,6 @@ const Forum = () => {
     
         <h2>Create a Post</h2>
         <form onSubmit={handleSubmit} className="post-form">
-          {/* <div className="box">
-    <input
-      type="text"
-      name="title"
-      placeholder="Title"
-      value={newPost.title}
-      onChange={handleInputChange}
-      className="input-field"
-    />
-  </div> */}
           <div className="box">
             <textarea
               name="content"
@@ -174,7 +168,6 @@ const Forum = () => {
       </div>
       <div className="post">
         <h2>Posts </h2>
-
         <div className="posts-container">
           {posts.map((post, index) => (
             <div key={index}>
@@ -185,7 +178,9 @@ const Forum = () => {
                   </div>
                 </div>
                 <div style={{ marginLeft: "10px" }}>
-                  <h5>{post.FirstName}</h5>
+                  <h5>{post.Firstname}</h5>
+                  <h5>{post.Lastname}</h5>
+                  <h5>{post.Role}</h5>
                 </div>
               </div>
 
