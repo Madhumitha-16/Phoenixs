@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db, auth } from "./firebaseConfig";
+import { db, auth, storage } from "./firebaseConfig";
 import { addDoc, doc, getDoc } from "firebase/firestore";
 import Navbar from "./Components/Navbar";
 import "./Styles/forum.css";
 import Sidebar from "./Components/Sidebar";
 import VoiceControl from "./Components/VoiceControl";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import StudentNavbar from "./Components/StudentNavbar";
 
 const Forum = () => {
   const [posts, setPosts] = useState([]);
   const name = "Madhu B";
-
+  const [file, setFile] = useState(null);
   const [textValue, setTextValue] = useState("");
   const [currentUser, setCurrentUser] = useState(null);
 
@@ -60,6 +62,12 @@ const Forum = () => {
         console.error("Current user is null. Unable to submit post.");
         return;
       }
+      let fileURL = null;
+      if (file) {
+        const storageRef = ref(storage, `postFiles/${file.name}`);
+        await uploadBytes(storageRef, file);
+        fileURL = await getDownloadURL(storageRef);
+      }
       const userDocRef = doc(db, "Users", currentUser.uid);
       const userDoc = await getDoc(userDocRef);
 
@@ -80,6 +88,7 @@ const Forum = () => {
 
       console.log("Text submitted and saved to Posts collection:", textValue);
       setTextValue("");
+      setFile(null);
     } catch (error) {
       console.error("Error saving text to Posts collection:", error.message);
     }
@@ -96,6 +105,11 @@ const Forum = () => {
     } catch (error) {
       console.error("Error fetching posts:", error.message);
     }
+  };
+
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
   };
 
   useEffect(() => {
@@ -140,16 +154,17 @@ const Forum = () => {
 
   return (
     <div>
-      <Navbar />
+      <StudentNavbar />
       <VoiceControl />
       <div className="main-container">
       <Sidebar />
-      <div style={{width:"60%"}}>
+      <div style={{width:"100%"}}>
       <div className="create-post">
     
         <h2>Create a Post</h2>
         <form onSubmit={handleSubmit} className="post-form">
           <div className="box">
+            <div className="col-sm">
             <textarea
               name="content"
               placeholder="Content"
@@ -157,14 +172,25 @@ const Forum = () => {
               onChange={handleTextAreaChange}
               className="input-field"
             ></textarea>
-            <button
+            </div>
+           <div >
+         
+        <br />
+           </div>
+           <div>
+        <input className="file-upload" type="file" accept="image,video/mkv/*" onChange={handleFileChange} />
+        </div>
+          </div>
+        </form>
+       
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <button
               type="submit"
               className="btn btn-primary rounded-pill py-sm-2 px-sm-3 me-2 animated slideInLeft"
             >
               Create Post
             </button>
-          </div>
-        </form>
+            </div>
       </div>
       <div className="post">
         <h2>Posts </h2>
@@ -174,7 +200,7 @@ const Forum = () => {
               <div className="post-item">
                 <div className="avatar">
                   <div style={customStyle}>
-                    <span>{initials}</span>
+                    <span>{getInitials(`${post.FirstName} ${post.LastName}`)}</span>
                   </div>
                 </div>
                 <div style={{ marginLeft: "10px" }}>
@@ -186,6 +212,7 @@ const Forum = () => {
 
               <div className="content">
                 <p>{post.content}</p>
+                <img src={post.fileURL} alt="" width={"100%"} />
               </div>
             </div>
           ))}
