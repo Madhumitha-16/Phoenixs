@@ -117,6 +117,10 @@ function App() {
          path="/Scheme-details" 
          element={<SchemesTable />} />
 
+        <Route 
+         path="/Donor-page" 
+         element={<DonorPage />} />
+
         </Routes>
         
 

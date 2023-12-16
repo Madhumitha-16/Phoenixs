@@ -124,7 +124,7 @@ const Forum = () => {
   }, [posts]);
 
   function getInitials(name) {
-    console.log(name);
+    // console.log(name);
     return `${name?.split(" ")[0][0]}${name?.split(" ")[1][0]}`;
   }
 
