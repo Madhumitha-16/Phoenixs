@@ -110,7 +110,7 @@ function Home() {
                    </div>
                  </div>
                </div>
-               <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+               {/* <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                  <div className="service-item text-center pt-3">
                    <div className="p-4">
                    <MdOutlineMenuBook size={60} />
@@ -120,7 +120,7 @@ function Home() {
                      </p>
                    </div>
                  </div>
-               </div>
+               </div> */}
                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                  <div className="service-item text-center pt-3">
                    <div className="p-4">
