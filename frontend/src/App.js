@@ -16,6 +16,7 @@ import UIforconversion from './Braille-Converter/UIforconversion';
 import DetailsTable from './Student/WebScrapping/DetailsTable';
 import Schools from './Student/Schools';
 import SchemesTable from './Student/WebScrapping/SchemesTable';
+import DonorPage from './Student/DonorPage';
 
 
 function App() {
@@ -108,6 +109,10 @@ function App() {
          <Route 
          path="/Scheme-details" 
          element={<SchemesTable />} />
+
+        <Route 
+         path="/Donor-page" 
+         element={<DonorPage />} />
 
         </Routes>
         
