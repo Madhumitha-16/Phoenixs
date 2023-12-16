@@ -27,7 +27,9 @@ const Forum = () => {
         if (userDoc.exists()) {
           setCurrentUser({
             uid: user.uid,
-            name: userDoc.data().Firstname,
+            Firstname: userDoc.data().Firstname,
+            Lastname: userDoc.data().Lastname,
+            Role: userDoc.data().Role
           });
         }
       } else {
@@ -77,8 +79,9 @@ const Forum = () => {
       const postData = {
         content: textValue,
         userID: currentUser.uid,
-        FirstName: userDoc.data().Firstname,
-        fileURL: fileURL || null,
+        Firstname: userDoc.data().Firstname,
+        Lastname: userDoc.data().Lastname,
+        Role: userDoc.data().Role
       };
 
       await addDoc(PostsCollectionRef, postData);

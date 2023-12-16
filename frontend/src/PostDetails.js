@@ -3,7 +3,7 @@ import { collection, addDoc, doc, getDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, auth, storage } from './firebaseConfig';
 
-const PostForm = ({ onPostSubmit }) => {
+const PostForm = ({ }) => {
   const [textValue, setTextValue] = useState('');
   const [file, setFile] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
@@ -17,10 +17,15 @@ const PostForm = ({ onPostSubmit }) => {
         const userDoc = await getDoc(userDocRef);
 
         if (userDoc.exists()) {
+          
           setCurrentUser({
             uid: user.uid,
-            name: userDoc.data().Firstname,
+            Firstname: userDoc.data().Firstname,
+            Lastname: userDoc.data().Lastname,
+            Role: userDoc.data().Role,
+
           });
+          console.log('Fetched User Data:', userDoc.data());
         }
       } else {
         const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -79,8 +84,10 @@ const PostForm = ({ onPostSubmit }) => {
       const postData = {
         content: textValue,
         userID: currentUser.uid,
-        FirstName: userDoc.data().Firstname,
-        fileURL: fileURL || null, // Ensure fileURL is not null
+        Firstname: userDoc.data().Firstname,
+        Lastname: userDoc.data().Lastname,
+        Role: userDoc.data().Role,
+        fileURL: fileURL || null,
       };
 
       await addDoc(PostsCollectionRef, postData);
@@ -92,7 +99,6 @@ const PostForm = ({ onPostSubmit }) => {
       console.error('Error saving text and file to Posts collection:', error.message);
     }
   };
-
   return (
     <div>
       <h2>Create a New Post</h2>
