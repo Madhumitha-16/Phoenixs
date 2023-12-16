@@ -393,54 +393,12 @@ h6,
 
 /*** Testimonial ***/
 .testimonial-carousel {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+justify-content: center;
 }
 
-@media (min-width: 576px) {
-    .testimonial-carousel {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
-}
-
-.testimonial-carousel .testimonial-item .border {
-    border: 1px dashed rgba(0, 185, 142, .3) !important;
-}
-
-.testimonial-carousel .owl-nav {
-    position: absolute;
-    width: 100%;
-    height: 45px;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    z-index: 1;
-}
-
-.testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
-    position: relative;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    background: var(--primary);
-    border-radius: 45px;
-    font-size: 20px;
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-nav .owl-prev:hover,
-.testimonial-carousel .owl-nav .owl-next:hover {
-    background: var(--dark);
-}
-
-
+.testimonial-slide{
+    background-color:"blue"
+  }
 /*** Footer ***/
 .footer .btn.btn-social {
     margin-right: 5px;
@@ -539,10 +497,10 @@ h6,
 /*overlay*/
 .overlay {
     position: absolute;
-    top: 0;
+    top: 110px;
     left: 0;
     width: 100%;
-    height: 110%;
+    height: 84%;
     background-color: rgba(0, 0, 0, 0.4); /* Adjust the color and opacity as needed */
     color: white; /* Text color on the overlay */
     z-index: 1; /* Ensure the overlay is on top of the image */

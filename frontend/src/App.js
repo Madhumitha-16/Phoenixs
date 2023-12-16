@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
@@ -10,7 +10,12 @@ import Forum from './Forum';
 import Mhome from './Ministry/Mhome';
 import THome from './Teacher/THome';
 import OddOneOut from './Student/Activity/OddOneOut'
+import Voice from './voice';
+import VoiceForm from './Form';
 import UIforconversion from './Braille-Converter/UIforconversion';
+import DetailsTable from './Student/WebScrapping/DetailsTable';
+import Schools from './Student/Schools';
+import SchemesTable from './Student/WebScrapping/SchemesTable';
 import ActivityHome from './Student/Activity/ActivityHome';
 
 
@@ -71,7 +76,19 @@ function App() {
               <Mhome />
           }
         />
-       
+        <Route
+          path="/voice"
+          element={
+              <Voice />
+          }
+        />
+
+<Route
+          path="/form"
+          element={
+              <VoiceForm />
+          }
+        />
 
         <Route
           path="/forum"
@@ -88,7 +105,20 @@ function App() {
          path="/convert-to-braille" 
          element={<UIforconversion />} />
 
+        <Route 
+         path="/school-details" 
+         element={<Schools />} />
+
+        <Route 
+         path="/school" 
+         element={<DetailsTable />} />
+         
+         <Route 
+         path="/Scheme-details" 
+         element={<SchemesTable />} />
+
         </Routes>
+        
 
   </BrowserRouter>
      

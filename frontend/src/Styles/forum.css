@@ -5,14 +5,14 @@
   }
 
   .create-post {
-    margin: 50px auto;
-    max-width: 600px;
+    margin: 0px auto;
+    max-width: 1000px;
   }
-  
+ 
   .box {
     margin-bottom: 15px;
   }
-  
+
   .input-field {
     width: 100%;
     padding: 10px;
@@ -26,18 +26,17 @@
     border-color: #7f8c8d; /* Change border color on focus */
   }
   .post{
-    margin-left: 20%;
+    margin-left: 15%;
 }
 
 .posts-container {
     display: flex;
-    margin-left: 5%;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
     width: 100%;
-    max-width: 800px;
+    max-width: 8500px;
   }
   
   .post-item {
@@ -50,7 +49,7 @@
     padding: 15px;
     border: 1px solid #ccc; 
     border-radius: 10px;
-    background-color: #fabf4096;
+    background-color:#e0e0e0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     margin-bottom: 9px;
@@ -89,19 +88,19 @@
   
   .post-content {
     flex: 1;
-    padding-left: 20px;
+    padding-left: 0px;
     
   }
   .content{
     width: calc(70% - 10px);
-    border: 2.1px dashed #777272;
+    border: 0.1px solid #c9c8c8;
   border-radius: 8px; 
   padding: 10px;
   }
   .content p {
     margin: 10px 0; /* Add margin for spacing between paragraphs */
-    font-size: 1.2rem; /* Adjust font size */
-    color: #555; /* Set text color */
+    font-size: 16px; /* Adjust font size */
+    color: #292828; /* Set text color */
     line-height: 1.5; /* Set line height for better readability */
   }
   
