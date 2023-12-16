@@ -9,6 +9,7 @@ import PostDetails from './PostDetails';
 import Forum from './Forum';
 import Mhome from './Ministry/Mhome';
 import THome from './Teacher/THome';
+import OHome from './Organization/OHome.js';
 import OddOneOut from './Student/Activity/OddOneOut'
 import Voice from './voice';
 import VoiceForm from './Form';
@@ -69,6 +70,12 @@ function App() {
               <THome />
           }
         />
+        <Route
+        path="/Organization/home"
+        element={
+            <OHome />
+        }
+      />
         
         <Route
           path="/Ministry/home"
@@ -83,7 +90,7 @@ function App() {
           }
         />
 
-<Route
+         <Route
           path="/form"
           element={
               <VoiceForm />
@@ -117,9 +124,7 @@ function App() {
          path="/Scheme-details" 
          element={<SchemesTable />} />
 
-        <Route 
-         path="/Donor-page" 
-         element={<DonorPage />} />
+        
 
         </Routes>
         
