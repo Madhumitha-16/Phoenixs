@@ -8,6 +8,7 @@ import Sidebar from "./Components/Sidebar";
 import VoiceControl from "./Components/VoiceControl";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import StudentNavbar from "./Components/StudentNavbar";
+import PostForm from "./PostDetails";
 
 const Forum = () => {
   const [posts, setPosts] = useState([]);
@@ -51,11 +52,12 @@ const Forum = () => {
 
   const handleTextAreaChange = (e) => {
     setTextValue(e.target.value);
+    console.log(e.target.value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log("submit",e.target.value);
     try {
       const PostsCollectionRef = collection(db, "Posts");
       if (!currentUser) {
@@ -81,7 +83,8 @@ const Forum = () => {
         userID: currentUser.uid,
         Firstname: userDoc.data().Firstname,
         Lastname: userDoc.data().Lastname,
-        Role: userDoc.data().Role
+        Role: userDoc.data().Role,
+        fileURL: fileURL || null,
       };
 
       await addDoc(PostsCollectionRef, postData);
@@ -121,8 +124,7 @@ const Forum = () => {
   }, [posts]);
 
   function getInitials(name) {
-    console.log(name);
-    return `${name?.split(" ")[0][0]}${name?.split(" ")[1][0]}`;
+    return `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`;
   }
 
   function generateBackground(name) {
@@ -157,11 +159,12 @@ const Forum = () => {
       <StudentNavbar />
       <VoiceControl />
       <div className="main-container">
+      <hr></hr>
         <Sidebar />
         <div style={{ width: "100%" }}>
           <div className="create-post">
             <h2>Create a Post</h2>
-            <form onSubmit={handleSubmit} className="post-form">
+            <form onSubmit={handleSubmit} >
               <div className="box">
                 <div className="col-sm">
                   <textarea
@@ -184,16 +187,18 @@ const Forum = () => {
                   />
                 </div>
               </div>
-            </form>
-
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <button
                 type="submit"
                 className="btn btn-primary rounded-pill py-sm-2 px-sm-3 me-2 animated slideInLeft"
               >
+              
                 Create Post
               </button>
             </div>
+            </form>
+
+            
           </div>
           <div className="post">
             <h2>Posts </h2>
@@ -219,8 +224,9 @@ const Forum = () => {
                       </div>
                     </div>
                     <div style={{ marginLeft: "10px" }}>
-                      <h5>{post.Firstname}</h5>                      
-                      <p>{post.Role}</p>
+                      <h5>{post.Firstname}</h5>
+                     
+                  <p>{post.Role}</p>
                     </div>
                   </div>
 
@@ -230,6 +236,7 @@ const Forum = () => {
                   </div>
                 </div>
               ))}
+                
             </div>
           </div>
         </div>
