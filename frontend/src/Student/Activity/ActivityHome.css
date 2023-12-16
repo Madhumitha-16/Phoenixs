@@ -1,0 +1,26 @@
+/* ContainerComponent.css */
+.container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .orange-button {
+    padding: 10px 20px;
+    background-color: #fd7e14;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .orange-button:hover {
+    background-color: #fd7e14;
+  }
+  

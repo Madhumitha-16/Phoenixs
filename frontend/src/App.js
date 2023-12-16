@@ -11,6 +11,8 @@ import Mhome from './Ministry/Mhome';
 import THome from './Teacher/THome';
 import OddOneOut from './Student/Activity/OddOneOut'
 import UIforconversion from './Braille-Converter/UIforconversion';
+import ActivityHome from './Student/Activity/ActivityHome';
+
 
 
 function App() {
@@ -35,6 +37,12 @@ function App() {
           path="/student/gamify"
           element={
               <OddOneOut/>
+          }
+        />
+        <Route
+          path="/student/AHome"
+          element={
+              <ActivityHome/>
           }
         />
 
