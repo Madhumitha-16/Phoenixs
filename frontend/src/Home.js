@@ -444,6 +444,17 @@ function Temp() {
                           <label htmlFor="gmail">Email</label>
                         </div>
                       </div>
+                      
+                      <div className="col-sm-6">
+                        <div className="form-floating">
+                          <input
+                            type="text"
+                            className="form-control border-0"
+                            placeholder="Contact Number"
+                          />
+                          <label htmlFor="Contact Number">Contact Number</label>
+                        </div>
+                      </div>
                      
                       <div className="col-12">
                         <div className="form-floating">
