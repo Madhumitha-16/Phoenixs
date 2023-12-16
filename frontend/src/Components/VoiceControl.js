@@ -65,7 +65,7 @@ function VoiceControl() {
   return (
     <div className="App">
       {redirect}
-      <p id="transcript">Transcript: {transcript}</p>
+      {/* <p id="transcript">Transcript: {transcript}</p> */}
       
     </div>
   );

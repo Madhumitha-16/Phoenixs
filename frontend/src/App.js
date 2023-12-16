@@ -104,9 +104,7 @@ function App() {
         <Route 
          path="/school" 
          element={<DetailsTable />} />
-         <Route 
-         path="/School-details" 
-         element={<DetailsTable />} />
+         
          <Route 
          path="/Scheme-details" 
          element={<SchemesTable />} />

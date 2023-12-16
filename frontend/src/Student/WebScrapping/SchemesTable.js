@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebaseConfig';
+import StudentNavbar from '../../Components/StudentNavbar';
 
 export default function SchemesTable() {
     const[allDetails,setAllDetails]=useState([]);
@@ -9,7 +10,6 @@ export default function SchemesTable() {
           try {
             const detailsCollectionRef = collection(db, 'DisabilitySchools2');
             const detailsQuerySnapshot = await getDocs(detailsCollectionRef);
-    
             const detailsData = detailsQuerySnapshot.docs.map((doc) => ({
               id: doc.id,
               data: doc.data(),
@@ -25,7 +25,11 @@ export default function SchemesTable() {
     
       }, []);
   return (
-    <div>
+    <>
+    <StudentNavbar />
+    <hr></hr>
+    <div  className="entire-table">
+    
         <h2> Disability Schemes
 </h2>
 <table border="1" className="table-container">
@@ -43,7 +47,7 @@ export default function SchemesTable() {
   <tbody>
     {allDetails.map((details, index) => (
       <tr key={details.id}>
-        <td>{index}</td>
+        <td>{index+1}</td>
         <td>{details.data.state}</td>
         <td>{details.data.disabilityType}</td>
         <td>{details.data.schemeName}</td>
@@ -61,5 +65,6 @@ export default function SchemesTable() {
 
 
     </div>
+    </>
   )
 }
