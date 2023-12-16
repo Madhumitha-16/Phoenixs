@@ -137,7 +137,6 @@ const Forum = () => {
     return color;
   }
 
-  let initials = getInitials(name);
   let color = generateBackground(name);
   const customStyle = {
     display: "flex",
@@ -154,70 +153,85 @@ const Forum = () => {
       <StudentNavbar />
       <VoiceControl />
       <div className="main-container">
-      <Sidebar />
-      <div style={{width:"100%"}}>
-      <div className="create-post">
-    
-        <h2>Create a Post</h2>
-        <form onSubmit={handleSubmit} className="post-form">
-          <div className="box">
-            <div className="col-sm">
-            <textarea
-              name="content"
-              placeholder="Content"
-              value={textValue}
-              onChange={handleTextAreaChange}
-              className="input-field"
-            ></textarea>
+        <Sidebar />
+        <div style={{ width: "100%" }}>
+          <div className="create-post">
+            <h2>Create a Post</h2>
+            <form onSubmit={handleSubmit} className="post-form">
+              <div className="box">
+                <div className="col-sm">
+                  <textarea
+                    name="content"
+                    placeholder="Content"
+                    value={textValue}
+                    onChange={handleTextAreaChange}
+                    className="input-field"
+                  ></textarea>
+                </div>
+                <div>
+                  <br />
+                </div>
+                <div>
+                  <input
+                    className="file-upload"
+                    type="file"
+                    accept="image,video/mkv/*"
+                    onChange={handleFileChange}
+                  />
+                </div>
+              </div>
+            </form>
+
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <button
+                type="submit"
+                className="btn btn-primary rounded-pill py-sm-2 px-sm-3 me-2 animated slideInLeft"
+              >
+                Create Post
+              </button>
             </div>
-           <div >
-         
-        <br />
-           </div>
-           <div>
-        <input className="file-upload" type="file" accept="image,video/mkv/*" onChange={handleFileChange} />
-        </div>
           </div>
-        </form>
-       
-        <div style={{ display: "flex", justifyContent: "flex-end" }}>
-        <button
-              type="submit"
-              className="btn btn-primary rounded-pill py-sm-2 px-sm-3 me-2 animated slideInLeft"
-            >
-              Create Post
-            </button>
-            </div>
-      </div>
-      <div className="post">
-        <h2>Posts </h2>
-        <div className="posts-container">
-          {posts.map((post, index) => (
-            <div key={index}>
-              <div className="post-item">
-                <div className="avatar">
-                  <div style={customStyle}>
-                    <span>{getInitials(`${post.FirstName} ${post.LastName}`)}</span>
+          <div className="post">
+            <h2>Posts </h2>
+            <div className="posts-container">
+              {posts.map((post, index) => (
+                <div key={index}>
+                  <div className="post-item">
+                    <div className="avatar">
+                      <div
+                        // style={{
+                        //   display: "flex",
+                        //   height: "50px",
+                        //   width: "50px",
+                        //   borderRadius: "100px",
+                        //   color: "white",
+                        //   background: generateBackground(post?.FirstName),
+                        //   margin: "auto",
+                        // }}
+                      >
+                        <span>
+                          {getInitials(`${post.FirstName} ${post.LastName}`)}
+                        </span>
+                      </div>
+                    </div>
+                    <div style={{ marginLeft: "10px" }}>
+                      <h5>{post.FirstName}</h5>
+                    </div>
+                  </div>
+
+                  <div className="content">
+                    <p>{post.content}</p>
+                    <img src={post.fileURL} alt="" width={"100%"} />
                   </div>
                 </div>
-                <div style={{ marginLeft: "10px" }}>
-                  <h5>{post.FirstName}</h5>
-                </div>
-              </div>
-
-              <div className="content">
-                <p>{post.content}</p>
-                <img src={post.fileURL} alt="" width={"100%"} />
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
-      </div>
-      </div>
       <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top">
-      <i className="bi bi-arrow-up" />
-    </a>
+        <i className="bi bi-arrow-up" />
+      </a>
     </div>
   );
 };

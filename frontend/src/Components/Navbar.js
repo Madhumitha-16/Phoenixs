@@ -62,7 +62,7 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0 ">
         <a href="#" className="navbar-brand">
           <h1 className="m-0 text-primary ">
-          <img src={logo} alt=''  width={80} />
+          <img src={logo} alt='' width={80} />
             Phoenixs
           </h1>
         </a>
