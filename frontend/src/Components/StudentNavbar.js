@@ -1,9 +1,11 @@
 import React from 'react';
 import logo from '../img/logo-SQUARE.png';
 import { useSpeechSynthesis } from "react-speech-kit";
+import { useNavigate } from 'react-router-dom';
 
 export default function StudentNavbar() {
   const { speak } = useSpeechSynthesis()
+  const navigate = useNavigate();
   const Greet = () => {
     speak({
       text: "Welcome to the Voice controllable website. Please chekout the commands!. These commands will help you to controll website with voice!. Click on the Next button to start!.",
@@ -27,7 +29,7 @@ export default function StudentNavbar() {
       />
 
       <body>
-      <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 my-2">
+      <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 my-2" >
         <a href="/" className="navbar-brand">
           <h1 className="m-0 text-primary ">
           <img src={logo} alt=''  width={80} />
@@ -63,13 +65,9 @@ export default function StudentNavbar() {
           <button className="btn btn-primary rounded-pill px-3 my-2 d-none d-lg-block" onClick={Greet}>
             Accessibility Mode
           </button>
-          <a
-            href="www.google.com"
-            className="btn btn-primary rounded-pill px-3 d-none d-lg-block"
-          >
-            Logout  
-            <i className="fa fa-arrow-right ms-3" />
-          </a>
+          <button className="btn btn-primary rounded-pill px-3 my-2 d-none d-lg-block" onClick={()=>navigate("/login")}>
+            Logout
+          </button>
         </div>
       </nav>
       </body>
