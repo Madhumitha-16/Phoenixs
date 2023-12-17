@@ -6,6 +6,11 @@ import '../Styles/Home.css';
 import donorpic from '../img/disablePic1.png';
 import logo from '../img/logo.png';
 import header from '../img/student-home.jpg';
+import teacher from '../img/TeacherImg.jpeg'
+import orgcenter from '../img/educenter.jpg';
+import stugru from '../img/StudentsGrp.jpeg';
+import ForumImg1 from '../img/ForumImg.jpg'
+import MinistryNavbar from '../Components/MinistryNavbar';
 
 
 function Mhome() {
@@ -42,74 +47,7 @@ function Mhome() {
     />
 
     <body>
-      <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0 ">
-        <a href="index.html" className="navbar-brand">
-          <h1 className="m-0 text-primary ">
-            <img src={logo} alt=''  width={100} />
-            Phoenixs
-          </h1>
-        </a>
-        <button
-          type="button"
-          className="navbar-toggler"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <div className="navbar-nav mx-auto">
-            <a href="index.html" className="nav-item nav-link active">
-              Home
-            </a>
-            <a href="about.html" className="nav-item nav-link">
-              About Us
-            </a>
-            <a href="classes.html" className="nav-item nav-link">
-              Classes
-            </a>
-            <div className="nav-item dropdown">
-              <a
-                href="www.google.com"
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                Pages
-              </a>
-              <div className="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                <a href="facility.html" className="dropdown-item">
-                  School Facilities
-                </a>
-                <a href="team.html" className="dropdown-item">
-                  Popular Teachers
-                </a>
-                <a href="call-to-action.html" className="dropdown-item">
-                  Become A Teachers
-                </a>
-                <a href="appointment.html" className="dropdown-item">
-                  Make Appointment
-                </a>
-                <a href="testimonial.html" className="dropdown-item">
-                  Testimonial
-                </a>
-                <a href="404.html" className="dropdown-item">
-                  404 Error
-                </a>
-              </div>
-            </div>
-            <a href="contact.html" className="nav-item nav-link">
-              Contact Us
-            </a>
-          </div>
-          <a
-            href="www.google.com"
-            className="btn btn-primary rounded-pill px-3 d-none d-lg-block"
-          >
-            Join Us
-            <i className="fa fa-arrow-right ms-3" />
-          </a>
-        </div>
-      </nav>
+      <MinistryNavbar />
 
           <div className="container-fluid p-0 mb-5">
             <img src={header} alt="" style={{  objectFit: "cover", width: "100%", height: "650px" }} />
@@ -187,26 +125,6 @@ function Mhome() {
       {/* Carousel End */}
       <>
     <title>My Table</title>
-    <style
-      dangerouslySetInnerHTML={{
-        __html: `
-          table {
-            border-collapse: collapse;
-            width: 100%;
-          }
-
-          th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-          }
-
-          th {
-            background-color: #f2f2f2;
-          }
-        `,
-      }}
-    />
     <h2>My Table</h2>
     <table>
       <thead>
@@ -274,8 +192,87 @@ function Mhome() {
       </tbody>
     </table>
   </>
-  
 
+
+  {/* Call To Action Start */}
+  <div className="container-xxl py-5" style={{ marginTop:'7%' }}>
+  <div className="container">
+    <div className="bg-light rounded">
+      <div className="row g-0">
+        <div
+          className="col-lg-6 wow fadeIn"
+          data-wow-delay="0.1s"
+          style={{ minHeight: 400 }}
+        >
+          <div className="position-relative h-100">
+            <img
+              className="position-absolute w-100 h-100 rounded"
+              src={stugru}
+              alt='student'
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        </div>
+        <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+          <div className="h-100 d-flex flex-column justify-content-center p-5">
+            <h1 className="mb-4">Make Organization , Friendly to Them!!</h1>
+            <p className="mb-4">
+            Transforming construction practices for inclusivity. 
+            JCreate spaces that accommodate diverse abilities—explore universal design, 
+            wheelchair-accessible entrances, adaptive restrooms, and safe, navigable pathways. 
+            Embrace inclusive signage, design accessible workspaces, and contribute to a future 
+            where every space is welcoming to all.
+            </p>
+            <a className="btn btn-primary py-3 px-5" href="/login">
+              Tap for Guidelines and Tips
+              <i className="fa fa-arrow-right ms-2" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<div className="container-xxl py-5 Forum">
+ <div className="container Forum">
+   <div className="bg-light rounded">
+     <div className="row g-0">
+       <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+         <div className="h-100 d-flex flex-column justify-content-center p-5">
+           <h1 className="mb-4">Collaborative Exchange Hub: Connect Edu-Centers!</h1>
+           <p className="mb-4">
+           Connect with your peers in our Special Organization Forum, a lively space where Experts share insights,
+            support each other's Training journeys, and excel together. Let's learn and grow as a community!
+           </p>
+           <a className="btn btn-primary py-3 px-5" href="">
+               Let's start!
+             <i className="fa fa-arrow-right ms-2" />
+           </a>
+         </div>
+       </div>
+       <div
+         className="col-lg-6 wow fadeIn"
+         data-wow-delay="0.1s"
+         style={{ minHeight: 400 }}
+       >
+         <div className="position-relative h-100">
+           <img
+             className="position-absolute w-100 h-100 rounded"
+             src={ForumImg1}
+             style={{ objectFit: "cover" }}
+           />
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ </div>
+  
+  
+ 
+  {/* Call To Action End */}
+  
+{/*Appointment Start */}
       <div className="container-xxl py-5">
         <div className="container">
           <div className="bg-light rounded">

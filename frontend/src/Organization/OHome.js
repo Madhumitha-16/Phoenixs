@@ -1,27 +1,21 @@
-import { Button, Modal } from 'antd';
 import React, { useState } from 'react';
 import '../Styles/Home.css';
-import logo1 from '../img/logo-SQUARE.png';
 import c1 from '../img/OrganizationBanner.png';
-import teacher from '../img/TeacherImg.jpeg'
-import orgcenter from '../img/educenter.jpg';
-import stugru from '../img/StudentsGrp.jpeg';
+import stugru from '../img/StudentsRecruit.jpg';
 import Footer from '../Components/Footer.js';
-import { BiSolidDonateHeart } from "react-icons/bi";
 import { useSpeechSynthesis } from "react-speech-kit";
 import VoiceControl from '../Components/VoiceControl.js';
 import Testimonial from '../Components/Testimonial.js';
 import OrganizationNavbar from '../Components/OrganizationNavbar.js';
 import ForumImg1 from '../img/ForumImg.jpg'
-import { FaSchool } from "react-icons/fa6";
-import { MdOutlineMenuBook } from "react-icons/md";
 import { MdForum } from "react-icons/md";
 import { IconContext } from "react-icons";
 import { FaGraduationCap } from "react-icons/fa6";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { FaQuestionCircle } from "react-icons/fa";
 import Query from '../Components/Query.js';
-
+import EducatorImg from '../img/TeacherImg.jpeg';
+import DisableFriendly from '../img/DisableFriendly.jpg';
 
 
 function OHome() {
@@ -188,7 +182,7 @@ function OHome() {
                <FaChalkboardTeacher size={60}/>
                  <h5 className="mb-3">Recruit Teacher</h5>
                  <p>
-                 Applications of teacher role , Post Vacancy and embark on a journey of academic growth together
+                 Applications of teacher role , Post Vacancy and embark on a journey of academic growth together.
                  </p>
                </div>
              </div>
@@ -204,7 +198,7 @@ function OHome() {
   
              <h5 className="mb-3">Forum</h5>
              <p>            
-              Online spaces for All Organization to discuss and share information on various topics          </p>
+              Online spaces for All Organization to discuss and share information on various topics.         </p>
               </div>
               </div>
               </a>
@@ -217,7 +211,8 @@ function OHome() {
       
                  <h5 className="mb-3">Clearing Queries </h5>
                  <p>
-                 Connect with our Ministry to ask and resolve your queries efficiently
+                 Connect with Department of Empowerment of Persons with Disabilities
+                  to resolve your queries efficiently.
                  </p>
                </div>
              </div>
@@ -234,137 +229,9 @@ function OHome() {
       {/* Facilities End */}
       <VoiceControl />
 
-      {/* Application Student start*/}
-      <div className="StudentsApplication">
-      <h2 style={{ marginLeft: '10%' }}>Students's Application</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>S.no</th>
-            <th>Name</th>
-            <th>Locality</th>
-            <th>Additonal Details</th>
+      {/* Application Student and teacher  start*/}
 
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Chokkalingam</td>
-            <td>Madurai, TamilNadu</td>
-            <td style={{ textAlign: 'center' }} >
-            <Button type="primary" onClick={showModal}>
-          Document
-        </Button>
-        <Modal title="Student Details" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-          <p>Name: C </p>
-          <p>Degree:</p>
-          <p>Experience:</p>
-        </Modal>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Madhumitha</td>
-            <td>Jaipur, Rajasthan</td>
-            <td style={{ textAlign: 'center' }}>
-              <Button type="primary" onClick={showModal}>
-          Document
-        </Button>
-        <Modal title="Student Details" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>Name: </p>
-        <p>Degree:</p>
-        <p>Experience:</p>
-        </Modal>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Kamali</td>
-            <td>Tiruvallur, TamilNadu</td>
-            <td style={{ textAlign: 'center' }}>
-            <Button type="primary" onClick={showModal}>
-          Document
-        </Button>
-        <Modal title="Student Details" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>Name: </p>
-        <p>Degree:</p>
-        <p>Experience:</p>
-        </Modal>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-      {/* Application Student End */}
-     
-
-      {/* Application Teacher start*/}
-      <div className="TeacherApplication">
-      <h2 style={{ marginLeft: '10%', marginTop:'7%'}}>Teacher's Application</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>S.no</th>
-            <th>Name</th>
-            <th>Locality</th>
-            <th>Resume</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>KamalaVasanthi</td>
-            <td>Chennai, TamilNadu</td>
-            <td style={{ textAlign: 'center' }}>
-            <Button type="primary" onClick={showModal}>
-          Resume
-        </Button>
-        <Modal title="Teacher Details" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-          <p>Name: </p>
-          <p>Degree:</p>
-          <p>Experience:</p>
-        </Modal>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>ManojKumar</td>
-            <td>Ranchi, Jharkhand</td>
-            <td style={{ textAlign: 'center' }}>
-              <Button type="primary" onClick={showModal}>
-                Resume
-              </Button>
-              <Modal title="Teacher Details" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-                <p>Name: </p>
-                <p>Degree:</p>
-                <p>Experience:</p>
-              </Modal>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Rahul</td>
-            <td>Coimbatore, TamilNadu</td>
-            <td style={{ textAlign: 'center' }}>
-            <Button type="primary" onClick={showModal}>
-          Resume
-        </Button>
-        <Modal title="Teacher Details" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>Name: </p>
-        <p>Degree:</p>
-        <p>Experience:</p>
-        </Modal>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-      {/* Application Teacher End */}
-     
-      {/* Call To Action Start */}
-      <div className="container-xxl py-5" style={{ marginTop:'7%' }}>
+      <div className="container-xxl py-5">
       <div className="container">
         <div className="bg-light rounded">
           <div className="row g-0">
@@ -377,6 +244,83 @@ function OHome() {
                 <img
                   className="position-absolute w-100 h-100 rounded"
                   src={stugru}
+                  alt='student'
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </div>
+            <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+              <div className="h-100 d-flex flex-column justify-content-center p-5">
+                <h1 className="mb-4"> Enroll New Students
+                </h1>
+                <p className="mb-4">
+                Unlock Potential and Transform Lives. 
+                Recruit students who are not currently enrolled in mainstream education and provide 
+                them with the opportunity to learn and thrive. Click below to explore a list of willing
+                 students ready to embark on their educational journey.
+                </p>
+                <a className="btn btn-primary py-3 px-5" href="/login">
+                 Show Me the List of Childs
+                  <i className="fa fa-arrow-right ms-2" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <div className="container-xxl py-5 Forum">
+     <div className="container Forum">
+       <div className="bg-light rounded">
+         <div className="row g-0">
+           <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+             <div className="h-100 d-flex flex-column justify-content-center p-5">
+               <h1 className="mb-4">Need of Teachers, Training Support!</h1>
+               <p className="mb-4">
+               Recruit dedicated teachers who are passionate about making a 
+               difference in the lives of specially-abled children and Training them.
+
+               </p>
+               <a className="btn btn-primary py-3 px-5" href="">
+                   Recruit Teachers!
+                 <i className="fa fa-arrow-right ms-2" />
+               </a>
+             </div>
+           </div>
+           <div
+             className="col-lg-6 wow fadeIn"
+             data-wow-delay="0.1s"
+             style={{ minHeight: 400 }}
+           >
+             <div className="position-relative h-100">
+               <img
+                 className="position-absolute w-100 h-100 rounded"
+                 src={EducatorImg}
+                 style={{ objectFit: "cover" }}
+               />
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     </div>
+      
+      {/* Application Teacher and teacher End */}
+     
+      {/* Call To Action Start */}
+      <div className="container-xxl py-5">
+      <div className="container">
+        <div className="bg-light rounded">
+          <div className="row g-0">
+            <div
+              className="col-lg-6 wow fadeIn"
+              data-wow-delay="0.1s"
+              style={{ minHeight: 400 }}
+            >
+              <div className="position-relative h-100">
+                <img
+                  className="position-absolute w-100 h-100 rounded"
+                  src={DisableFriendly}
                   alt='student'
                   style={{ objectFit: "cover" }}
                 />
@@ -414,7 +358,7 @@ function OHome() {
                 support each other's Training journeys, and excel together. Let's learn and grow as a community!
                </p>
                <a className="btn btn-primary py-3 px-5" href="">
-                   Let's start!
+                   Let's get Connected!
                  <i className="fa fa-arrow-right ms-2" />
                </a>
              </div>
