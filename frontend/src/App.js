@@ -24,8 +24,6 @@ import TRegister from './Teacher/TRegister';
 import TestTable from './Student/Assessment/TestTable.js';
 import Domain1 from './Student/Assessment/Domain1.js';
 import Gradesheet from './Student/Assessment/Gradesheet.js';
-
-
 import ORegister from './Organization/ORegister.js';
 import DisplayingSchools from './Student/DisplayingSchools.js';
 import TeacherApplication from './Organization/TeacherApplication.js';
