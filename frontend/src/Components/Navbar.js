@@ -78,7 +78,7 @@ export default function Navbar() {
             <a href="/Teacher-register" className="nav-item nav-link">
               Teacher 
             </a>
-            <a href="to be coded" className="nav-item nav-link">
+            <a href="/organisation-register" className="nav-item nav-link">
               Organization 
             </a>
             
