@@ -11,8 +11,7 @@ export default function ActivityHome() {
       <h2>Container Page</h2>
       <div className="button-container">
         <Link to="/student/gamify" className="orange-button">OddOneOut</Link>
-        {/* <Link to="/page2" className="orange-button">Page 2</Link>
-        <Link to="/page3" className="orange-button">Page 3</Link> */}
+      
       </div>
     </div>
     </div>

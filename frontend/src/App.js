@@ -17,6 +17,9 @@ import DetailsTable from './Student/WebScrapping/DetailsTable';
 import Schools from './Student/Schools';
 import SchemesTable from './Student/WebScrapping/SchemesTable';
 import ActivityHome from './Student/Activity/ActivityHome';
+import DonorPage from './Student/DonorPage';
+import SRegister from './Student/SRegister';
+import TRegister from './Teacher/TRegister';
 
 
 
@@ -120,6 +123,14 @@ function App() {
         <Route 
          path="/Donor-page" 
          element={<DonorPage />} />
+
+         <Route 
+         path="/Student-register" 
+         element={<SRegister />} />
+
+         <Route 
+         path="/Teacher-register" 
+         element={< TRegister/>} />
 
         </Routes>
         
