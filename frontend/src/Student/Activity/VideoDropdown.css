@@ -1,0 +1,73 @@
+/* VideoDropdown.css */
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f4f4f4; /* Orange background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+    border-radius: 8px;
+    margin: 20px auto; /* Center the container */
+    max-width: 600px; /* Adjust the maximum width */
+  }
+  
+  .header {
+    color: #ff8c00; /* Header text color */
+  }
+  
+  .toggle-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff8c00; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none;
+    cursor: pointer;
+  }
+  
+  .video-wrapper {
+    margin-top: 20px;
+  }
+  
+  .question-container {
+    margin-top: 20px;
+  }
+  
+  .options-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  .option {
+    background-color: #ffffff; /* Button background color */
+    color: #ff8c00; /* Button text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  .option:hover {
+    background-color: #ff8c00; /* Hover background color */
+    color: #ffffff; /* Hover text color */
+  }
+  
+  .selected {
+    background-color: #ff8c00; /* Selected background color */
+    color: #ffffff; /* Selected text color */
+  }
+  
+  .congrats-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4caf50; /* Congrats message background color */
+    color: #ffffff; /* Congrats message text color */
+    border-radius: 8px;
+    text-align: center;
+  }
+  .fail {
+    background-color: #ff4c4c; /* Failure message background color */
+  }

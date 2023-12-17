@@ -1,0 +1,25 @@
+.table {
+    display: flex;
+  }
+  
+  .question {
+    flex: 0.4;
+    padding: 20px;
+    margin-left: 150px;
+    position: sticky;
+    width: 30%;
+    top: 0;
+  }
+  
+  .table-scroll {
+    flex: 1;
+
+  }
+  .table-scroll h1{
+    text-align: center;
+
+  }
+  .table-scroll td{
+    padding: 15px;
+  }
+  
