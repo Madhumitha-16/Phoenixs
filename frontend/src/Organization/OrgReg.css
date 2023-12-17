@@ -1,0 +1,17 @@
+.checkbox-options {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .checkbox-option {
+    margin-right: 20px; /* Adjust as needed */
+    margin-bottom: 10px; /* Adjust as needed */
+  }
+  
+  .checkbox-option label {
+    margin-left: 5px; /* Adjust as needed */
+  }
+  
+  .selected-facilities {
+    margin-top: 20px; /* Adjust as needed */
+  }
