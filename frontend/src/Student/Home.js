@@ -18,6 +18,7 @@ import { FaChalkboardTeacher } from "react-icons/fa";
 import { FaQuestionCircle } from "react-icons/fa";
 import StudentNavbar from '../Components/StudentNavbar';
 import Testimonial from '../Components/Testimonial';
+import Query from '../Components/Query';
 
 
 function Home() {
@@ -45,7 +46,7 @@ function Home() {
       
 
           <div className="container-fluid p-0 mb-5">
-            <img src={c1} alt="" style={{  objectFit: "cover", width: "100%", height: "750px" }} />
+            <img src={c1} alt="" style={{  objectFit: "cover", width: "100%", height: "550px" }} />
             <div className="overlay">
             <div
               className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
@@ -110,7 +111,7 @@ function Home() {
                    </div>
                  </div>
                </div>
-               <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+               {/* <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                  <div className="service-item text-center pt-3">
                    <div className="p-4">
                    <MdOutlineMenuBook size={60} />
@@ -120,7 +121,7 @@ function Home() {
                      </p>
                    </div>
                  </div>
-               </div>
+               </div> */}
                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                  <div className="service-item text-center pt-3">
                    <div className="p-4">
@@ -355,68 +356,7 @@ function Home() {
       <Testimonial />
       </div>
       {/* Appointment Start */}
-      <div className="container-xxl py-5">
-        <div className="container">
-          <div className="bg-light rounded">
-            <div className="row g-0">
-              <div className="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                <div className="h-100 d-flex flex-column justify-content-center p-5">
-                  <h1 className="mb-4">Share Your Queries </h1>
-                  <form>
-                    <div className="row g-3">
-                      <div className="col-sm-12">
-                        <div className="form-floating">
-                          <input
-                            type="text"
-                            className="form-control border-0"
-                            id="gname"
-                            placeholder="Gurdian Name"
-                          />
-                          <label htmlFor="gname">Problem </label>
-                        </div>
-                      </div>
-                    
-                      <div className="col-12">
-                        <div className="form-floating">
-                          <textarea
-                            className="form-control border-0"
-                            placeholder="Leave a message here"
-                            id="message"
-                            style={{ height: 100 }}
-                            defaultValue={""}
-                          />
-                          <label htmlFor="message">Description of the problem</label>
-                        </div>
-                      </div>
-                      <div className="col-12">
-                        <button
-                          className="btn btn-primary w-100 py-3"
-                          type="submit"
-                        >
-                          Submit to Resolve!
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div
-                className="col-lg-6 wow fadeIn"
-                data-wow-delay="0.5s"
-                style={{ minHeight: 400 }}
-              >
-                <div className="position-relative h-100">
-                  <img
-                    className="position-absolute w-100 h-100 rounded"
-                    src={donorpic}
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Query />
       {/* Appointment End */}
   
           

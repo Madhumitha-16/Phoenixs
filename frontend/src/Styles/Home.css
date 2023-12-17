@@ -505,3 +505,22 @@ justify-content: center;
     color: white; /* Text color on the overlay */
     z-index: 1; /* Ensure the overlay is on top of the image */
   }
+
+  /*table*/
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
