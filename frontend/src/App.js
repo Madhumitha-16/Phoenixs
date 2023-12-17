@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
-import Register from './Register';
 import Temp from './Home';
 import Home from './Student/Home';
 import PostDetails from './PostDetails';
@@ -114,9 +113,6 @@ function App() {
           }
         />
            
-         <Route 
-         path="/register" 
-         element={<Register />} />
 
          <Route 
          path="/convert-to-braille" 
@@ -158,6 +154,30 @@ function App() {
          <Route 
          path="/domain-test/1" 
          element={<Domain1/>} />
+
+        <Route 
+         path="/organisation-register" 
+         element={<ORegister/>} />
+
+        <Route 
+         path="/display-schools" 
+         element={<DisplayingSchools/>} />
+
+         <Route 
+         path="/Organization/Teacher-Application" 
+         element={<TeacherApplication/>} />
+
+         <Route 
+         path="/Ministry/Organization-Queries" 
+         element={<OrganizationQueries/>} />
+
+         <Route 
+         path="/Ministry/Student-Queries" 
+         element={<StudentQueries/>} />
+
+         <Route 
+         path="/Organization/Student-Application" 
+         element={<StudentApplication/>} />
 
         </Routes>
         
