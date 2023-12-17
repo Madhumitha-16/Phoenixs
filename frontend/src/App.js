@@ -78,11 +78,34 @@ function App() {
             <OHome />
         }
       />
-        
+      <Route
+        path="/Organization/Teacher-Application"
+        element={
+            <TeacherApplication />
+        }
+      />
+      <Route
+      path="/Organization/Student-Application"
+      element={
+          <StudentApplication />
+      }
+    />
         <Route
           path="/Ministry/home"
           element={
               <Mhome />
+          }
+        />
+        <Route
+          path="/Ministry/Organization-Queries"
+          element={
+              <OrganizationQueries />
+          }
+        />
+        <Route
+          path="/Ministry/Student-Queries"
+          element={
+              <StudentQueries />
           }
         />
         <Route
