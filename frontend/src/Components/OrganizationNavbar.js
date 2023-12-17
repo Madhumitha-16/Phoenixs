@@ -55,7 +55,7 @@ export default function OrganizationNavbar() {
             </a>
           </div>
           <a
-            href="www.google.com"
+            href="/#"
             className="btn btn-primary rounded-pill px-3 d-none d-lg-block"
           >
             Logout  
