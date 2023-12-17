@@ -40,44 +40,22 @@ export default function OrganizationNavbar() {
             <a href="/Organization/home" className="nav-item nav-link active">
               Home
             </a>
-            <a href="classes.html" className="nav-item nav-link">
-              Classes
+            <a href="/Organization/Teacher-Application" className="nav-item nav-link">
+              Teacher-Applications
             </a>
-            <div className="nav-item dropdown">
-              <a
-                href="www.google.com"
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                Pages
-              </a>
-              <div className="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                <a href="facility.html" className="dropdown-item">
-                  School Facilities
-                </a>
-                <a href="team.html" className="dropdown-item">
-                  Popular Teachers
-                </a>
-                <a href="call-to-action.html" className="dropdown-item">
-                  Become A Teachers
-                </a>
-                <a href="appointment.html" className="dropdown-item">
-                  Make Appointment
-                </a>
-                <a href="testimonial.html" className="dropdown-item">
-                  Testimonial
-                </a>
-                <a href="404.html" className="dropdown-item">
-                  404 Error
-                </a>
-              </div>
-            </div>
+            <a href="/Organization/Student-Application" className="nav-item nav-link">
+              Student-Applications
+            </a>
+            <a href="need to be routed" className="nav-item nav-link">
+            Forum
+          </a>
+          
             <a href="contact.html" className="nav-item nav-link">
               Contact Us
             </a>
           </div>
           <a
-            href="www.google.com"
+            href="/#"
             className="btn btn-primary rounded-pill px-3 d-none d-lg-block"
           >
             Logout  
