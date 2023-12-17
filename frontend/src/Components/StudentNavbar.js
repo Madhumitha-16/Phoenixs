@@ -52,13 +52,13 @@ export default function StudentNavbar() {
             <a href="/forum" className="nav-item nav-link">
               Forum
             </a>
-            <a href="/activity" className="nav-item nav-link">
+            <a href="/student/AHome" className="nav-item nav-link">
               Activity
             </a>
-            <a href="/donators" className="nav-item nav-link">
+            <a href="/Donor-page" className="nav-item nav-link">
               Donators
             </a>
-            <a href="/schemes-and-scholarships" className="nav-item nav-link">
+            <a href="/Scheme-details" className="nav-item nav-link">
               Schemes & Scholarships
             </a>
           </div>

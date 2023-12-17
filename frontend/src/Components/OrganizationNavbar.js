@@ -37,7 +37,7 @@ export default function OrganizationNavbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav mx-auto">
-            <a href="#" className="nav-item nav-link active">
+            <a href="/Organization/home" className="nav-item nav-link active">
               Home
             </a>
             <a href="classes.html" className="nav-item nav-link">

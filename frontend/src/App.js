@@ -21,6 +21,9 @@ import ActivityHome from './Student/Activity/ActivityHome';
 import DonorPage from './Student/DonorPage';
 import SRegister from './Student/SRegister';
 import TRegister from './Teacher/TRegister';
+import TestTable from './Student/Assessment/TestTable.js';
+import Domain1 from './Student/Assessment/Domain1.js';
+import Gradesheet from './Student/Assessment/Gradesheet.js';
 
 
 
@@ -127,8 +130,6 @@ function App() {
          path="/Scheme-details" 
          element={<SchemesTable />} />
 
-        
-
          <Route 
          path="/Student-register" 
          element={<SRegister />} />
@@ -136,13 +137,26 @@ function App() {
          
          <Route 
          path="/Teacher-register" 
-         element={< TRegister/>} />
+         element={<TRegister/>} />
 
         <Route 
          path="/Donor-page" 
-         element={< DonorPage/>} />
+         element={<DonorPage/>} />
+
+        <Route 
+         path="/TestTable" 
+         element={<TestTable/>} />
+
+        <Route 
+         path="/gradesheet" 
+         element={<Gradesheet />} />
+         
+         <Route 
+         path="/domain-test/1" 
+         element={<Domain1/>} />
 
         </Routes>
+        
         
 
   </BrowserRouter>
