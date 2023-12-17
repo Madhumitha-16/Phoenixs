@@ -50,7 +50,7 @@ function Temp() {
       <Navbar />
 
       <div className="container-fluid p-0 mb-5">
-            <img src={c1} alt="" style={{  objectFit: "fit", width: "100%", height: "750px" }} />
+            <img src={c1} alt="" style={{  objectFit: "fit", width: "100%", height: "550px" }} />
             <div className="overlay">
             <div
               className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
