@@ -20,8 +20,10 @@ import SRegister from './Student/SRegister';
 import TRegister from './Teacher/TRegister';
 import ORegister from './Organization/ORegister.js';
 import DisplayingSchools from './Student/DisplayingSchools.js';
-
-
+import TeacherApplication from './Organization/TeacherApplication.js';
+import StudentQueries from './Ministry/StudentQueries.js';
+import OrganizationQueries from './Ministry/OrganizationQueries.js';
+import StudentApplication from './Organization/StudentApplication.js';
 
 function App() {
  
