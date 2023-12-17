@@ -73,6 +73,12 @@ function Temp() {
                     >
                       Login
                     </a>
+                    <a
+                      href="/register"
+                      className="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight"
+                    >
+                      New? Register Now!
+                    </a>
                   </div>
                 </div>
               </div>
