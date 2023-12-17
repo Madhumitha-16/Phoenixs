@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from 'react';
+import { Modal } from 'antd';
+import '../Styles/Home.css';
+
 export default function StudentApplicationList() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false); }
     return(
         <div>
         <div className="StudentsApplication">
-        <h2 style={{ marginLeft: '10%' }}>Students's Application</h2>
+        <h2 style={{ marginLeft: '10%' , marginTop:'7%'}}>Students's Application</h2>
         <table>
           <thead>
             <tr>
@@ -20,9 +32,9 @@ export default function StudentApplicationList() {
               <td>Chokkalingam</td>
               <td>Madurai, TamilNadu</td>
               <td style={{ textAlign: 'center' }} >
-              <Button type="primary" onClick={showModal}>
+              <button type="primary" onClick={showModal}>
             Document
-          </Button>
+          </button>
           <Modal title="Student Details" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
             <p>Name: C </p>
             <p>Degree:</p>
@@ -35,9 +47,9 @@ export default function StudentApplicationList() {
               <td>Madhumitha</td>
               <td>Jaipur, Rajasthan</td>
               <td style={{ textAlign: 'center' }}>
-                <Button type="primary" onClick={showModal}>
+                <button type="primary" onClick={showModal}>
             Document
-          </Button>
+          </button>
           <Modal title="Student Details" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
           <p>Name: </p>
           <p>Degree:</p>
@@ -50,9 +62,9 @@ export default function StudentApplicationList() {
               <td>Kamali</td>
               <td>Tiruvallur, TamilNadu</td>
               <td style={{ textAlign: 'center' }}>
-              <Button type="primary" onClick={showModal}>
+              <button type="primary" onClick={showModal}>
             Document
-          </Button>
+          </button>
           <Modal title="Student Details" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
           <p>Name: </p>
           <p>Degree:</p>

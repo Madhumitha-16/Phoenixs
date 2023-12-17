@@ -18,20 +18,16 @@ import EducatorImg from '../img/TeacherImg.jpeg';
 import DisableFriendly from '../img/DisableFriendly.jpg';
 
 
+
 function OHome() {
   const { speak } = useSpeechSynthesis()
   const [greet, setGreet] = useState(false);
   const text = 'Some dummy text'
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const showModal = () => {
-    setIsModalOpen(true);
+  const handleClickApplication = () => {
+    const forumContainer = document.querySelector('.container-xxl.py-5.Application');
+    forumContainer.scrollIntoView({ behavior: 'smooth' });
   };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false); }
 
     const handleClickForum = () => {
       const forumContainer = document.querySelector('.container-xxl.py-5.Forum');
@@ -88,7 +84,7 @@ function OHome() {
                     Join us in building diverse and empowered learning environments, where the barriers at every step are reduced! 
                     </p>
                     <a
-                      href="#"
+                      onClick={handleClickApplication}
                       className="btn btn-primary rounded-pill py-sm-2 px-sm-4 me-3 animated slideInLeft"
                     >
                       New Student and Teacher Applications
@@ -231,7 +227,7 @@ function OHome() {
 
       {/* Application Student and teacher  start*/}
 
-      <div className="container-xxl py-5">
+      <div className="container-xxl py-5 Application">
       <div className="container">
         <div className="bg-light rounded">
           <div className="row g-0">
@@ -259,7 +255,7 @@ function OHome() {
                 them with the opportunity to learn and thrive. Click below to explore a list of willing
                  students ready to embark on their educational journey.
                 </p>
-                <a className="btn btn-primary py-3 px-5" href="/login">
+                <a className="btn btn-primary py-3 px-5" href="/Organization/Student-Application">
                  Show Me the List of Childs
                   <i className="fa fa-arrow-right ms-2" />
                 </a>
@@ -269,8 +265,8 @@ function OHome() {
         </div>
       </div>
     </div> 
-    <div className="container-xxl py-5 Forum">
-     <div className="container Forum">
+    <div className="container-xxl py-5">
+     <div className="container">
        <div className="bg-light rounded">
          <div className="row g-0">
            <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
@@ -281,7 +277,7 @@ function OHome() {
                difference in the lives of specially-abled children and Training them.
 
                </p>
-               <a className="btn btn-primary py-3 px-5" href="">
+               <a className="btn btn-primary py-3 px-5" href="/Organization/Teacher-Application">
                    Recruit Teachers!
                  <i className="fa fa-arrow-right ms-2" />
                </a>

@@ -1,6 +1,17 @@
-import react from 'react';
+import React, { useState } from 'react';
+import { Modal } from 'antd';
+import '../Styles/Home.css';
 
 export default function TeacherApplicationList() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false); }
     return(
         <div>
         <div className="TeacherApplication">
@@ -21,9 +32,9 @@ export default function TeacherApplicationList() {
               <td>KamalaVasanthi</td>
               <td>Chennai, TamilNadu</td>
               <td style={{ textAlign: 'center' }}>
-              <Button type="primary" onClick={showModal}>
+              <button type="primary" onClick={showModal}>
             Resume
-          </Button>
+          </button>
           <Modal title="Teacher Details" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
             <p>Name: </p>
             <p>Degree:</p>
@@ -36,9 +47,9 @@ export default function TeacherApplicationList() {
               <td>ManojKumar</td>
               <td>Ranchi, Jharkhand</td>
               <td style={{ textAlign: 'center' }}>
-                <Button type="primary" onClick={showModal}>
+                <button type="primary" onClick={showModal}>
                   Resume
-                </Button>
+                </button>
                 <Modal title="Teacher Details" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                   <p>Name: </p>
                   <p>Degree:</p>
@@ -51,9 +62,9 @@ export default function TeacherApplicationList() {
               <td>Rahul</td>
               <td>Coimbatore, TamilNadu</td>
               <td style={{ textAlign: 'center' }}>
-              <Button type="primary" onClick={showModal}>
+              <button type="primary" onClick={showModal}>
             Resume
-          </Button>
+          </button>
           <Modal title="Teacher Details" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
           <p>Name: </p>
           <p>Degree:</p>

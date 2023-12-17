@@ -21,6 +21,10 @@ import ActivityHome from './Student/Activity/ActivityHome';
 import DonorPage from './Student/DonorPage';
 import SRegister from './Student/SRegister';
 import TRegister from './Teacher/TRegister';
+import TeacherApplication from './Organization/TeacherApplication.js';
+import StudentApplication from './Organization/StudentApplication.js';
+import OrganizationQueries from './Ministry/OrganizationQueries.js';
+import StudentQueries from './Ministry/StudentQueries.js';
 
 
 
@@ -79,11 +83,34 @@ function App() {
             <OHome />
         }
       />
-        
+      <Route
+        path="/Organization/Teacher-Application"
+        element={
+            <TeacherApplication />
+        }
+      />
+      <Route
+      path="/Organization/Student-Application"
+      element={
+          <StudentApplication />
+      }
+    />
         <Route
           path="/Ministry/home"
           element={
               <Mhome />
+          }
+        />
+        <Route
+          path="/Ministry/Organization-Queries"
+          element={
+              <OrganizationQueries />
+          }
+        />
+        <Route
+          path="/Ministry/Student-Queries"
+          element={
+              <StudentQueries />
           }
         />
         <Route
