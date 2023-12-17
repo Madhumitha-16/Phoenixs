@@ -229,7 +229,7 @@ export default function ORegister() {
                 </div>
                 <div className="input-row">
                   <div className="input-group">
-                    <label>Facilities</label>
+                    <label style={{marginRight:"50px"}}>Facilities</label>
                     <br />
                     <div className="checkbox-options">
                       {facilitiesOptions.map((option) => (

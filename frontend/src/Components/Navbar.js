@@ -70,7 +70,7 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav mx-auto">
             <a href="/register" className="nav-item nav-link active" >
-            Register as 
+            Register 
             </a>
             <a href="/Student-register" className="nav-item nav-link">
               Student 
@@ -78,16 +78,16 @@ export default function Navbar() {
             <a href="/Teacher-register" className="nav-item nav-link">
               Teacher 
             </a>
-            <a href="to be coded" className="nav-item nav-link">
+            <a href="/organisation-register" className="nav-item nav-link">
               Organization 
             </a>
             
-            <a href="to be coded " className="nav-item nav-link">
+            {/* <a href="to be coded " className="nav-item nav-link">
               Ministry
             </a>
             <a href="to be coded " className="nav-item nav-link">
               Donor
-            </a>
+            </a> */}
           </div>
           <button className="btn btn-primary rounded-pill px-3 my-2 mx-2 d-none d-lg-block" onClick={Greet}>
             Accessibility Mode

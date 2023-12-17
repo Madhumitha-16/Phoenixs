@@ -1,11 +1,12 @@
 .checkbox-options {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 20px;
   }
   
   .checkbox-option {
     margin-right: 20px; /* Adjust as needed */
-    margin-bottom: 10px; /* Adjust as needed */
+    margin-bottom: 100px; /* Adjust as needed */
   }
   
   .checkbox-option label {

@@ -29,7 +29,7 @@ function VoiceControl() {
 
   useEffect(() => {
     SpeechRecognition.startListening({ continuous: true });
-    speak({ text: `hello` });
+    speak({ text: `Voice Control Activated` });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
