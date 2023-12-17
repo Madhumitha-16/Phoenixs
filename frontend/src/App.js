@@ -133,9 +133,14 @@ function App() {
          path="/Student-register" 
          element={<SRegister />} />
 
+         
          <Route 
          path="/Teacher-register" 
          element={< TRegister/>} />
+
+        <Route 
+         path="/Donor-page" 
+         element={< DonorPage/>} />
 
         </Routes>
         
