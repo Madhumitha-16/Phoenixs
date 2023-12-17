@@ -1,21 +1,8 @@
 import React, { useState } from 'react';
 import '../Styles/Home.css';
-import c1 from '../img/OrganizationBanner.png';
-import stugru from '../img/StudentsRecruit.jpg';
 import Footer from '../Components/Footer.js';
 import { useSpeechSynthesis } from "react-speech-kit";
-import VoiceControl from '../Components/VoiceControl.js';
-import Testimonial from '../Components/Testimonial.js';
 import OrganizationNavbar from '../Components/OrganizationNavbar.js';
-import ForumImg1 from '../img/ForumImg.jpg'
-import { MdForum } from "react-icons/md";
-import { IconContext } from "react-icons";
-import { FaGraduationCap } from "react-icons/fa6";
-import { FaChalkboardTeacher } from "react-icons/fa";
-import { FaQuestionCircle } from "react-icons/fa";
-import Query from '../Components/Query.js';
-import EducatorImg from '../img/TeacherImg.jpeg';
-import DisableFriendly from '../img/DisableFriendly.jpg';
 import StudentApplicationList from '../Components/StudentApplicationList.js';
 
 
@@ -48,8 +35,7 @@ function StudentApplication() {
 
     <body>
       <OrganizationNavbar />
-        
-         <StudentApplicationList />
+      <StudentApplicationList />
       
       {/* footer starts */}
       

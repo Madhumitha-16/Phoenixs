@@ -169,7 +169,6 @@ function App() {
          path="/domain-test/1" 
          element={<Domain1/>} />
 
-        
         <Route 
          path="/organisation-register" 
          element={<ORegister/>} />
@@ -194,9 +193,6 @@ function App() {
          path="/Organization/Student-Application" 
          element={<StudentApplication/>} />
 
-
-        
-        
         </Routes>
         
         

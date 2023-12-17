@@ -9,11 +9,7 @@ import StudentsQueriesList from '../Components/StudentsQueriesList.js';
 function StudentQueries() {
   const { speak } = useSpeechSynthesis()
   const [greet, setGreet] = useState(false);
-  const text = 'Some dummy text'
-
-  
-
-  
+  const text = 'Some dummy text' 
   
   return (
     
