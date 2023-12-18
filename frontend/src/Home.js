@@ -220,6 +220,28 @@ function Temp() {
     </div>
       {/* Facilities End */}
       <VoiceControl />
+      <div className="text-center mx-auto mb-5 wow fadeInUp">
+        <h1 >Toll -Free Help line numbers</h1>
+        <p style={{ fontSize: '22px' }}>
+              <i className="fa fa-phone-alt me-3" />
+              
+              <a href="tel:1800-11-4515">1800-11-4515</a>
+              <br></br>(Loan & Skill Guidance)
+              </p>
+              <p style={{ fontSize: '22px' }}>
+                <i className="fa fa-phone-alt me-3" />
+                
+                <a href="tel:1800-180-5129">1800-180-5129</a>
+                <br></br>( Aids and assistive devices )
+              </p>
+              <p style={{ fontSize: '22px' }}>
+                <i className="fa fa-phone-alt me-3" />
+                
+                <a href="tel:1800-572-6422">1800-572-6422</a>
+                <br></br>(National Institute Helpline)<br></br>(Mental Health, Special Education, Occupational
+                therapy,Counseling,Speech and Physiotherapy)
+              </p>
+      </div>
       {/* About Start */}
       <div className="container-xxl py-5">
         <div className="container">
