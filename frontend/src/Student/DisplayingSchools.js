@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { collection, getDocs, query, where,addDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
 import { Modal, Button, Form, Input } from 'antd';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'; // Import speech recognition
+
 
 const DisplayingSchools = () => {
+  const { transcript, resetTranscript } = useSpeechRecognition();
   const [orgDetails, setOrgDetails] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [form] = Form.useForm();
@@ -38,11 +41,17 @@ const DisplayingSchools = () => {
 
   const handleApplyClick = (orgName) => {
     setModalVisible(true);
+    SpeechRecognition.startListening();
+    
   };
+
+  
 
   const handleModalCancel = () => {
     setModalVisible(false);
     form.resetFields();
+    SpeechRecognition.stopListening(); // Stop speech recognition when modal closes
+    resetTranscript();
   };
 
   const handleFormSubmit = async (values) => {
@@ -146,7 +155,7 @@ const DisplayingSchools = () => {
               >
                 <Input />
               </Form.Item>
-              <Form.Item
+              {/* <Form.Item
                 label="Email Id"
                 name="emailId"
                 rules={[
@@ -155,7 +164,7 @@ const DisplayingSchools = () => {
                 ]}
               >
                 <Input />
-              </Form.Item>
+              </Form.Item> */}
               <Form.Item
                 label="Address"
                 name="address"
@@ -179,7 +188,7 @@ const DisplayingSchools = () => {
               >
                 <Input />
               </Form.Item>
-              <Form.Item
+              {/* <Form.Item
                 label="Aadhar Card Number"
                 name="aadharCardNumber"
                 rules={[
@@ -190,7 +199,7 @@ const DisplayingSchools = () => {
                 ]}
               >
                 <Input />
-              </Form.Item>
+              </Form.Item> */}
               <Form.Item
                 name="organizationName"
                 initialValue={orgDetails[0]?.OrganisationName || ''}
@@ -198,6 +207,9 @@ const DisplayingSchools = () => {
               >
                 <Input />
               </Form.Item>
+              <Form.Item name="voiceInput" style={{ display: 'none' }}>
+            <Input value={transcript} />
+          </Form.Item>
             </Form>
           </Modal>
         </div>

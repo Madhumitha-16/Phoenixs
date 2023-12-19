@@ -21,7 +21,6 @@ function VoiceForm() {
 
   const handleVoiceInput = () => {
     if (transcript) {
-      const emailRegex = /^set email ([^\s@]+@[^\s@]+\.[^\s@]+)$/i;
   
       const commands = [
         {
@@ -31,10 +30,6 @@ function VoiceForm() {
         {
           command: "set last name *",
           callback: (name) => setFormData({ ...formData, lastName: name }),
-        },
-        {
-          command: "set email *",
-          callback: (email) => setFormData({ ...formData, email }),
         },
         {
           command: "set message *",
