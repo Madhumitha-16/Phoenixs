@@ -27,6 +27,7 @@ import StudentApplication from './Organization/StudentApplication.js';
 import StudentQueries from './Ministry/StudentQueries.js';
 import OrganizationQueries from './Ministry/OrganizationQueries.js';
 import TeacherApplication from './Organization/TeacherApplication.js';
+import VideoChat from './VideoChat/VideoChat.jsx'
 
 
 function App() {
@@ -200,6 +201,11 @@ function App() {
           path="/ApplyToEducation"
           element={<DisplayingSchools/>}/>
            
+
+<Route 
+         path="/videoChat" 
+         element={<VideoChat/>} />
+
         </Routes>
         
         
