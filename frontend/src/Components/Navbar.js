@@ -28,7 +28,7 @@ export default function Navbar() {
 
   const Greet = () => {
     speak({
-      text: "Welcome to the Voice controllable website. Please chekout the commands!. These commands will help you to controll website with voice!. Click on the Next button to start!.",
+      text: "Welcome to the Phoeniks. Please checkout the commands!. Say Go to and the page you want to navigate to move between pages and go back to move to previous page. These commands will help you to control website with voice!. Now you are set to use the website!.",
     });
   };
   return (
