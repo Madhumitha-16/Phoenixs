@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { collection, getDocs, query, where,addDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
 import { Modal, Button, Form, Input } from 'antd';
+import StudentNavbar from '../Components/StudentNavbar';
+import Footer from '../Components/Footer';
 
 const DisplayingSchools = () => {
   const [orgDetails, setOrgDetails] = useState([]);
@@ -70,7 +72,8 @@ const DisplayingSchools = () => {
 
   return (
         <div>
-          <h2>Organization Details</h2>
+          <StudentNavbar />
+          <h2 style={{ marginLeft: '10%' , marginTop:'3%'}}>Organization Details</h2>
           <table>
             <thead>
               <tr>
@@ -194,12 +197,15 @@ const DisplayingSchools = () => {
               <Form.Item
                 name="organizationName"
                 initialValue={orgDetails[0]?.OrganisationName || ''}
-                hidden
-              >
+                hidden>
+              
                 <Input />
-              </Form.Item>
-            </Form>
+             
+                </Form.Item>
+              </Form>
+                
           </Modal>
+          <Footer />
         </div>
       );
     };

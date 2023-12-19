@@ -45,10 +45,10 @@ function Login() {
                   break;
     
                 case 'Org':
-                  navigate('/student/home');
+                  navigate('/Organization/home');
                   break;
                 case 'Minis':
-                  navigate('/ministry/home');
+                  navigate('/Ministry/home');
                   break;
                 default:
                   // Handle default case or error

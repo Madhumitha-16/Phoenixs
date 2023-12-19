@@ -22,6 +22,10 @@ import Query from '../Components/Query';
 
 
 function Home() {
+  const handleClickForum = () => {
+    const forumContainer = document.querySelector('.container-xxl.py-5.Forum');
+    forumContainer.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <>
     {/* Google Web Fonts */}
@@ -152,6 +156,7 @@ function Home() {
          <div className="container">
            <div className="row g-4">
              <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+             <a onClick={handleClickForum}>
                <div className="service-item text-center pt-3">
                  <div className="p-4">
                  <IconContext.Provider value={{ className: "top-react-icons" }}>
@@ -164,6 +169,7 @@ function Home() {
         Forums are online spaces where people discuss and share information on various topics          </p>
                  </div>
                </div>
+               </a>
              </div>
              <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                <div className="service-item text-center pt-3">
@@ -236,7 +242,7 @@ function Home() {
                 Enroll yourself in schools and colleges through our inclusive education platform,
                 where education aligns with your unique needs.
                </p>
-               <a className="btn btn-primary py-3 px-5" href="">
+               <a className="btn btn-primary py-3 px-5" href="/ApplyToEducation">
                Unlock Opportunities! Enroll here!
                  <i className="fa fa-arrow-right ms-2" />
                </a>
@@ -259,7 +265,7 @@ function Home() {
                <p className="mb-4">
                Dive in to explore exclusive schemes and scholarships designed for exceptional individuals—check out the possibilities waiting for you!
                </p>
-               <a className="btn btn-primary py-3 px-5" href="">
+               <a className="btn btn-primary py-3 px-5" href="/Student/Schemes-and-scholoship">
                Discover now!!
                  <i className="fa fa-arrow-right ms-2" />
                </a>
@@ -318,7 +324,7 @@ function Home() {
          </div>
        </div>
      </div>
-     <div className="container-xxl py-5">
+     <div className="container-xxl py-5 Forum">
      <div className="container">
        <div className="bg-light rounded">
          <div className="row g-0">
@@ -329,8 +335,8 @@ function Home() {
                Connect with your peers in our Special Student Forum, a lively space where students share insights,
                 support each other's educational journeys, and excel together. Let's learn and grow as a community!
                </p>
-               <a className="btn btn-primary py-3 px-5" href="">
-                   Let's start!
+               <a className="btn btn-primary py-3 px-5" href="/forum">
+                   Let's Engage with others!
                  <i className="fa fa-arrow-right ms-2" />
                </a>
              </div>

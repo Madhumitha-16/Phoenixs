@@ -54,6 +54,10 @@ function App() {
           }
         />
         <Route
+         path="/Student/Schemes-and-scholoship"
+         element={<SchemesTable/>} />
+
+        <Route
           path="/student/AHome"
           element={
               <ActivityHome/>
@@ -192,7 +196,10 @@ function App() {
          <Route 
          path="/Organization/Student-Application" 
          element={<StudentApplication/>} />
-
+         <Route
+          path="/ApplyToEducation"
+          element={<DisplayingSchools/>}/>
+           
         </Routes>
         
         

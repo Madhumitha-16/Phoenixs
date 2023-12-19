@@ -56,7 +56,7 @@ export default function StudentNavbar() {
               Activity
             </a>
             <a href="/Donor-page" className="nav-item nav-link">
-              Donators
+            Voice Your Needs
             </a>
             <a href="/Scheme-details" className="nav-item nav-link">
               Schemes & Scholarships
