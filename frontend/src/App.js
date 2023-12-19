@@ -30,6 +30,7 @@ import TeacherApplication from './Organization/TeacherApplication.js';
 import VideoChat from './VideoChat/VideoChat.jsx'
 
 
+
 function App() {
  
   return (
@@ -91,12 +92,7 @@ function App() {
             <TeacherApplication />
         }
       />
-      <Route
-      path="/Organization/Student-Application"
-      element={
-          <StudentApplication />
-      }
-    />
+      
         <Route
           path="/Ministry/home"
           element={
@@ -194,13 +190,14 @@ function App() {
          path="/Organization/Student-Application" 
          element={<StudentApplication/>} />
 
-<Route 
+        <Route 
          path="/videoChat" 
          element={<VideoChat/>} />
 
+
         </Routes>
         
-        
+      
 
   </BrowserRouter>
      
