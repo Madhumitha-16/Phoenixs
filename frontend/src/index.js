@@ -6,6 +6,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 
 i18n
   .use(initReactI18next) 
@@ -163,8 +165,25 @@ Enroll:'अपने शिक्षा केंद्र में नाम�
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <>
+  <ToastContainer
+      toastClassName={() =>
+        "relative flex py-4 px-3 rounded overflow-hidden cursor-pointer bg-white shadow-lg"
+      }
+      bodyClassName={() => "text-black text-base font-normal"}
+      position="bottom-left"
+      autoClose={4000}
+      hideProgressBar={true}
+      newestOnTop={false}
+      closeButton={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+    />
     <App />
-  </React.StrictMode>
+    </>
 );
-reportWebVitals();
+
