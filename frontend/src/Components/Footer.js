@@ -13,21 +13,28 @@ export default function Footer() {
         <div className="container py-5">
           <div className="row g-5">
             <div className="col-lg-3 col-md-6">
-              <h3 className="text-white mb-4">Get In Touch</h3>
+              <h3 className="text-white mb-4">Toll -Free <br></br>Help line numbers</h3>
               <p className="mb-2">
-                <i className="fa fa-map-marker-alt me-3" />
-                Ministry of Jharkhand
+              <i className="fa fa-phone-alt me-3" />
+              <a href="tel:1800-11-4515">1800-11-4515</a>
+              </p>
+              <p className="mb-2">
+                <i className="fa fa-phone-alt me-3" />
+                <a href="tel:1800-180-5129">1800-180-5129</a>
+                 <br></br>( Aids and assistive devices )              
               </p>
               <p className="mb-2">
                 <i className="fa fa-phone-alt me-3" />
                 
-                +91 98947*****
+                <a href="tel:1800-572-6422">1800-572-6422</a>
+                <br></br>( National Institute of
+                  Empowerment of persons )           
               </p>
               <p className="mb-2">
                 <i className="fa fa-envelope me-3" />
-                Phoenixs.EduForAll@gmail
+         
               </p>
-              <div className="d-flex pt-2">
+             {/*<div className="d-flex pt-2">
                 <a className="btn btn-outline-light btn-social" href="">
                   <i className="fab fa-twitter" />
                 </a>
@@ -40,8 +47,8 @@ export default function Footer() {
                 <a className="btn btn-outline-light btn-social" href="">
                   <i className="fab fa-linkedin-in" />
                 </a>
-              </div>
-            </div>
+              </div>*/}
+                </div>
             <div className="col-lg-3 col-md-6">
               <h3 className="text-white mb-4">Quick Links</h3>
               <a className="btn btn-link text-white-50" href="">
