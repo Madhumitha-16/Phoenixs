@@ -84,7 +84,9 @@ export default function SRegister()
           Lastname: lastName,
           Email: email,
           Role: selectedOption,
-          UDID: UDID
+          UDID: UDID,
+          ContactNo:Phnum,
+          
           
         };
 
