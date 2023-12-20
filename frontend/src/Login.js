@@ -8,15 +8,53 @@ import toast, { Toaster } from 'react-hot-toast';
 import { doc, getDoc } from "firebase/firestore";
 import Navbar from "./Components/Navbar";
 import VoiceControl from "./Components/VoiceControl";
+import { signInWithPhoneNumber } from "firebase/auth";
+import { RecaptchaVerifier } from 'firebase/auth';
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [userId, setUserId] = useState("");
   const navigate = useNavigate();
+  const [number,setNumber] = useState()
+  const [code,setCode] = useState()
 
   const notify = () => toast.success('Login successful');
   const err = () => toast.error('User not found!');
+  const signIn = ()=>{
+    onCaptchVerify();
+    const appVerifier = window.recaptchaVerifier;
+    const phnum = "+91" + number
+    console.log(appVerifier)
+    signInWithPhoneNumber(auth, phnum, appVerifier)
+        .then((confirmationResult) => {
+          // SMS sent. Prompt user to type the code from the message, then sign the
+          // user in with confirmationResult.confirm(code).
+          window.confirmationResult = confirmationResult;
+          // ...
+        }).catch((error) => {
+          // Error; SMS not sent
+          console.log(error)
+          console.log("SMS not sent")
+          // ...
+ });
+}
+
+const login = ()=>{
+
+  console.log(code);
+window.confirmationResult.confirm(code).then((result) => {
+// User signed in successfully.
+const user = result.user;
+console.log(user)
+// ...
+}).catch((error) => {
+// User couldn't sign in (bad verification code?)
+console.log("Wrong code")
+ // ...
+});
+}
+  
 
   const loginfunc = (e) => {
     e.preventDefault();
@@ -68,7 +106,25 @@ function Login() {
         err();
       });
   };
-  
+  function onCaptchVerify(){
+    if(!window.recaptchaVerifier){
+    console.log("Clicked")
+  window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+    'size': 'invisible',
+    callback: (response) => {
+      // reCAPTCHA solved, allow signInWithPhoneNumber.
+      console.log("Entered here")
+     signIn()
+      // ...
+    },
+    'expired-callback': () => {
+      // Response expired. Ask user to solve reCAPTCHA again.
+      console.log("WHATS THE ERROR")
+      // ...
+ }
+});
+}
+}
        
   return (
     <>
@@ -92,39 +148,45 @@ function Login() {
               <VoiceControl />
                 <h1>Log in</h1>
                 <div className="input-group">
+                <label
+                    // className={`${number.length > 0 ? "focusLabel" : ""}`}
+                  >
+                    Phone No.<span className="asterisk"> * </span>
+                  </label>
                   <input
-                    type="email"
+                    type="number"
                     className="input"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    value={number}
+                    onChange={(e) => setNumber(e.target.value)}
                     required
                   />
-                  <label
-                    className={`${username.length > 0 ? "focusLabel" : ""}`}
-                  >
-                    Email ID<span className="asterisk"> * </span>
-                  </label>
+                  
                 </div>
                   <div className="input-group">
+                  <label
+                      // className={`${code.length > 0 ? "focusLabel" : ""}`}
+                    >
+                      OTP<span className="asterisk"> * </span>
+                    </label>
                     <input
-                      type="password"
+                      type="number"
                       className="input password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      value={code}
+                      onChange={(e) => setCode(e.target.value)}
                       required
                     />
-                    <label
-                      className={`${password.length > 0 ? "focusLabel" : ""}`}
-                    >
-                      Password<span className="asterisk"> * </span>
-                    </label>
+                   
                   </div>
-                  <input type="submit" value="Login" className="btn btn-primary rounded-pill w-25 py-2"/>
+                  <button className="btn btn-dark rounded-pill py-sm-3 px-sm-4 animated slideInRight" style={{marginRight:"20px"}} onClick={signIn}>Send OTP</button>
+                  <button className="btn btn-primary rounded-pill py-sm-3 px-sm-4 animated slideInRight" onClick={login}>Login</button>
+                  {/* <input type="submit" value="Login" className="btn btn-primary rounded-pill w-25 py-2"/> */}
+               
                <br></br>
                 <p>Haven't registered yet ? 
                 <Link to="/register">
                 Register here!
                 </Link></p>
+                <div id='recaptcha-container'></div>
               </div>
             </div>
           </form>
