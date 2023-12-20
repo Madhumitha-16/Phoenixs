@@ -31,6 +31,7 @@ import VideoChat from './VideoChat/VideoChat.jsx'
 import ArQr from './Student/Activity/ArQr.js';
 import TamilVoice from './TamilVoice.js';
 import EnglishSpeechRecognition from './EnglishVoice.js';
+import ScreenReader from './Student/ScreenReader.js';
 
 
 
@@ -215,6 +216,10 @@ function App() {
         <Route 
          path="/eng" 
          element={<EnglishSpeechRecognition />} />
+
+<Route 
+         path="/screenreader" 
+         element={<ScreenReader />} />
          
          
 

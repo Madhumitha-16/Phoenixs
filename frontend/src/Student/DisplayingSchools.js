@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { collection, getDocs, query, where, addDoc } from 'firebase/firestore';
-import { db, auth } from '../firebaseConfig'; 
+import { collection, getDocs, query, where, addDoc, doc, getDoc } from 'firebase/firestore';
+import { db, auth } from '../firebaseConfig';
 import { Modal, Button, Form, Input } from 'antd';
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'; 
-import VoiceForm from '../Form';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import StudentNavbar from '../Components/StudentNavbar';
-
 
 const DisplayingSchools = () => {
   const { transcript, resetTranscript } = useSpeechRecognition();
 
   const [formData, setFormData] = useState({
-    name: "",
-    address:"",
-    udid:"",
-    disabilityType:"",
-    contactNo:""    
+    firstName: "",
+    lastName: "",
+    address: "",
+    udid: "",
+    disabilityType: "",
+    contactNo: ""
   });
   const [orgDetails, setOrgDetails] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
@@ -49,27 +48,63 @@ const DisplayingSchools = () => {
     fetchOrgDetails();
   }, []);
 
-  const handleApplyClick = (orgName) => {
-    setModalVisible(true);    
+  const speak = (text) => {
+    const speech = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(speech);
+  };
+
+  const handleApplyClick = async (orgName) => {
+    setModalVisible(true);
+
+    // Fetch user details and prefill the form
+    try {
+      const currentUser = auth.currentUser;
+      const currentUserID = currentUser ? currentUser.uid : '123';
+
+      const userDocRef = doc(db, 'Users', currentUserID);
+      const userDocSnapshot = await getDoc(userDocRef);
+
+      if (userDocSnapshot.exists()) {
+        const userData = userDocSnapshot.data();
+        setFormData({
+          firstName: userData.Firstname || '',
+          lastName: userData.Lastname || '',
+          address: userData.Address || '',
+          udid: userData.UDID || '',
+          disabilityType: '', // Set this to the appropriate user data field
+          contactNo: userData.ContactNo || '',
+
+        });
+
+        form.setFieldsValue({
+          firstName: userData.Firstname || '',
+          lastName: userData.Lastname || '',
+          address: userData.Address || '',
+          udid: userData.UDID || '',
+          disabilityType: '', // Set this to the appropriate user data field
+          contactNo: userData.ContactNo || '',
+        });
+
+        speak('Application form opened. Please provide the required details.');
+      }
+    } catch (error) {
+      console.error('Error fetching user details:', error);
+    }
   };
 
   const handleModalCancel = () => {
     setModalVisible(false);
     form.resetFields();
-    SpeechRecognition.stopListening(); 
+    SpeechRecognition.stopListening();
     resetTranscript();
+    speak('Application form closed.');
   };
-
-  useEffect(() => {
-    SpeechRecognition.startListening({ continuous: true });
-  }, []);
 
   const handleFormSubmit = async (values) => {
     try {
-     
       const currentUser = auth.currentUser;
-      const currentUserID = currentUser ? currentUser.uid : '123'; 
-console.log(values);
+      const currentUserID = currentUser ? currentUser.uid : '123';
+
       const studentAppCollection = collection(db, 'StudentApplication');
       await addDoc(studentAppCollection, {
         UserID: currentUserID,
@@ -83,17 +118,79 @@ console.log(values);
 
       setModalVisible(false);
       form.resetFields();
-      // speak({
-      //   text: "submitted",
-      // });
-      console.log('Form submitted successfully!');
+      speak('Application form submitted successfully.');
     } catch (error) {
       console.error('Error submitting form:', error);
     }
   };
 
+  const handleVoiceInput = () => {
+    if (transcript) {
+      const commands = [
+        {
+          command: "set first name *",
+          callback: (name) => {
+            setFormData({ ...formData, firstName: name });
+            speak(`First name set to ${name}`);
+          },
+        },
+        {
+          command: "set last name *",
+          callback: (name) => {
+            setFormData({ ...formData, lastName: name });
+            speak(`Last name set to ${name}`);
+          },
+        },
+        {
+          command: "set u d i d number *",
+          callback: (udid) => {
+            setFormData({ ...formData, udid });
+            speak(`UDID number set to ${udid}`);
+          },
+        },
+        {
+          command: "set address *",
+          callback: (address) => {
+            setFormData({ ...formData, address });
+            speak(`Address set to ${address}`);
+          },
+        },
+        {
+          command: "set disability type *",
+          callback: (disabilityType) => {
+            setFormData({ ...formData, disabilityType });
+            speak(`Disability type set to ${disabilityType}`);
+          },
+        },
+        {
+          command: "set contact number *",
+          callback: (contactNo) => {
+            setFormData({ ...formData, contactNo });
+            speak(`Contact number set to ${contactNo}`);
+          },
+        },
+        {
+          command: "submit form",
+          callback: () => handleFormSubmit(formData),
+        },
+      ];
+
+      commands.forEach(({ command, callback }) => {
+        const regex = new RegExp(`^${command.replace(/\*/g, "(.+)")}$`, "i");
+        const match = transcript.toLowerCase().match(regex);
+        if (match) {
+          callback(match[1]);
+          resetTranscript();
+        } else {
+          speak(`Sorry, please try again`);
+          resetTranscript();
+        }
+      });
+    }
+  };
+
   useEffect(() => {
-    const delay = 1500; 
+    const delay = 1500;
     const timeoutId = setTimeout(() => {
       handleVoiceInput();
     }, delay);
@@ -101,73 +198,13 @@ console.log(values);
     return () => {
       clearTimeout(timeoutId);
     };
-  },[transcript]);
-
-  const speak = (text) => {
-    const speech = new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(speech);
-  };
-
-  const handleVoiceInput = () => {
-    if (transcript) {
-  
-      const commands = [
-        {
-          command: "set first name *",
-          
-          callback: (name) => setFormData({ ...formData, firstName: name }) ,
-        },
-        {
-          command: "set last name *",
-          callback: (name) => setFormData({ ...formData, lastName: name }),
-        },
-        {
-          command: "set u d i d number *",
-          callback: (udid) => setFormData({ ...formData, udid }),
-        },
-        {
-          command: "set address *",
-          callback: (address) => setFormData({ ...formData, address }),
-        },
-        {
-          command: "set disability type *",
-          callback: (disabilityType) => setFormData({ ...formData, disabilityType }),
-        },
-        {
-          command: "set message *",
-          callback: (message) => setFormData({ ...formData, message }),
-        },
-        {
-          command: "set contact number *",
-          callback: (contactNo) => setFormData({ ...formData, contactNo }),
-        },
-        {
-          command: "submit form",
-          callback: ()=>handleFormSubmit(formData)
-        },
-      ];
-  
-      commands.forEach(({ command, callback }) => {
-        const regex = new RegExp(`^${command.replace(/\*/g, "(.+)")}$`, "i");
-        console.log("regex",regex)
-        const match = transcript.toLowerCase().match(regex);
-        if (match) {
-          callback(match[1]);
-          resetTranscript();
-        }else{
-          // speak({ text: `Sorry, please try again` });
-          resetTranscript();
-        }
-      });
-    }
-  };
-
+  }, [transcript]);
 
   return (
     <div>
-    <StudentNavbar />
-    <hr></hr>
-      <h2 style={{marginLeft:"180px",marginBottom:"20px",marginTop:"50px"}}>List of Schools</h2>
+      <StudentNavbar />
+      <hr></hr>
+      <h2 style={{ marginLeft: "180px", marginBottom: "20px", marginTop: "50px" }}>List of Schools</h2>
       <table>
         <thead>
           <tr>
@@ -223,61 +260,61 @@ console.log(values);
           </Button>,
         ]}
       >
-        <form onSubmit={handleFormSubmit}>
-        <label className="input-group">
-          First Name:
-          <input
-            type="text"
-            value={formData.firstName}
-            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-          />
-        </label>
-        <br />
-        <label className="input-group">
-          Last Name:
-          <input
-            type="text"
-            value={formData.lastName}
-            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-          />
-        </label>
-        <br />
-        <label className="input-group">
-          Address:
-          <input
-          type="text"
-            value={formData.address}
-            onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-          />
-        </label>
-        <br />
-        <label className="input-group">
-          UDID No.:
-          <input
-          type="text"
-            value={formData.udid}
-            onChange={(e) => setFormData({ ...formData, udid: e.target.value })}
-          />
-        </label>
-        <label className="input-group">
-          Disability Type:
-          <input
-          type="text"
-            value={formData.disabilityType}
-            onChange={(e) => setFormData({ ...formData, disabilityType: e.target.value })}
-          />
-        </label>
-        <label className="input-group">
-          Contact No.:
-          <input
-          type="text"
-            value={formData.contactNo}
-            onChange={(e) => setFormData({ ...formData, contactNo: e.target.value })}
-          />
-        </label>
-        <br />
-      </form> 
-      <p>Transcript: {transcript}</p>
+        <Form form={form} onFinish={handleFormSubmit}>
+          <label className="input-group">
+            First Name:
+            <input
+              type="text"
+              value={formData.firstName}
+              onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+            />
+          </label>
+          <br />
+          <label className="input-group">
+            Last Name:
+            <input
+              type="text"
+              value={formData.lastName}
+              onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+            />
+          </label>
+          <br />
+          <label className="input-group">
+            Address:
+            <input
+              type="text"
+              value={formData.address}
+              onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+            />
+          </label>
+          <br />
+          <label className="input-group">
+            UDID No.:
+            <input
+              type="text"
+              value={formData.udid}
+              onChange={(e) => setFormData({ ...formData, udid: e.target.value })}
+            />
+          </label>
+          <label className="input-group">
+            Disability Type:
+            <input
+              type="text"
+              value={formData.disabilityType}
+              onChange={(e) => setFormData({ ...formData, disabilityType: e.target.value })}
+            />
+          </label>
+          <label className="input-group">
+            Contact No.:
+            <input
+              type="text"
+              value={formData.contactNo}
+              onChange={(e) => setFormData({ ...formData, contactNo: e.target.value })}
+            />
+          </label>
+          <br />
+        </Form>
+        <p>Transcript: {transcript}</p>
       </Modal>
     </div>
   );
