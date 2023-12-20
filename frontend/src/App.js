@@ -32,6 +32,7 @@ import TamilVoice from './TamilVoice.js';
 import EnglishSpeechRecognition from './EnglishVoice.js';
 
 
+
 function App() {
  
   return (
@@ -93,12 +94,7 @@ function App() {
             <TeacherApplication />
         }
       />
-      <Route
-      path="/Organization/Student-Application"
-      element={
-          <StudentApplication />
-      }
-    />
+      
         <Route
           path="/Ministry/home"
           element={
@@ -212,7 +208,7 @@ function App() {
 
         </Routes>
         
-        
+      
 
   </BrowserRouter>
      

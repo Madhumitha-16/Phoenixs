@@ -183,7 +183,7 @@ console.log("Wrong code")
                
                <br></br>
                 <p>Haven't registered yet ? 
-                <Link to="/register">
+                <Link to="Teacher-register">
                 Register here!
                 </Link></p>
                 <div id='recaptcha-container'></div>
