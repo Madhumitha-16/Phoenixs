@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebaseConfig';
 import StudentNavbar from '../../Components/StudentNavbar';
-import '../../Styles/Home.css';
+import '../../Styles/application.css';
 import Footer from '../../Components/Footer';
 
 export default function SchemesTable() {
