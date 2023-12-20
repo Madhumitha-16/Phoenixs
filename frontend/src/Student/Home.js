@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/Home.css';
-import c1 from '../img/StudentHeaderImg.jpeg';
+import c1 from '../img/StuHeader.jpeg';
 import scholor from '../img/ScholorImg.jpg'
 import ForumImg1 from '../img/ForumImg.jpg'
 import donorpic from '../img/disablePic1.png';
@@ -23,6 +23,26 @@ import VoiceControl from '../Components/VoiceControl';
 
 
 function Home() {
+  const handleClickForum = () => {
+    const forumContainer = document.querySelector('.container-xxl.py-5.Forum');
+    forumContainer.scrollIntoView({ behavior: 'smooth' });
+  };
+  const handleClickScheme = () => {
+    const forumContainer = document.querySelector('.container-xxl.py-5.ss');
+    forumContainer.scrollIntoView({ behavior: 'smooth' });
+  };
+  const handleClickSchool = () => {
+    const forumContainer = document.querySelector('.container-xxl.py-5.school');
+    forumContainer.scrollIntoView({ behavior: 'smooth' });
+  };
+  const handleClickTeacher = () => {
+    const forumContainer = document.querySelector('.container-xxl.py-5.Teacher');
+    forumContainer.scrollIntoView({ behavior: 'smooth' });
+  };
+  const handleClickQuery = () => {
+    const forumContainer = document.querySelector('.container-xxl.py-5.query');
+    forumContainer.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <>
     {/* Google Web Fonts */}
@@ -102,6 +122,7 @@ function Home() {
            <div className="container">
              <div className="row g-4">
                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+               <a onClick={handleClickSchool}>
                  <div className="service-item text-center pt-3">
                    <div className="p-4">
                    <FaSchool size={60}/>
@@ -111,19 +132,25 @@ function Home() {
                      </p>
                    </div>
                  </div>
+                 </a>
                </div>
-               {/* <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                 <div className="service-item text-center pt-3">
-                   <div className="p-4">
-                   <MdOutlineMenuBook size={60} />
-                     <h5 className="mb-3">Course</h5>
-                     <p>
-                     Take up free courses and gain valuable new skills or enhance your skills today
-                     </p>
-                   </div>
+               <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+               <a onClick={handleClickScheme}>
+               <div className="service-item text-center pt-3">
+                 <div className="p-4">
+                 <FaGraduationCap size={60} />
+                   <h5 className="mb-3">Schemes and Scholarship</h5>
+                   <p>
+                    Getting It in Digitalized and Friendly Way
+       
+                   </p>
                  </div>
-               </div> */}
+               </div>
+               </a>
+             </div>
+              
                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+              <a onClick={() => { window.location.href = "/student/AHome"; }}>
                  <div className="service-item text-center pt-3">
                    <div className="p-4">
                    <MdSportsEsports size={60} />
@@ -134,6 +161,7 @@ function Home() {
                      </p>
                    </div>
                  </div>
+                 </a>
                </div>
                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                  <div className="service-item text-center pt-3">
@@ -153,6 +181,7 @@ function Home() {
          <div className="container">
            <div className="row g-4">
              <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+             <a onClick={handleClickForum}>
                <div className="service-item text-center pt-3">
                  <div className="p-4">
                  <IconContext.Provider value={{ className: "top-react-icons" }}>
@@ -165,20 +194,23 @@ function Home() {
         Forums are online spaces where people discuss and share information on various topics          </p>
                  </div>
                </div>
+               </a>
              </div>
              <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-               <div className="service-item text-center pt-3">
-                 <div className="p-4">
-                 <FaGraduationCap size={60} />
-                   <h5 className="mb-3">Schemes and Scholarship</h5>
-                   <p>
-                   
-        Schemes and scholarships empower academic potential by overcoming financial barriers.
-                   </p>
-                 </div>
+             <a onClick={() => { window.location.href = "/Student/Ar"; }}>
+             <div className="service-item text-center pt-3">
+               <div className="p-4">
+               <MdOutlineMenuBook size={60} />
+                 <h5 className="mb-3">Augmented Reality</h5>
+                 <p>
+                 Bring everything to the Place where you are and learn with fun !
+                 </p>
                </div>
              </div>
+             </a>
+           </div> 
              <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+             <a onClick={handleClickTeacher}>
                <div className="service-item text-center pt-3">
                  <div className="p-4">
                  <FaChalkboardTeacher size={60}/>
@@ -188,8 +220,10 @@ function Home() {
                    </p>
                  </div>
                </div>
+               </a>
              </div>
              <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+             <a onClick={handleClickQuery}>
                <div className="service-item text-center pt-3">
                  <div className="p-4">
                  <FaQuestionCircle size={60}/>
@@ -200,6 +234,7 @@ function Home() {
                    </p>
                  </div>
                </div>
+               </a>
              </div>
            </div>
          </div>
@@ -212,7 +247,7 @@ function Home() {
       {/* Facilities End */}
       
      {/* Call To Action Start */}
-     <div className="container-xxl py-5">
+     <div className="container-xxl py-5 school">
      <div className="container">
        <div className="bg-light rounded">
          <div className="row g-0">
@@ -237,7 +272,7 @@ function Home() {
                 Enroll yourself in schools and colleges through our inclusive education platform,
                 where education aligns with your unique needs.
                </p>
-               <a className="btn btn-primary py-3 px-5" href="">
+               <a className="btn btn-primary py-3 px-5" href="/ApplyToEducation">
                Unlock Opportunities! Enroll here!
                  <i className="fa fa-arrow-right ms-2" />
                </a>
@@ -250,7 +285,7 @@ function Home() {
 
 
      
-     <div className="container-xxl py-5">
+     <div className="container-xxl py-5 ss">
      <div className="container">
        <div className="bg-light rounded">
          <div className="row g-0">
@@ -260,7 +295,7 @@ function Home() {
                <p className="mb-4">
                Dive in to explore exclusive schemes and scholarships designed for exceptional individuals—check out the possibilities waiting for you!
                </p>
-               <a className="btn btn-primary py-3 px-5" href="">
+               <a className="btn btn-primary py-3 px-5" href="/Student/Schemes-and-scholoship">
                Discover now!!
                  <i className="fa fa-arrow-right ms-2" />
                </a>
@@ -285,7 +320,7 @@ function Home() {
    </div>
      
 
-     <div className="container-xxl py-5">
+     <div className="container-xxl py-5 Teacher">
        <div className="container">
          <div className="bg-light rounded">
            <div className="row g-0">
@@ -309,8 +344,8 @@ function Home() {
                  Engage with Teachers! Reach out, excel, and turn learning into a lively conversation. 
                  Your academic journey is now more personal and interactive!
                  </p>
-                 <a className="btn btn-primary py-3 px-5" href="">
-                 Learn With Us!
+                 <a className="btn btn-primary py-3 px-5" href="/Videochat">
+                 Connect with Teacher/Trainee
                    <i className="fa fa-arrow-right ms-2" />
                  </a>
                </div>
@@ -319,7 +354,7 @@ function Home() {
          </div>
        </div>
      </div>
-     <div className="container-xxl py-5">
+     <div className="container-xxl py-5 Forum">
      <div className="container">
        <div className="bg-light rounded">
          <div className="row g-0">
@@ -330,8 +365,8 @@ function Home() {
                Connect with your peers in our Special Student Forum, a lively space where students share insights,
                 support each other's educational journeys, and excel together. Let's learn and grow as a community!
                </p>
-               <a className="btn btn-primary py-3 px-5" href="">
-                   Let's start!
+               <a className="btn btn-primary py-3 px-5" href="/forum">
+                   Let's Engage with others!
                  <i className="fa fa-arrow-right ms-2" />
                </a>
              </div>
@@ -357,7 +392,9 @@ function Home() {
       <Testimonial />
       </div>
       {/* Appointment Start */}
+      <div className="container-xxl py-5 query">
       <Query />
+      </div>
       {/* Appointment End */}
   
           

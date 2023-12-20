@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebaseConfig';
 import StudentNavbar from '../../Components/StudentNavbar';
+import '../../Styles/Home.css';
+import Footer from '../../Components/Footer';
 
 export default function SchemesTable() {
     const[allDetails,setAllDetails]=useState([]);
@@ -30,7 +32,7 @@ export default function SchemesTable() {
     <hr></hr>
     <div  className="entire-table">
     
-        <h2> Disability Schemes
+        <h2 style={{ marginLeft: '10%' , marginTop:'3%'}}> Disability Schemes
 </h2>
 <table border="1" className="table-container">
   <thead>
@@ -63,7 +65,7 @@ export default function SchemesTable() {
   </tbody>
 </table>   
 
-
+<Footer />
     </div>
     </>
   )

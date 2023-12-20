@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, getDocs, doc } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
+import Footer from '../Components/Footer';
+import StudentNavbar from '../Components/StudentNavbar';
 
 
 const DonorPage = () => {
@@ -73,21 +75,36 @@ const DonorPage = () => {
 
   return (
     <div>
+    <StudentNavbar />
       <div className="container-xxl py-5">
 
         <h2>Donor Details</h2>
-        <ul>
-          {donorDetails.map((donor) => (
-            <li key={donor.id}>
-              <strong>Name:</strong> {donor.data.Name} | 
-              <strong>Email:</strong> {donor.data.Email} | 
-              <strong>Contact Number:</strong> {donor.data.contactNumber} | 
-              <strong>Message:</strong> {donor.data.message}
-              <button onClick={() => openModal(donor)}>Click here to connect</button>
-            </li>
-          ))}
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Contact Number</th>
+              <th>Message</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {donorDetails.map((donor) => (
+              <tr key={donor.id}>
+                <td>{donor.data.Name}</td>
+                <td>{donor.data.Email}</td>
+                <td>{donor.data.contactNumber}</td>
+                <td>{donor.data.message}</td>
+                <td>
+                  <button onClick={() => openModal(donor)}>Click here to connect</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -10,7 +10,7 @@ export const firebaseConfig = {
     storageBucket: "sih23-2.appspot.com",
     messagingSenderId: "1022128069376",
     appId: "1:1022128069376:web:a8139842b2e38531ecb1e5"
-};
+  };
 
 
 const app = initializeApp(firebaseConfig);

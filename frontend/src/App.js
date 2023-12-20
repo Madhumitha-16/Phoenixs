@@ -28,6 +28,7 @@ import StudentQueries from './Ministry/StudentQueries.js';
 import OrganizationQueries from './Ministry/OrganizationQueries.js';
 import TeacherApplication from './Organization/TeacherApplication.js';
 import VideoChat from './VideoChat/VideoChat.jsx'
+import ArQr from './Student/Activity/ArQr.js';
 import TamilVoice from './TamilVoice.js';
 import EnglishSpeechRecognition from './EnglishVoice.js';
 
@@ -58,11 +59,18 @@ function App() {
           }
         />
         <Route
+         path="/Student/Schemes-and-scholoship"
+         element={<SchemesTable/>} />
+
+        <Route
           path="/student/AHome"
           element={
               <ActivityHome/>
           }
         />
+        <Route
+        path="/Student/Ar"
+        element={<ArQr />}/>
 
         <Route
           path="/login"
@@ -153,7 +161,7 @@ function App() {
          element={<TRegister/>} />
 
         <Route 
-         path="/Donor-page" 
+         path="/RequestToDonor" 
          element={<DonorPage/>} />
 
         <Route 
@@ -191,6 +199,10 @@ function App() {
          <Route 
          path="/Organization/Student-Application" 
          element={<StudentApplication/>} />
+         <Route
+          path="/ApplyToEducation"
+          element={<DisplayingSchools/>}/>
+           
 
         <Route 
          path="/videoChat" 
