@@ -47,7 +47,7 @@ export default function TeacherNavbar() {
               Get Hired
             </a>
             
-            <a href="contact.html" className="nav-item nav-link">
+            <a href="/videoChat" className="nav-item nav-link">
               Live Session
             </a>
           </div>

@@ -29,6 +29,9 @@ import OrganizationQueries from './Ministry/OrganizationQueries.js';
 import TeacherApplication from './Organization/TeacherApplication.js';
 import VideoChat from './VideoChat/VideoChat.jsx'
 import ArQr from './Student/Activity/ArQr.js';
+import TamilVoice from './TamilVoice.js';
+import EnglishSpeechRecognition from './EnglishVoice.js';
+
 
 
 function App() {
@@ -99,12 +102,7 @@ function App() {
             <TeacherApplication />
         }
       />
-      <Route
-      path="/Organization/Student-Application"
-      element={
-          <StudentApplication />
-      }
-    />
+      
         <Route
           path="/Ministry/home"
           element={
@@ -206,13 +204,23 @@ function App() {
           element={<DisplayingSchools/>}/>
            
 
-<Route 
+        <Route 
          path="/videoChat" 
          element={<VideoChat/>} />
 
+        <Route 
+         path="/tamil" 
+         element={<TamilVoice />} />
+
+        <Route 
+         path="/eng" 
+         element={<EnglishSpeechRecognition />} />
+         
+         
+
         </Routes>
         
-        
+      
 
   </BrowserRouter>
      

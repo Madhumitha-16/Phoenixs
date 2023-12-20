@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../img/logo-SQUARE.png';
 import { useSpeechSynthesis } from "react-speech-kit";
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
+
 
 export default function Navbar() {
   const { speak } = useSpeechSynthesis()
   const [grayscale, setGrayscale] = useState(false);
-
+  const { t } = useTranslation();
   useEffect(() => {
     const isGrayscale = localStorage.getItem('grayscale');
     if (isGrayscale === 'true') {
@@ -66,20 +71,20 @@ export default function Navbar() {
             Phoenixs
           </h1>
         </a>
-       
+       <LanguageSwitcher />
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav mx-auto">
             <a href="/register" className="nav-item nav-link active" >
-            Register 
+              {t('register')} 
             </a>
             <a href="/Student-register" className="nav-item nav-link">
-              Student 
+              {t('student')} 
             </a>
             <a href="/Teacher-register" className="nav-item nav-link">
-              Teacher 
+              {t('teacher')}
             </a>
             <a href="/organisation-register" className="nav-item nav-link">
-              Organization 
+              {t('organization')}
             </a>
             
             {/* <a href="to be coded " className="nav-item nav-link">

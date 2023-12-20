@@ -17,14 +17,15 @@ import VoiceControl from './Components/VoiceControl.js';
 import Navbar from './Components/Navbar.js';
 import Testimonial from './Components/Testimonial.js';
 import DonorForm from './Donor/DonorForm.js';
-
+import { useTranslation } from 'react-i18next';
+// import LanguageSwitcher from './LanguageSwitcher';
 
 
 function Temp() {
   const { speak } = useSpeechSynthesis()
   const [greet, setGreet] = useState(false);
   const text = 'Some dummy text'
-
+  const { t } = useTranslation();
  
   
   return (
@@ -61,23 +62,23 @@ function Temp() {
                 <div className="row justify-content-start">
                   <div className="col-10 col-lg-8">
                   <h1 style={{ color: '#ffffff', fontSize: '3rem', textShadow: '2px 2px 4px #000000' }} className="text-white animated slideInDown mb-4">
-                  Bridging Gaps, Fostering Dreams:<br></br> A Journey to Inclusive Education
+                   {t('Bridging')}
                    </h1>
                     <p style={{fontSize: '1.3rem', textShadow: '2px 2px 4px #000000' }} className=" fw-medium text-white mb-4 pb-2">
-                    This platform unites students, institutions, teachers, and government ministries, 
-                    an Edu-ecosystem that empowers, informs, and transforms lives.
+                   {t('platform')}
                     </p>
                     <a
                       href="/login"
                       className="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft"
                     >
-                      Login
+                      {t('Login')}
                     </a>
                     <a
                       href="/register"
                       className="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight"
                     >
-                      New? Register Now!
+                    {t('Register')}
+                    
                     </a>
                   </div>
                 </div>
@@ -129,10 +130,10 @@ function Temp() {
           data-wow-delay="0.1s"
           style={{ maxWidth: 600 }}
         >
-          <h1 className="mb-3">Explore Our Features!</h1>
-          <p>
-          Empowering Students!!
-         Inclusive Education is Here.Happy Learning!!
+          <h1 className="mb-3">{t("Features")}</h1>
+          <p>{t('Features')}
+          {t('Empowering')}
+          
           </p>
         </div>
         <div className="row g-4">
@@ -144,13 +145,14 @@ function Temp() {
                 <span className="bg-primary" />
               </div>
               <div className="facility-text bg-primary">
-                <h3 className="text-primary mb-3">Student's</h3>
+                <h3 className="text-primary mb-3">{t('student')}</h3>
                 <p className="mb-0">
-                Unlock your learning journey!</p>
-                <p></p>
-                <p> Accessible course materials </p><p>Adaptive learning tools</p>
-                     <p>Support services</p>
-                      <p>Peer support</p>
+                {t('unlock')}
+                </p>
+                <p> {t('accessible')}  {t('adapt')}
+                      {t('service')}
+                      {t('peer')}
+                      </p>
               </div>
             </div>
           </div>
@@ -164,13 +166,13 @@ function Temp() {
               <div className="facility-text bg-success">
                 <h3 className="text-success mb-3">Organisation</h3>
                 <p className="mb-0">
-                  Decrease the Huddles and Overcome It!</p>
-                  <p></p>
-                <p>Comprehensive Curriculum</p>
+                {t('huddle')}
+                  
+                 {t('comprehensive')}
                 
-                <p>Professional Development</p>
-                <p>Collaboration and Advocacy</p>
-                <p>Data and Reporting</p>
+                 {t('professional')}
+                 {t('Collaboration')}
+                 {t('data')}</p>
               </div>
             </div>
           </div>
@@ -184,13 +186,13 @@ function Temp() {
               <div className="facility-text bg-warning">
                 <h3 className="text-warning mb-3">Teacher's</h3>
                 <p className="mb-0">
-                Jump In ! To Train and help Our Special Kids</p>
-                <p></p>
-               <p>Individualized Education Plans (IEPs)</p>
+                {t('jump')}
+               
+               {t('IEP')}
       
-                <p>Assistive technology resources
-                </p>
-                <p>Collaboration tools
+                {t('assistive')}
+                
+                 {t('tools')}
                 </p>
               </div>
             </div>
@@ -203,15 +205,16 @@ function Temp() {
                 <span className="bg-info" />
               </div>
               <div className="facility-text bg-info">
-                <h3 className="text-info mb-3">Ministry</h3>
+                <h3 className="text-info mb-3">
+                  <p> {t('Ministry')}</p>
+                </h3>
                 <p className="mb-0">
-                  For the People!
-                </p>
-                <p></p>
-                <p>Schemes and Scholarship</p>
-                <p>Certificates and Services</p>
-                <p>Education and Employment Resources</p>
-                <p>Awareness Campaigns</p>
+                {t('For')}
+                
+                 {t('Schemes')}
+                 {t('Certificates')}
+                  {t('Education')}
+                 {t('Awareness')}</p>
               </div>
             </div>
           </div>
@@ -221,25 +224,24 @@ function Temp() {
       {/* Facilities End */}
       <VoiceControl />
       <div className="text-center mx-auto mb-5 wow fadeInUp">
-        <h1 >Toll -Free Help line numbers</h1>
+        <h1 ><p> {t('Toll')}</p></h1>
         <p style={{ fontSize: '22px' }}>
               <i className="fa fa-phone-alt me-3" />
               
               <a href="tel:1800-11-4515">1800-11-4515</a>
-              <br></br>(Loan & Skill Guidance)
+              <br></br><p> {t('Loan')}</p>
               </p>
               <p style={{ fontSize: '22px' }}>
                 <i className="fa fa-phone-alt me-3" />
                 
                 <a href="tel:1800-180-5129">1800-180-5129</a>
-                <br></br>( Aids and assistive devices )
+                <br></br><p> {t('Aids')}</p>
               </p>
               <p style={{ fontSize: '22px' }}>
                 <i className="fa fa-phone-alt me-3" />
                 
                 <a href="tel:1800-572-6422">1800-572-6422</a>
-                <br></br>(National Institute Helpline)<br></br>(Mental Health, Special Education, Occupational
-                therapy,Counseling,Speech and Physiotherapy)
+                <br></br><p> {t('National')}</p><br></br><p> {t('Mental')}</p>
               </p>
       </div>
       {/* About Start */}
@@ -248,26 +250,16 @@ function Temp() {
           <div className="row g-5 align-items-center">
             <div className="col-lg-6">
               <h1 className="mb-4">
-                Learn More About Our Work And Activities Here!
+                <p>  {t('Learn')}</p>
               </h1>
               <p className="mb-4">
-              Welcome to our transformative platform dedicated to inclusive education.
-              At the heart of our mission is the empowerment of special children with disabilities, 
-              offering a seamless registration process and access to mainstream education. We connect 
-              students with local education centers and enrich their learning experience through a 
-              gamified educational platform. Educational institutions benefit from proactive notifications, 
-              keeping them informed about potential enrollees and government schemes. For teachers, 
-              we provide not just job opportunities but a collaborative space to share resources 
-              and enhance their impact. Government ministries find a secure gateway to manage requests,
-               upload schemes, and contribute to the collective advancement of inclusive education. 
-               Join us in building a future where every child, regardless of ability, has access 
-               to quality education and limitless possibilities.
+              {t('Welcome')}
               </p>
             
               <div className="row g-4 align-items-center">
                 <div className="col-sm-6">
                   <a className="btn btn-primary rounded-pill py-3 px-5" href="">
-                    Read More
+                   <p> {t('Read')}</p>
                   </a>
                 </div>
                 <div className="col-sm-6">
@@ -280,7 +272,7 @@ function Temp() {
                     />
                     <div className="ms-3">
                       <h6 className="text-primary mb-1">Phoenixs</h6>
-                      <small>IT, RMKEC</small>
+                     
                     </div>
                   </div>
                 </div>
@@ -339,13 +331,12 @@ function Temp() {
             </div>
             <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
               <div className="h-100 d-flex flex-column justify-content-center p-5">
-                <h1 className="mb-4">Unlock Learning!!</h1>
+                <h1 className="mb-4"><p> {t('Unlock')}</p></h1>
                 <p className="mb-4">
-                Makes learning easy by giving students personal profiles, real-time updates, and clear communication for parents. It's secure and lets everyone work together with shared resources, 
-          online meetings, and a helpful library. You can give feedback to make it better and ensure a complete learning experience for students and their families.
+                {t('Makes')}
                 </p>
                 <a className="btn btn-primary py-3 px-5" href="/login">
-                  Let's Get Educated ! Enroll here
+                 <p> {t('Let')}</p>
                   <i className="fa fa-arrow-right ms-2" />
                 </a>
               </div>
@@ -360,13 +351,12 @@ function Temp() {
           <div className="row g-0">
             <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
               <div className="h-100 d-flex flex-column justify-content-center p-5">
-                <h1 className="mb-4">Classroom Navigator </h1>
+                <h1 className="mb-4"><p> {t('Classroom ')}</p> </h1>
                 <p className="mb-4">
-                Teachers play a crucial role in the holistic development of disabled individuals by fostering inclusive education, providing tailored support, and nurturing an environment that promotes their unique strengths.
-                These professionals employ personalized strategies, create inclusive environments, and advocate for the unique needs of disabled learners. Through their guidance and encouragement, disabled individuals can overcome obstacles, gain confidence, and actively engage in society, promoting inclusivity and diversity.
+                {t('Teachers')}
                 </p>
                 <a className="btn btn-primary py-3 px-5" href="/login">
-                  Register As a Teacher Now 
+                  <p> {t('This')}</p> 
                   <i className="fa fa-arrow-right ms-2" />
                 </a>
               </div>
@@ -422,7 +412,7 @@ function Temp() {
                     - we have a place for you!
                   </p>
                   <a className="btn btn-primary py-3 px-5" href="/login">
-                    Enroll Your Edu-Center!
+                   <p> {t('Enroll')}</p>
                     <i className="fa fa-arrow-right ms-2" />
                   </a>
                 </div>

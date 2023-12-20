@@ -14,13 +14,6 @@ function VoiceForm() {
     
   });
 
-  // const [queryData, setQueryData] = useState({
-  //   problem: "",
-  //   description:"",
-
-    
-  // });
-
   const [currentField, setCurrentField] = useState("");
 
   useEffect(() => {
@@ -72,10 +65,6 @@ function VoiceForm() {
           command: "submit form",
           callback: ()=>handleFormSubmit(formData)
         },
-        // {
-        //   command: "My Problem is",
-        //   callback: (message) => setQueryData({ ...queryData, message }),
-        // }
       ];
   
       commands.forEach(({ command, callback }) => {
@@ -87,7 +76,7 @@ function VoiceForm() {
           callback(match[1]);
           resetTranscript();
         }else{
-          // speak({ text: Sorry, please try again });
+          // speak({ text: `Sorry, please try again` });
           resetTranscript();
         }
       });

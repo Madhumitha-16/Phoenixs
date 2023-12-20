@@ -186,5 +186,5 @@ input[type="radio"]:checked + label{
 #carousel-1:checked ~ .control-1,
 #carousel-2:checked ~ .control-2,
 #carousel-3:checked ~ .control-3 {
-  display: block;
+  display: block;
 }
