@@ -5,6 +5,8 @@ import { Modal, Button, Form, Input } from 'antd';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'; 
 import VoiceForm from '../Form';
 import StudentNavbar from '../Components/StudentNavbar';
+import '../Styles/application.css';
+import Footer from '../Components/Footer';
 
 
 const DisplayingSchools = () => {
@@ -167,11 +169,11 @@ console.log(values);
     <div>
     <StudentNavbar />
     <hr></hr>
-      <h2 style={{marginLeft:"180px",marginBottom:"20px",marginTop:"50px"}}>List of Schools</h2>
+      <h2 style={{marginLeft:"10%",marginBottom:"30px",marginTop:"50px"}}>List of Schools</h2>
       <table>
         <thead>
           <tr>
-            <th>Organisation Name</th>
+            <th>Organisation</th>
             <th>Email</th>
             <th>Contact Number</th>
             <th>Address</th>
@@ -223,7 +225,7 @@ console.log(values);
           </Button>,
         ]}
       >
-        <form onSubmit={handleFormSubmit}>
+        <form  onSubmit={handleFormSubmit}>
         <label className="input-group">
           First Name:
           <input
@@ -279,6 +281,7 @@ console.log(values);
       </form> 
       <p>Transcript: {transcript}</p>
       </Modal>
+      <Footer />
     </div>
   );
 };

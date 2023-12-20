@@ -1,0 +1,50 @@
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  thead th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 6px;
+  }
+
+  tbody td {
+    padding: 10px;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tbody tr:hover {
+    background-color: #e6e6e6;
+  }
+
+  .apply-button {
+    padding: 8px 16px;
+    background-color: rgb(245, 107, 16);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .apply-button:hover {
+    background-color: rgba(252, 138, 62, 0.897);
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .input-group input {
+    width: 80%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }

@@ -71,33 +71,20 @@ function Home() {
             <div className="overlay">
             <div
               className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+              style={{ top: '-20px' }}
             > 
             
               <div className="container">
               
-                <div className="row justify-content-start">
-                  <div className="col-10 col-lg-8">
-                  <h1 style={{ color: '#ffffff', fontSize: '3rem', textShadow: '2px 2px 4px #000000' }} className="text-white animated slideInDown mb-4">
-                  You are capable of Amazing things !
-                   </h1>
-              
-              
-                    <p style={{fontSize: '1.3rem', textShadow: '2px 2px 4px #000000' }} className=" fw-medium text-white mb-4 pb-2">
-                    Success begins with a single determined step, & We are here to help you take it.
-                    Embrace the challenges, celebrate the victories, and unfold the incredible potential within you with Phoenixs.
+                <div className="row justify-content-end">
+                  <div className="col-10 col-rg-8 text-end"> {/* Add 'text-end' class */}
+                    <h1 style={{ color: '#ffffff', fontSize: '3.25rem', textShadow: '2px 2px 4px #000000', }} className="text-white animated slideInDown mb-2">
+                      You are capable of Amazing things !
+                    </h1>
+                    <p style={{fontSize: '1.5rem', textShadow: '2px 2px 4px #000000' }} className=" fw-medium text-white mb-0 pb-0">
+                      Success begins with a single determined step, & We are here to help you take it.
+                      Embrace the challenges, celebrate the victories, and unfold the incredible potential.
                     </p>
-                    <a
-                      href="www.google.com"
-                      className="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft"
-                    >
-                    Jump to Courses
-                    </a>
-                    <a
-                      href="www.google.com"
-                      className="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight"
-                    >
-                    Discover other features
-                    </a>
                   </div>
                 </div>
               </div>
@@ -118,22 +105,23 @@ function Home() {
               Enrich with our facilities and make your learning experience more fun and interactive.
             </p>
            {/* Service Start */}
-           <div className="container-xxl py-5">
-           <div className="container">
-             <div className="row g-4">
-               <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-               <a onClick={handleClickSchool}>
-                 <div className="service-item text-center pt-3">
-                   <div className="p-4">
-                   <FaSchool size={60}/>
-                     <h5 className="mb-3">School</h5>
-                     <p>
-                     Embrace the opportunity to educate yourself and graduate with grace
-                     </p>
-                   </div>
-                 </div>
-                 </a>
-               </div>
+           <div className="container-xxl animated shake py-5">
+          <div className="container animated shake">
+            <div className="row g-4">
+              <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <a onClick={handleClickSchool}>
+                  <div className="service-item text-center pt-3">
+                    <div className="p-4">
+                      <FaSchool size={60} />
+                      <h5 className="mb-3">School</h5>
+                      <p>
+                        Embrace the opportunity to educate yourself and graduate with grace
+                      </p>
+                    </div>
+                  </div>
+                </a>
+             
+          </div>
                <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                <a onClick={handleClickScheme}>
                <div className="service-item text-center pt-3">

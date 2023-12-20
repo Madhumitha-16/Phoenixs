@@ -94,10 +94,10 @@ export default function Navbar() {
               Donor
             </a> */}
           </div>
-          <button className="btn btn-primary rounded-pill px-3 my-2 mx-2 d-none d-lg-block" onClick={Greet}>
+          <button className="btn btn-primary rounded-pill px-3 my-2 mx-2 d-none d-lg-block" onClick={Greet} style={{ marginRight: '5px' }}>
             Accessibility Mode
           </button>
-          <button className="btn btn-secondary rounded-pill px-3 my-2 ml-3 d-none d-lg-block" onClick={toggleGrayscale}>
+          <button className="btn btn-primary rounded-pill px-3 my-2 ml-2 d-none d-lg-block" onClick={toggleGrayscale}>
             Toggle Grayscale
           </button>
 

@@ -170,7 +170,7 @@ function Temp() {
                   
                  {t('comprehensive')}
                 
-                 {t('professional')}
+                 {t(' professional')}
                  {t('Collaboration')}
                  {t('data')}</p>
               </div>

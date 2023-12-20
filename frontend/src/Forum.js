@@ -164,7 +164,7 @@ const Forum = () => {
         <Sidebar />
         <div style={{ width: "100%" }}>
           <div className="create-post">
-            <h2>Create a Post</h2>
+            <h2 style={{ fontSize: "40px" }}>Create a Post</h2>
             <form onSubmit={handleSubmit} >
               <div className="box">
                 <div className="col-sm">
@@ -184,8 +184,17 @@ const Forum = () => {
                     className="file-upload"
                     type="file"
                     accept="image,video/mkv/*"
+                    placeholder="Upload File"
                     onChange={handleFileChange}
+                    style={{
+                      border: "2px solid #ccc",
+                      borderRadius: "5px",
+                      padding: "10px",
+                      color: "blue",
+                      background: "lightgray",
+                    }}
                   />
+                  <span style={{ color: "blue" , fontsize:"10px",}}>📁</span>
                 </div>
               </div>
               <div style={{ display: "flex", justifyContent: "flex-end" }}>
