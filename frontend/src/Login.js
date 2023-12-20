@@ -46,6 +46,9 @@ const login = ()=>{
   window.confirmationResult.confirm(code).then((result) => {
     const user = result.user;
     console.log(user)
+    if(user.uid){
+      navigate('/student/home');
+    }
     // ...
   }).catch((error) => {
 console.log("Wrong code")
@@ -128,14 +131,14 @@ console.log("Wrong code")
     <>
      <Navbar />
       <div>
-      <Toaster toastOptions={{
+      {/* <Toaster toastOptions={{
         success: {
           iconTheme: {
             primary: 'green',
             secondary: 'white',
           },
         },
-      }} />
+      }} /> */}
     </div>
       <div className="body">
         <div className="contentLoginWrap">

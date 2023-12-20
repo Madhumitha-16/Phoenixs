@@ -19,6 +19,7 @@ import { FaQuestionCircle } from "react-icons/fa";
 import StudentNavbar from '../Components/StudentNavbar';
 import Testimonial from '../Components/Testimonial';
 import Query from '../Components/Query';
+import VoiceControl from '../Components/VoiceControl';
 
 
 function Home() {
@@ -103,7 +104,7 @@ function Home() {
               </div>
             </div>
           </div>
-         
+         <VoiceControl />
       {/* Facilities Start */}
       <div className="container-xxl py-5">
         <div className="container">
