@@ -28,6 +28,8 @@ import StudentQueries from './Ministry/StudentQueries.js';
 import OrganizationQueries from './Ministry/OrganizationQueries.js';
 import TeacherApplication from './Organization/TeacherApplication.js';
 import VideoChat from './VideoChat/VideoChat.jsx'
+import TamilVoice from './TamilVoice.js';
+import EnglishSpeechRecognition from './EnglishVoice.js';
 
 
 
@@ -194,6 +196,15 @@ function App() {
          path="/videoChat" 
          element={<VideoChat/>} />
 
+        <Route 
+         path="/tamil" 
+         element={<TamilVoice />} />
+
+        <Route 
+         path="/eng" 
+         element={<EnglishSpeechRecognition />} />
+         
+         
 
         </Routes>
         

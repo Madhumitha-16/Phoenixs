@@ -5,40 +5,65 @@ function VoiceForm() {
   const { transcript, resetTranscript } = useSpeechRecognition();
 
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    message: "",
+    name: "",
+    address:"",
+    udid:"",
+    disabilityType:"",
+    aadharCardNumber:"",
+    organizationName:""
+    
   });
+
+  const [currentField, setCurrentField] = useState("");
 
   useEffect(() => {
     SpeechRecognition.startListening({ continuous: true });
   }, []);
 
   useEffect(() => {
-    handleVoiceInput();
-  }, [transcript]);
+    const delay = 1000; 
+    const timeoutId = setTimeout(() => {
+      handleVoiceInput();
+    }, delay);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  },[transcript]);
+
+  const speak = (text) => {
+    const speech = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(speech);
+  };
 
   const handleVoiceInput = () => {
     if (transcript) {
-      const emailRegex = /^set email ([^\s@]+@[^\s@]+\.[^\s@]+)$/i;
   
       const commands = [
         {
-          command: "set first name *",
-          callback: (name) => setFormData({ ...formData, firstName: name }),
+          command: "set name *",
+          
+          callback: (name) => setFormData({ ...formData, firstName: name }) ,
         },
         {
           command: "set last name *",
           callback: (name) => setFormData({ ...formData, lastName: name }),
         },
         {
-          command: "set email *",
-          callback: (email) => setFormData({ ...formData, email }),
+          command: "set u d i d number *",
+          callback: (message) => setFormData({ ...formData, message }),
+        },
+        {
+          command: "set disability type *",
+          callback: (message) => setFormData({ ...formData, message }),
         },
         {
           command: "set message *",
           callback: (message) => setFormData({ ...formData, message }),
+        },
+        {
+          command: "submit form",
+          callback: ()=>handleFormSubmit(formData)
         },
       ];
   
@@ -50,20 +75,27 @@ function VoiceForm() {
            
           callback(match[1]);
           resetTranscript();
+        }else{
+          // speak({ text: `Sorry, please try again` });
+          resetTranscript();
         }
       });
     }
   };
 
   const handleFormSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission with formData
     console.log(formData);
   };
 
+  useEffect(() => {
+    if (currentField && transcript === "") {
+      speak(`Please fill ${currentField}`);
+    }
+  }, [currentField, transcript]);
+
   return (
     <div className="App">
-      <h2>Voice-Controlled Form</h2>
+      {/* <h2>Voice-Controlled Form</h2>
       <form onSubmit={handleFormSubmit}>
         <label className="input-group">
           First Name:
@@ -84,15 +116,6 @@ function VoiceForm() {
         </label>
         <br />
         <label className="input-group">
-          Email:
-          <input
-            type="email"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          />
-        </label>
-        <br />
-        <label className="input-group">
           Message:
           <textarea
             value={formData.message}
@@ -101,7 +124,7 @@ function VoiceForm() {
         </label>
         <br />
         <button type="submit">Submit</button>
-      </form>
+      </form> */}
       <p>Transcript: {transcript}</p>
     </div>
   );

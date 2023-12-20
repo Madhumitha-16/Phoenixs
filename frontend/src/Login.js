@@ -145,6 +145,11 @@ console.log("Wrong code")
               <VoiceControl />
                 <h1>Log in</h1>
                 <div className="input-group">
+                <label
+                    // className={`${number.length > 0 ? "focusLabel" : ""}`}
+                  >
+                    Phone No.<span className="asterisk"> * </span>
+                  </label>
                   <input
                     type="number"
                     className="input"
@@ -152,12 +157,14 @@ console.log("Wrong code")
                     onChange={(e) => setNumber(e.target.value)}
                     required
                   />
-                  <label
-                  >
-                    Phone No.<span className="asterisk"> * </span>
-                  </label>
+                  
                 </div>
                   <div className="input-group">
+                  <label
+                      // className={`${code.length > 0 ? "focusLabel" : ""}`}
+                    >
+                      OTP<span className="asterisk"> * </span>
+                    </label>
                     <input
                       type="number"
                       className="input password"
@@ -165,15 +172,11 @@ console.log("Wrong code")
                       onChange={(e) => setCode(e.target.value)}
                       required
                     />
-                    <label
-                      
-                    >
-                      OTP<span className="asterisk"> * </span>
-                    </label>
+                   
                   </div>
-                  <button onClick={signIn}>Send OTP</button>
-                  <button onClick={login}>Signup</button>
-                  <input type="submit" value="Login" className="btn btn-primary rounded-pill w-25 py-2"/>
+                  <button className="btn btn-dark rounded-pill py-sm-3 px-sm-4 animated slideInRight" style={{marginRight:"20px"}} onClick={signIn}>Send OTP</button>
+                  <button className="btn btn-primary rounded-pill py-sm-3 px-sm-4 animated slideInRight" onClick={login}>Login</button>
+                  {/* <input type="submit" value="Login" className="btn btn-primary rounded-pill w-25 py-2"/> */}
                
                <br></br>
                 <p>Haven't registered yet ? 
@@ -190,4 +193,4 @@ console.log("Wrong code")
   );
 }
 
-export default Login;
+export default Login;
