@@ -4,6 +4,7 @@ import { db, auth } from '../firebaseConfig';
 import { Modal, Button, Form, Input } from 'antd';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'; 
 import VoiceForm from '../Form';
+import StudentNavbar from '../Components/StudentNavbar';
 
 
 const DisplayingSchools = () => {
@@ -82,7 +83,9 @@ console.log(values);
 
       setModalVisible(false);
       form.resetFields();
-
+      // speak({
+      //   text: "submitted",
+      // });
       console.log('Form submitted successfully!');
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -162,7 +165,9 @@ console.log(values);
 
   return (
     <div>
-      <h2>Organization Details</h2>
+    <StudentNavbar />
+    <hr></hr>
+      <h2 style={{marginLeft:"180px",marginBottom:"20px",marginTop:"50px"}}>List of Schools</h2>
       <table>
         <thead>
           <tr>
@@ -272,6 +277,7 @@ console.log(values);
         </label>
         <br />
       </form> 
+      <p>Transcript: {transcript}</p>
       </Modal>
     </div>
   );

@@ -49,6 +49,9 @@ export default function StudentNavbar() {
             <a href="/student/home" className="nav-item nav-link active">
               Home
             </a>
+            <a href="/display-schools" className="nav-item nav-link ">
+              Admission
+            </a>
             <a href="/forum" className="nav-item nav-link">
               Forum
             </a>

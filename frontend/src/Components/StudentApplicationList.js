@@ -155,7 +155,7 @@ const DisplayStudentApplications = () => {
             <p><strong>Aadhar Card Number:</strong> {selectedStudent.AadharCardNumber}</p>
             <p><strong>Address:</strong> {selectedStudent.Address}</p>
             <p><strong>Contact Number:</strong> {selectedStudent.ContactNumber}</p>
-            <p><strong>Email ID:</strong> {selectedStudent.EmailID}</p>
+            {/* <p><strong>Email ID:</strong> {selectedStudent.EmailID}</p> */}
             <p><strong>Organization Name:</strong> {selectedStudent.OrganizationName}</p>
             
             <Form.Item
