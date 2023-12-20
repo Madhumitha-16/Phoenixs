@@ -112,15 +112,12 @@ console.log("Wrong code")
   window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
     'size': 'invisible',
     callback: (response) => {
-      // reCAPTCHA solved, allow signInWithPhoneNumber.
+      
       console.log("Entered here")
      signIn()
-      // ...
     },
     'expired-callback': () => {
-      // Response expired. Ask user to solve reCAPTCHA again.
       console.log("WHATS THE ERROR")
-      // ...
  }
 });
 }
@@ -156,7 +153,6 @@ console.log("Wrong code")
                     required
                   />
                   <label
-                    // className={${number.length > 0 ? "focusLabel" : ""}}
                   >
                     Phone No.<span className="asterisk"> * </span>
                   </label>
@@ -170,7 +166,7 @@ console.log("Wrong code")
                       required
                     />
                     <label
-                      // className={${code.length > 0 ? "focusLabel" : ""}}
+                      
                     >
                       OTP<span className="asterisk"> * </span>
                     </label>
