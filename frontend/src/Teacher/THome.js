@@ -191,12 +191,10 @@ export default function THome() {
           <div className="row g-5 align-items-center">
             <div className="col-lg-6">
               <h1 className="mb-4">
-                Learn More About Our Work And Our Cultural Activities
+                Conduct Online Sessions for Students
               </h1>
               <p>
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
-                lorem sit clita duo justo magna dolore erat amet
+                Connect with the students through our meet portal
               </p>
               <p className="mb-4">
                 Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No
@@ -207,8 +205,8 @@ export default function THome() {
               </p>
               <div className="row g-4 align-items-center">
                 <div className="col-sm-6">
-                  <a className="btn btn-primary rounded-pill py-3 px-5" href="">
-                    Read More
+                  <a className="btn btn-primary rounded-pill py-3 px-5" href="/videoChat">
+                    Online Sessions
                   </a>
                 </div>
                 <div className="col-sm-6">

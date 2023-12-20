@@ -43,13 +43,11 @@ function Login() {
 const login = ()=>{
 
   console.log(code);
-window.confirmationResult.confirm(code).then((result) => {
-// User signed in successfully.
-const user = result.user;
-console.log(user)
-// ...
-}).catch((error) => {
-// User couldn't sign in (bad verification code?)
+  window.confirmationResult.confirm(code).then((result) => {
+    const user = result.user;
+    console.log(user)
+    // ...
+  }).catch((error) => {
 console.log("Wrong code")
  // ...
 });
@@ -112,12 +110,15 @@ console.log("Wrong code")
   window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
     'size': 'invisible',
     callback: (response) => {
-      
+      // reCAPTCHA solved, allow signInWithPhoneNumber.
       console.log("Entered here")
      signIn()
+      // ...
     },
     'expired-callback': () => {
+      // Response expired. Ask user to solve reCAPTCHA again.
       console.log("WHATS THE ERROR")
+      // ...
  }
 });
 }
@@ -146,7 +147,7 @@ console.log("Wrong code")
                 <h1>Log in</h1>
                 <div className="input-group">
                 <label
-                    // className={`${number.length > 0 ? "focusLabel" : ""}`}
+                    // className={${number.length > 0 ? "focusLabel" : ""}}
                   >
                     Phone No.<span className="asterisk"> * </span>
                   </label>
@@ -161,7 +162,7 @@ console.log("Wrong code")
                 </div>
                   <div className="input-group">
                   <label
-                      // className={`${code.length > 0 ? "focusLabel" : ""}`}
+                      // className={${code.length > 0 ? "focusLabel" : ""}}
                     >
                       OTP<span className="asterisk"> * </span>
                     </label>
@@ -193,4 +194,4 @@ console.log("Wrong code")
   );
 }
 
-export default Login;
+export default Login;
